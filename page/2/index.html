@@ -1,0 +1,661 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/09/06/JavaScript_基礎概念/">JavaScript | 基礎概念</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <h1 id="JavaScript-基礎概念"><a href="#JavaScript-基礎概念" class="headerlink" title="[JavaScript] - 基礎概念"></a>[JavaScript] - 基礎概念</h1><p>本篇主要是複習 JavaScript 的基礎概念，將一些簡單的觀念做個紀錄．</p>
+<h2 id="queryselector-用法："><a href="#queryselector-用法：" class="headerlink" title="queryselector 用法："></a>queryselector 用法：</h2><ul>
+<li>只回傳符合指定選擇器的第一個元素</li>
+</ul>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;divclass&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;divclass&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">".divclass"</span>).textContent=<span class="string">'測試文字'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>output:<br><img src="https://i.imgur.com/zDRrb40.png" alt></p>
+<hr>
+<h2 id="queryselectorAll-用法："><a href="#queryselectorAll-用法：" class="headerlink" title="queryselectorAll 用法："></a>queryselectorAll 用法：</h2><ul>
+<li>抓取所有符合匹配的元素,以陣列方式回傳</li>
+</ul>
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divclass = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.divclass'</span>);</span><br><span class="line">divclass[<span class="number">0</span>].textContent=<span class="string">'測試文字１'</span>;</span><br><span class="line">divclass[<span class="number">1</span>].textContent=<span class="string">'測試文字２'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>把 divclass 印出來：<br><img src="https://i.imgur.com/ml7qXE0.png" alt></p>
+<p>output:<br><img src="https://i.imgur.com/hsmaSkh.png" alt></p>
+<hr>
+<h2 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild"></a>appendChild</h2><ul>
+<li><p>動態增加子結點，加入後並不會清掉子結點原本的內容</p>
+<p>目標加入到下方<code>&lt;p&gt;</code>元素裡:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;title&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>透過 <code>creatElement()</code> 加入:</li>
+</ul>
+<p><code>creatElement()</code>  創立後，加入想要的元素：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</span><br><span class="line">str.textContent = <span class="string">'Yes!'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>指定在 <code>class=&#39;title&#39;</code> 後動態加入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doucment.querySelector(<span class="string">'.title'</span>).appendChild(str);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p>  output:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;title&quot;&gt;</span><br><span class="line">    &lt;p&gt;Yes!&lt;/p&gt;</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>透過 <code>createTextNode()</code> 加入:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="built_in">document</span>.createTextNode(<span class="string">"Yes!!"</span>);</span><br><span class="line">doucment.querySelector(<span class="string">'.title'</span>).appendChild(str);</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;title&quot;&gt;Yes!!&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="innerHTML-v-s-creatElement"><a href="#innerHTML-v-s-creatElement" class="headerlink" title="innerHTML v.s creatElement"></a>innerHTML v.s creatElement</h2><h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><ul>
+<li>字串傳入直接渲染、效能快、安全性低 </li>
+<li>同層節點會被清空，只留下本次加入的 innerHTML</li>
+</ul>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ptag&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"ptag"</span>).innerHTML = <span class="string">"Hello ptag."</span>;</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ptag&quot;&gt;Hello ptag.&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="creatElement"><a href="#creatElement" class="headerlink" title="creatElement"></a>creatElement</h3><ul>
+<li>以 DOM 節點新增、效能差、安全性高</li>
+</ul>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;tempdiv&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.createElement(<span class="string">"BUTTON"</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"tempdiv"</span>).appendChild(btn);</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;tempdiv&quot;&gt;</span><br><span class="line">    &lt;button&gt;&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="splice-陣列刪除"><a href="#splice-陣列刪除" class="headerlink" title="splice 陣列刪除"></a>splice 陣列刪除</h2><ul>
+<li>array.splice(‘刪除的第 n 個位置’,’要刪幾個’)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numArray = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">numArray.splice(<span class="number">1</span>,<span class="number">1</span>)<span class="comment">//刪除第一個,刪除一個</span></span><br><span class="line"><span class="built_in">console</span>.log(numArray);<span class="comment">//[0,2,3]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="自訂-dataset-－-data"><a href="#自訂-dataset-－-data" class="headerlink" title="自訂 dataset － data-*"></a>自訂 dataset － data-*</h2><ul>
+<li>可元件上自定義資料屬性</li>
+</ul>
+<p>取得 <code>div</code> 裡 <code>data-userid</code> 的值：</p>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;user&quot; data-userid=&quot;777&quot;&gt;Tony&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> element = <span class="built_in">document</span>.querySelector(<span class="string">'#user'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'id:'</span>+element.dataset.userid); <span class="comment">//id:777</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="BOM-Browser-Object-Model"><a href="#BOM-Browser-Object-Model" class="headerlink" title="BOM (Browser Object Model)"></a>BOM (Browser Object Model)</h2><p>windows 底下有很多物件，介紹其中幾個：</p>
+<ul>
+<li>DOM : 操作 DOM 元素</li>
+<li>history : 歷史瀏覽紀錄</li>
+<li>location : 網址資訊做調整</li>
+<li>frames : 針對網頁的 iframe 做操控 </li>
+<li>screen : 載具螢幕相關資訊</li>
+<li>navigator : 瀏覽器相關資訊、版本</li>
+</ul>
+<hr>
+<p>參考：<code>udemy</code>,<code>w3schools</code>,<code>MDN</code></p>
+<h6 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:  javascript"></a>tags:  <code>javascript</code></h6>
+                
+            </div>
+        </article>
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/09/06/hello_git/">Hello git</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <h1 id="Hello-git"><a href="#Hello-git" class="headerlink" title="Hello git"></a>Hello git</h1><p><strong>git</strong> 是一套<strong>版本控制軟體</strong>，類似的概念還記得小時候打電動每次破關，遊戲都會幫你儲存，死了又可以在同一個地方重新開始．因此程式每寫一個版本就儲存起來，可以看到每次版本的進程，網路上有很多更詳細的介紹，我們就直接開使安裝吧！</p>
+<p><img src="https://i.imgur.com/d1kk7zn.png" alt></p>
+<h2 id="環境建立"><a href="#環境建立" class="headerlink" title="環境建立"></a>環境建立</h2><ul>
+<li>開啟 Terminal，進到要建專案的目錄底下後，建立資料夾，透過指令 <code>mkdir xxxx</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir hello_git (創建 資料夾名稱)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接下來進入到我們剛建立的專案<code>cd xxxx</code></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd hello_git (進入 資料夾名稱)</span><br></pre></td></tr></table></figure>
+
+<h2 id="git-初始化建立repository"><a href="#git-初始化建立repository" class="headerlink" title="git 初始化建立repository"></a>git 初始化建立repository</h2><ul>
+<li>進入資料夾後開始 <strong>git 初始化</strong> (Initialized empty Git repository)</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接著透過指令 <code>ls -a</code> 可以看到剛 <code>git init</code> 後產生的 <code>.git</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ls -a (查看該目錄所有檔案)</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/K2u4iLS.png" alt></p>
+<ul>
+<li>接著利用 <code>git status</code> 取得現在檔案的狀態，像是我們若有修改檔案、刪除、新增、commit…等，就可以透過這個指令看到目前所有的狀況</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/hjJZu0E.png" alt></p>
+<h2 id="建立檔案"><a href="#建立檔案" class="headerlink" title="建立檔案"></a>建立檔案</h2><ul>
+<li>我們先透過 <code>touch</code> 指令建立一個 <code>hello.txt</code> 的檔案</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">touch hello.txt (建立 hello.txt)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接著利用 <code>vim</code> 指令來編輯<code>hello.txt</code></li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim hello.txt</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>接著按下 <code>i</code> 後，隨意輸入內容，接著書入<code>:wq</code>存檔後離開</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">i (insert，隨意輸入字)</span><br></pre></td></tr></table></figure>
+
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">:wq (write &amp; quit，存擋並離開)</span><br></pre></td></tr></table></figure>
+
+<h2 id="註冊檔案"><a href="#註冊檔案" class="headerlink" title="註冊檔案"></a>註冊檔案</h2><ul>
+<li><p>這時透過 <code>git status</code> 查看目前狀態，會發現 hello.txt 已變<strong>紅色</strong>，git 偵測到 <code>hello.txt</code> 有新的檔案<br><img src="https://i.imgur.com/GX4ENVX.png" alt></p>
+</li>
+<li><p>接著可以透過 <code>git add XXX</code> 指令將檔案<code>hello.txt</code> 加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add hello.txt</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>加入檔案後我們在利用<code>git status</code> 指令查看，會發現 <code>hello.txt</code> 已變<strong>綠色</strong>，代表狀態從 working area 轉變成 staging area)</p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/Uh568E1.png" alt></p>
+<h2 id="提交本次修改"><a href="#提交本次修改" class="headerlink" title="提交本次修改"></a>提交本次修改</h2><ul>
+<li>我們將本次的修改做個紀錄，這樣之後可以透過這些紀錄快速了解本次修改的目的，透過<code>git commit -m &quot;XXX&quot;</code> 指令，因為我這次是新增一個 <code>hello.txt</code> 檔案 的修改，所以我輸入：<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;add new file hello.txt&quot;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.imgur.com/aoI2o9H.png" alt></p>
+<ul>
+<li>再用 <code>git status</code> 看一下現在狀態，這樣就已將檔案加入完畢<br><img src="https://i.imgur.com/MawCJZ5.png" alt></li>
+</ul>
+<p>接著我們要將本機端的修改推送到遠端！但在推送之前需要一些步驟</p>
+<h2 id="產生-ssh-key-Mac"><a href="#產生-ssh-key-Mac" class="headerlink" title="產生 ssh key (Mac)"></a>產生 ssh key (Mac)</h2><h3 id="確認憑證是否存在"><a href="#確認憑證是否存在" class="headerlink" title="確認憑證是否存在?"></a>確認憑證是否存在?</h3><ul>
+<li>先到家目錄確認有無 .ssh 資料夾</li>
+</ul>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cd ~/.ssh</span><br></pre></td></tr></table></figure>
+
+<p>若沒有的話，自己建立一個</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mkdir .ssh</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><p>看一下內部檔案<code>ls</code>，確認有無 id_rsa、id_rsa.pub`
+<img src="https://i.imgur.com/cn3t4Th.png" alt></p>
+</li>
+<li><p>若沒有的話透過下方指令生產一個，建立方法：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa -C &quot;yourmail@email.com</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>讀取公鑰，將公鑰貼到 Git 上，透過 <code>cat xxx</code> 指令查看後複製起來，要貼給 GitHub 上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">cat id_rsa.pub</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="將公鑰貼到-GitHub-自己的帳號裡"><a href="#將公鑰貼到-GitHub-自己的帳號裡" class="headerlink" title="將公鑰貼到 GitHub 自己的帳號裡"></a>將公鑰貼到 GitHub 自己的帳號裡</h3><ul>
+<li><p>進到自己帳號 &gt; Settings<br><img src="https://i.imgur.com/bRt1hEG.png" alt></p>
+</li>
+<li><p>左側有個“SSH and GPG Keys” ，接著點擊右側 ”new SSh Key“，並將 title 與 key 貼上<br><img src="https://i.imgur.com/EnDho2R.png" alt></p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/8KeeQmx.png" alt></p>
+<ul>
+<li>接著將網站中方筐處複製起來<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git＠github.com:XXX/hello_git.git</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.imgur.com/jKc4HQE.png" alt></p>
+<ul>
+<li><p>terminal 進到自己電腦專案資料夾<br><img src="https://i.imgur.com/OWYZirO.png" alt></p>
+</li>
+<li><p>接著我們也要在遠端建立 repository，輸入剛剛在 git 網頁藍色方匡處的指令</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git remote add origin git@github.com:XXX/hello_git.git</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>接著將本次修改推送到遠端的 master 上，之後只要 <code>git push</code> 即可</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin master</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>完成後回到剛剛網頁重新整理即可看到下方結果<br><img src="https://i.imgur.com/VhVgVhc.png" alt></p>
+</li>
+</ul>
+<hr>
+<h2 id="透過-GitHub-展示靜態網站"><a href="#透過-GitHub-展示靜態網站" class="headerlink" title="透過 GitHub 展示靜態網站"></a>透過 GitHub 展示靜態網站</h2><ul>
+<li><p>建立名為 <strong>gh-pages</strong> 的 branch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch gh-pages</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送到 <strong>gh-pages</strong> 分支上</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push -u origin gh-pages</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>這樣就可以到網站上查看囉</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[github_name].github.io/[repository_name]/</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="git-基本指令整理："><a href="#git-基本指令整理：" class="headerlink" title="git 基本指令整理："></a>git 基本指令整理：</h2><ul>
+<li><p>git 初始化 repository</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git init</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>指定檔案從 working area 加入到 staging area</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add XXX</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>該本目錄底下檔案全部加入</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>取得檔案狀態</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>提交指定檔案</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git commit -m &quot;add new file XXX&quot;</span><br><span class="line">git commit -m &quot;modify XXX&quot;  (內容可自行修改)</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>查看 log 紀錄，可確認剛做的事、是否已成功..等</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git log</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>目前的 branch 指定切換到 xxx branch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout XXX</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>推送到遠端</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>建立 branch</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git branch XXX</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>若發現有一小部分修改，沒加入剛剛的 commit，可以使用： </p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit --amend --no-edit</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li><ol>
+<li><code>git add .</code> 加入小部分修改</li>
+</ol>
+</li>
+<li><ol start="2">
+<li><code>git status</code> 確認狀態正確後</li>
+</ol>
+</li>
+<li><ol start="3">
+<li><code>git commit --amend --no-edit</code> 追加檔案到最近一次的 Commit</li>
+</ol>
+</li>
+</ul>
+</li>
+</ul>
+<p><a href="https://gitbook.tw/chapters/using-git/amend-commit2.html" target="_blank" rel="noopener">參考</a></p>
+<hr>
+<h2 id="Sourcetree-安裝"><a href="#Sourcetree-安裝" class="headerlink" title="Sourcetree 安裝"></a>Sourcetree 安裝</h2><p><a href="https://www.sourcetreeapp.com/" target="_blank" rel="noopener">Sourcetree 網站連結</a></p>
+<p><img src="https://i.imgur.com/2VAJsjf.png" alt></p>
+<ul>
+<li><p>安裝完後並申請帳戶</p>
+</li>
+<li><p>會出現所有 repository ，點擊要處理的 repository<br><img src="https://i.imgur.com/tfbB4Lv.png" alt></p>
+</li>
+</ul>
+<ul>
+<li>即可看到目前 repository 的狀態、history..等等<br><img src="https://i.imgur.com/SSuVeHQ.png" alt></li>
+</ul>
+<ul>
+<li>如何在 terminal 直接呼叫 repository 的控制頁面呢？</li>
+</ul>
+<ol>
+<li>Sourcetree &gt; install Command Line Tools<br><img src="https://i.imgur.com/nBTYHOD.png" alt></li>
+<li>安裝成功<br><img src="https://i.imgur.com/z3uMoZV.png" alt></li>
+</ol>
+<p>3.這樣就可在 terminal 輸入指令<code>stree .</code> 即可跳出repository 的控制頁了！！</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">stree .</span><br></pre></td></tr></table></figure>
+
+
+                
+            </div>
+        </article>
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/09/06/CSS_幼幼班/">CSS | 幼幼班</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <h1 id="CSS-幼幼班"><a href="#CSS-幼幼班" class="headerlink" title="CSS 幼幼班"></a>CSS 幼幼班</h1><p>這篇主要是複習 <code>CSS</code> 做的筆記，將一些基礎概念動手做</p>
+<h2 id="1-權重："><a href="#1-權重：" class="headerlink" title="1.權重："></a>1.權重：</h2><ul>
+<li>!important &gt; element style &gt; id &gt; class &gt; element<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="2-自定義属性用法："><a href="#2-自定義属性用法：" class="headerlink" title="2.自定義属性用法："></a>2.自定義属性用法：</h2><p>屬性名稱前使用 <code>--</code> 字樣，表示該屬性為變數，例如下方範例的 <code>--bg-color</code>，這時就可以使用 <code>bg-color</code> 變數，並透過<code>var</code> 就可在整份文件重複使用喔．</p>
+<p>變數語法範例：</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">var</span>(<span class="selector-tag">custom-name</span>, <span class="selector-tag">value</span>)</span><br></pre></td></tr></table></figure>
+
+<p>範例：</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;<span class="selector-tag">style</span>&gt;</span><br><span class="line">    <span class="selector-pseudo">:root</span>&#123;</span><br><span class="line">        --bg-color：red;</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.temp1</span>&#123;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">var</span>(--bg-color);</span><br><span class="line">    &#125;</span><br><span class="line">    </span><br><span class="line">    <span class="selector-class">.temp2</span>&#123;</span><br><span class="line">        <span class="attribute">background</span>: <span class="built_in">var</span>(--bg-color,gray);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;/style&gt;</span><br></pre></td></tr></table></figure>
+
+<p>若在上方範例<code>.temp2</code> 中，<code>--bg-color</code> 設定失效，css 就會利用後方的第二個變數<code>gray</code></p>
+<p><a href="https://www.w3schools.com/css/tryit.asp?filename=trycss3_var2" target="_blank" rel="noopener">馬上利用 w3schools 範例試一試</a></p>
+<hr>
+<h2 id="開始學習-CSS-版面配置"><a href="#開始學習-CSS-版面配置" class="headerlink" title="開始學習 CSS 版面配置"></a>開始學習 CSS 版面配置</h2><p>參考資料：<br><a href="http://zh-tw.learnlayout.com/" target="_blank" rel="noopener">學習 CSS 版面配置 - 保哥</a></p>
+<h3 id="1-好用的屬性-margin-auto"><a href="#1-好用的屬性-margin-auto" class="headerlink" title="1.好用的屬性 - margin: auto;"></a>1.好用的屬性 - margin: auto;</h3><ul>
+<li><p>在為了避免區塊左右撐滿容器，我們可以設定<code>width</code> 來固定我們的寬度．並加上左右外邊距（margin-left 與 margin-right）為 auto 來使其水平居中．</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-tag">margin</span>: 0 <span class="selector-tag">auto</span>; </span><br><span class="line"><span class="comment">/*第一個參數為上下(margin-top、margin-bottom)*/</span></span><br><span class="line"><span class="comment">/*第二個參數為左右(margin-left、margin-right)*/</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>max-width 屬性</p>
+</li>
+<li><ul>
+<li>但使用 <code>width</code> 頁面下方會有<em>捲軸</em>，這時就得使用<code>max-width</code></li>
+</ul>
+</li>
+</ul>
+<h3 id="2-Box-Model"><a href="#2-Box-Model" class="headerlink" title="2.Box Model"></a>2.Box Model</h3><p>由於我們在設定每個元素的 margin (元素與元素的邊界) 與 padding (該元素與內容的邊界，俗稱內距)後可能會撐開元素，導致設定的效果可能不如預期，來看個範例：</p>
+<p><img src="https://i.imgur.com/XhjWLiX.png" alt></p>
+<p>可以透過 <code>box-sizing:border-box</code> 來解決，但我們也希望能在所有瀏覽器上都能使用，所以我們另外加上：</p>
+<ul>
+<li><code>-webkit-box-sizing</code> ( 支援 Safari )</li>
+<li><code>-moz-box-sizing</code> =&gt; ( 支援 Firefox )</li>
+</ul>
+<p>所以建議在每個 css 都加上此設定： </p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">* &#123;</span><br><span class="line">  <span class="attribute">-webkit-box-sizing</span>: border-box;</span><br><span class="line">     <span class="attribute">-moz-box-sizing</span>: border-box;</span><br><span class="line">          <span class="attribute">box-sizing</span>: border-box;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="3-position"><a href="#3-position" class="headerlink" title="3.position"></a>3.position</h3><ul>
+<li><p>relative </p>
+</li>
+<li><ul>
+<li>元素與元素「之間」的相對位置</li>
+</ul>
+</li>
+<li><ul>
+<li>不會有特別表現，除非加入其他屬性(top:-50px…)<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.temp1</span>&#123;</span><br><span class="line"><span class="attribute">position</span>: relative;</span><br><span class="line"><span class="attribute">top</span>: -<span class="number">50px</span>;</span><br><span class="line"><span class="attribute">left</span>: <span class="number">40px</span>;</span><br><span class="line"><span class="attribute">width</span>: <span class="number">600px</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+</li>
+<li><p>fixed</p>
+</li>
+<li><ul>
+<li>「定位」於視窗的所設定的位置上，就連捲動頁面也會「固定」在原先設定的位置上．</li>
+</ul>
+</li>
+<li><ul>
+<li>與 relative 使用方法相同<code>top</code>、<code>right</code>、<code>bottom</code>、<code>left</code>來設定「相對」視窗的位置</li>
+</ul>
+</li>
+<li><p>absolute</p>
+</li>
+<li><ul>
+<li>與<code>fixed</code>用法相似，但不同的是定位在該元素所處的上一層容器的「相對位置」(父元素)上，若無可定位的容器，就以<code>&lt;body&gt;</code>來定位．<br><img src="https://i.imgur.com/XLKgEUm.png" alt></li>
+</ul>
+</li>
+</ul>
+<h3 id="4-float"><a href="#4-float" class="headerlink" title="4.float"></a>4.float</h3><ul>
+<li>適用情境：文繞圖<br><img src="https://i.imgur.com/Stybkcj.png" alt></li>
+</ul>
+<h3 id="5-clear-與-好物推薦-clearfix"><a href="#5-clear-與-好物推薦-clearfix" class="headerlink" title="5.clear 與 好物推薦 ( clearfix )"></a>5.clear 與 好物推薦 ( clearfix )</h3><ul>
+<li>因 <code>float</code> 屬性使用後，會讓該元素像「漂浮」於下層元素上<br><img src="https://i.imgur.com/AOegL48.png" alt></li>
+<li>這時可利用來 <code>clear</code> 來清除 <code>float</code> 效果</li>
+</ul>
+<p><img src="https://i.imgur.com/6pb7Igl.png" alt></p>
+<ul>
+<li>clearfix<br>使用 <code>float</code> 常會發生類似下面情況：<br><img src="https://i.imgur.com/ytiWCVJ.png" alt></li>
+</ul>
+<p>這時就可以拿出 <code>clearfix</code> 來解決</p>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="selector-class">.clearfix</span> &#123;</span><br><span class="line">  <span class="attribute">overflow</span>: auto;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/B2fYYLE.png" alt></p>
+<h3 id="6-響應式設計（Responsive-Design）"><a href="#6-響應式設計（Responsive-Design）" class="headerlink" title="6.響應式設計（Responsive Design）"></a>6.響應式設計（Responsive Design）</h3><ul>
+<li>media queries</li>
+<li><ul>
+<li>因現在裝置尺寸過多，要讓網站適用於每個裝置上，就要透過<code>media queries</code> 來實現．<figure class="highlight css"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">@<span class="keyword">media</span> screen and (min-width:<span class="number">600px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">nav</span> &#123;</span><br><span class="line">    <span class="attribute">float</span>: left;</span><br><span class="line">    <span class="attribute">width</span>: <span class="number">25%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">  <span class="selector-tag">section</span> &#123;</span><br><span class="line">    <span class="attribute">margin-left</span>: <span class="number">25%</span>;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br><span class="line">@<span class="keyword">media</span> screen and (max-width:<span class="number">599px</span>) &#123;</span><br><span class="line">  <span class="selector-tag">nav</span> <span class="selector-tag">li</span> &#123;</span><br><span class="line">    <span class="attribute">display</span>: inline;</span><br><span class="line">  &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/EvvVKBH.png" alt></p>
+<h3 id="7-display"><a href="#7-display" class="headerlink" title="7.display:"></a>7.display:</h3><h3 id="8-偽元素-pseudo-element-和偽類-pseudo-class"><a href="#8-偽元素-pseudo-element-和偽類-pseudo-class" class="headerlink" title="8.偽元素 ( pseudo element ) 和偽類 ( pseudo class )"></a>8.偽元素 ( pseudo element ) 和偽類 ( pseudo class )</h3><p>參考資料:<br><a href="https://stringpiggy.hpd.io/pseudo-element-pseudo-class-difference/" target="_blank" rel="noopener">【CSS FAQ】偽元素 (pseudo element) 和偽類 (pseudo class) 差在哪？</a></p>
+<hr>
+<ul>
+<li>response-image(RWD)</li>
+<li>偽元素(pseudo element) 和偽類(pseudo class) </li>
+</ul>
+<p>2019/06/19 課程</p>
+<ul>
+<li>amos切版(阿莫斯) </li>
+<li>blog (Hexo)</li>
+<li>筆記整理</li>
+<li>彭彭</li>
+</ul>
+<p>CSS屬性：</p>
+<ul>
+<li><p>clear-fix:可依據框內物件(nav)，更動框架大小(container)<br><img src="https://i.imgur.com/Wf82gsv.png" alt><br>（無 clear-fix）<br><img src="https://i.imgur.com/hgm1caM.png" alt><br>（有 clear-fix）</p>
+</li>
+<li><p>box-sizing:border-box(學css配蠻頭p2,49:00)<br><img src="https://i.imgur.com/5Pnzh0B.png" alt></p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/S5t59Z6.png" alt><br>因為nav的border沒有算在元素的總長內所以nav有漂浮現象<br>（box-sizing:border-box隱藏下)<br><img src="https://i.imgur.com/PPmfe05.png" alt></p>
+<p>（加上box-sizing:border-box)</p>
+<h6 id="tags-CSS"><a href="#tags-CSS" class="headerlink" title="tags: CSS"></a>tags: <code>CSS</code></h6>
+                
+            </div>
+        </article>
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/09/06/hello_css/">手刻 | 純ＣＳＳ＋ＲＷＤ 切版練習-The Plant Shop</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <h1 id="手刻-純CSS＋RWD-切版練習-The-Plant-Shop"><a href="#手刻-純CSS＋RWD-切版練習-The-Plant-Shop" class="headerlink" title="[手刻] - 純ＣＳＳ＋ＲＷＤ 切版練習-The Plant Shop"></a>[手刻] - 純ＣＳＳ＋ＲＷＤ 切版練習-The Plant Shop</h1><p>本次練習是參考 hexo 上的一個 theme， 來練習手刻加上 RWD 應用，網站主要是在販賣植物的網頁。</p>
+<h2 id="網站-DEMO"><a href="#網站-DEMO" class="headerlink" title="網站 DEMO"></a>網站 DEMO</h2><p>The Plant Shop 切版練習 - <a href="https://phxww.github.io/PlantShopRWD/" target="_blank" rel="noopener">Demo</a></p>
+<h2 id="網站介紹"><a href="#網站介紹" class="headerlink" title="網站介紹"></a>網站介紹</h2><p>網頁分為三個頁面：Home、About、Contact：</p>
+<p>Home： 主要結構依序為 navbar 、 header 背景圖與文字敘述，點擊按鈕 shop 按鈕可以到達下方 main 裡、 main 主要展示商品的部分、footer 放置三個社群網站的 icon</p>
+<p>About：主要結構為同 Home 中的 navbar 與 footer，main一張圖片與敘述  </p>
+<p>Contact: 簡單的表格輸入使用者資料與訊息</p>
+<h2 id="網站佈局紀錄"><a href="#網站佈局紀錄" class="headerlink" title="網站佈局紀錄"></a>網站佈局紀錄</h2><h3 id="css-管理"><a href="#css-管理" class="headerlink" title="css 管理"></a>css 管理</h3><p>分別用兩隻 css 做管理:</p>
+<ul>
+<li><p>螢幕寬度大於 990px 以上用 style.css</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel="stylesheet" href="css/style.css" /&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>螢幕寬度小於 900px 用 mobile.css</p>
+<figure class="highlight"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;link rel="stylesheet" media="screen and (max-width: 990px)" href="css/mobile.css" /&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="RWD-佈局"><a href="#RWD-佈局" class="headerlink" title="RWD 佈局"></a>RWD 佈局</h3><p>網頁會有三個不同的佈局，利用 <code>media query</code> 來偵測螢幕寬度做佈局上的調整：</p>
+<ul>
+<li>990px 以上</li>
+<li>768px~900px 之間</li>
+<li>768px 以下</li>
+</ul>
+<p>大於 990 px 以上畫面：<br><img src="https://i.imgur.com/EacQtNT.jpg" alt></p>
+<p>768 px 以下畫面：<br><img src="https://i.imgur.com/XgcMAQS.png" alt></p>
+<h3 id="Navbar-區塊"><a href="#Navbar-區塊" class="headerlink" title="Navbar 區塊"></a>Navbar 區塊</h3><p>Navbar 區塊主要分為兩部分由一個店家 logo 與三個分頁加上一個購物車，這邊排版使用 <code>float</code> 練習，分頁加上購物車的部分利用 <code>ul</code>、<code>li</code>，並使用 <code>list-style:none</code> 將 <code>li</code> 黑點清除</p>
+<ul>
+<li><p>Logo <code>float:left</code> 另一部分則是 <code>float:right</code><br><img src="https://i.imgur.com/Lo18FXu.png" alt></p>
+</li>
+<li><p>當需螢幕寬度過小時，第二部分則要改為 <code>float:none</code><br><img src="https://i.imgur.com/v8SrPY5.png" alt></p>
+</li>
+</ul>
+<p>當螢幕小於 768 px ，要顯示 <code>navicon</code>，並監聽 <code>click</code> 事件<br><img src="https://i.imgur.com/pIZIyvM.png" alt><br>利用<code>click</code> 事件，切換 class 來決定顯示哪個佈局</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">myFunction</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">       <span class="keyword">var</span> x = <span class="built_in">document</span>.getElementById(<span class="string">"navbarmenu"</span>);</span><br><span class="line">       <span class="keyword">if</span> (x.className === <span class="string">"navbarul"</span>) &#123;</span><br><span class="line">         x.className += <span class="string">" responsive"</span>;</span><br><span class="line">       &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">         x.className = <span class="string">"navbarul"</span>;</span><br><span class="line">       &#125;</span><br><span class="line">     &#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="購物車-Snipcart"><a href="#購物車-Snipcart" class="headerlink" title="購物車 Snipcart"></a>購物車 Snipcart</h4><p>一個可以快速建立起購物車功能的套件還可以分析<br><a href="https://snipcart.com/" target="_blank" rel="noopener">snipcart 官網</a><br>註冊好之後，只要引入並修改 data-api-key 即可使用： </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://ajax.googleapis.com/ajax/libs/jquery/2.2.2/jquery.min.js"</span>&gt;&lt;/script&gt;</span><br><span class="line">  &lt;script</span><br><span class="line">    src=<span class="string">"https://cdn.snipcart.com/scripts/2.0/snipcart.js"</span></span><br><span class="line">    id=<span class="string">"snipcart"</span></span><br><span class="line">    data-api-key=<span class="string">" XXX "</span></span><br><span class="line">  &gt;&lt;/script&gt;</span><br><span class="line">  &lt;link</span><br><span class="line">    href=<span class="string">"https://cdn.snipcart.com/themes/2.0/base/snipcart.min.css"</span></span><br><span class="line">    type=<span class="string">"text/css"</span></span><br><span class="line">    rel=<span class="string">"stylesheet"</span></span><br><span class="line">  /&gt;</span><br></pre></td></tr></table></figure>
+
+<p>點選增加到購物車畫面：<br><img src="https://i.imgur.com/bpA9Y3U.png" alt></p>
+<h3 id="shop-區塊"><a href="#shop-區塊" class="headerlink" title="shop 區塊"></a>shop 區塊</h3><p>shop 區塊佈局分別為一排三個商品，依據螢幕寬度若介於 900~768 px 則為兩個一排，float 設定為：<code>float: left</code><br><img src="https://i.imgur.com/cpDky13.png" alt><br>若小於 768px 就為一排一個進行排列，<code>float: none</code><br><img src="https://i.imgur.com/EzHLdaa.png" alt></p>
+<h6 id="tags-css-RWD"><a href="#tags-css-RWD" class="headerlink" title="tags: css RWD"></a>tags: <code>css</code> <code>RWD</code></h6>
+                
+            </div>
+        </article>
+    
+        <article class="post-abstract">
+            <div class="post-title">
+                <h2><a class="post-title-link" href="/2019/06/24/hello-world/">Hello World</a></h2>
+            </div>
+            <div class="post-meta">
+                <span class="post-time">2019-06-24</span>
+                
+            </div>
+            <div class="post-content">
+                
+                    <p>Welcome to <a href="https://hexo.io/" target="_blank" rel="noopener">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/" target="_blank" rel="noopener">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html" target="_blank" rel="noopener">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="noopener">GitHub</a>.</p>
+<h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/writing.html" target="_blank" rel="noopener">Writing</a></p>
+<h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/server.html" target="_blank" rel="noopener">Server</a></p>
+<h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/generating.html" target="_blank" rel="noopener">Generating</a></p>
+<h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
+
+<p>More info: <a href="https://hexo.io/docs/deployment.html" target="_blank" rel="noopener">Deployment</a></p>
+
+                
+            </div>
+        </article>
+    
+</div>
+<div class="paginator">
+    
+        
+        <a class="prev" href="/">
+            <i class="iconfont icon-prev"></i>
+            上一页
+        </a>
+        
+        
+    
+</div>
+
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

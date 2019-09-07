@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">Node.js | fashe購物網站</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js-fashe-購物網站"><span class="toc-text">[Node.js] - fashe 購物網站</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#網站應用技術"><span class="toc-text">網站應用技術</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#網站功能簡介"><span class="toc-text">網站功能簡介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#網站前端介紹："><span class="toc-text">網站前端介紹：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#使用者註冊和登入"><span class="toc-text">使用者註冊和登入</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#商品選購："><span class="toc-text">商品選購：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#訂單查詢："><span class="toc-text">訂單查詢：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#網站後台介紹："><span class="toc-text">網站後台介紹：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#商品管理頁面："><span class="toc-text">商品管理頁面：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#fashe-網站-Demo："><span class="toc-text">fashe 網站 Demo：</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-Node-js"><span class="toc-text">tags: Node.js</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="Node-js-fashe-購物網站"><a href="#Node-js-fashe-購物網站" class="headerlink" title="[Node.js] - fashe 購物網站"></a>[Node.js] - fashe 購物網站</h1><p>本篇主要介紹 <strong>fashe 購物網站</strong> 功能及架構，自學完 Node.js 後，找一個電商網站來模仿並加上自己設計，另外加上管理者後台控制功能．</p>
+<h2 id="網站應用技術"><a href="#網站應用技術" class="headerlink" title="網站應用技術"></a>網站應用技術</h2><p>技術介紹：</p>
+<ul>
+<li>前端框架： <code>Bootstrap</code></li>
+<li>前端程式語言：<code>JavaScript</code>、<code>jQuery</code></li>
+<li>後端框架： <code>Node.js</code></li>
+<li>資料庫：<code>PostgreSQL</code></li>
+<li>雲端伺服器:<code>Heroku</code></li>
+</ul>
+<h2 id="網站功能簡介"><a href="#網站功能簡介" class="headerlink" title="網站功能簡介"></a>網站功能簡介</h2><p>網站功能主要切分兩類 <strong>使用者</strong>、<strong>管理者</strong></p>
+<ul>
+<li>使用者：<ul>
+<li>註冊、登入、修改個人資料</li>
+<li>選購商品、刪除訂單商品、送出訂單、查看已送出訂單</li>
+</ul>
+</li>
+<li>管理者：<ul>
+<li>商品：對商品可以新增、刪除、修改、查詢</li>
+<li>後台只能有管理者能進入</li>
+</ul>
+</li>
+</ul>
+<h2 id="網站前端介紹："><a href="#網站前端介紹：" class="headerlink" title="網站前端介紹："></a>網站前端介紹：</h2><p>主要分為４個部分：首頁、商品選購頁面、關於頁面、聯繫頁面</p>
+<ul>
+<li><p>首頁：<br><img src="https://i.imgur.com/U3ygTFt.png" alt></p>
+</li>
+<li><p>關於頁面：<br><img src="https://i.imgur.com/Dh8nBv2.png" alt></p>
+</li>
+<li><p>聯繫頁面：<br><img src="https://i.imgur.com/DNealpn.png" alt></p>
+</li>
+</ul>
+<p>「商品頁面」放在下分跟商品流程一起說明，下面分兩部份解說「使用者註冊和登入」、「商品選購」</p>
+<h3 id="使用者註冊和登入"><a href="#使用者註冊和登入" class="headerlink" title="使用者註冊和登入"></a>使用者註冊和登入</h3><p>點選右上方註冊即可進入到 「註冊頁面」<br><img src="https://i.imgur.com/9zo4qV7.png" alt></p>
+<p>註冊成功後網頁會自動導入到 「登入頁面」，而登入後就自動導回首頁<br><img src="https://i.imgur.com/QXsztFL.png" alt></p>
+<p>若 email 有重複被註冊，系統也會判定後倒回登入頁面<br><img src="https://i.imgur.com/nC5LcEq.png" alt></p>
+<p>也可以點選右上方人頭「修改個人資料」：</p>
+<p><img src="https://i.imgur.com/PFK7uts.png" alt></p>
+<h3 id="商品選購："><a href="#商品選購：" class="headerlink" title="商品選購："></a>商品選購：</h3><p>商品頁面：<br><img src="https://i.imgur.com/plJqub0.png" alt></p>
+<p>商品頁面每頁呈現最多六筆商品，透過分頁管理來呈現<br>使用者可點選任意商品後，進入商品更詳細的頁面，並且可以點選右方的 <code>size</code> 和 <code>數量</code> ，選購完後點選 <code>ADD CART</code> 即可加入購物車</p>
+<p><img src="https://i.imgur.com/L5c0sdr.png" alt></p>
+<p>出現已加入購物車後，右上角購物車就會加入剛剛選購的商品<br><img src="https://i.imgur.com/dn0oB9n.png" alt><br><img src="https://i.imgur.com/z9ihWxa.png=500x500" alt></p>
+<p>點擊 「view cart」按鈕就可看到目前購物車內有什麼商品，若買錯也可點擊「垃圾桶」刪除商品，下方訂購者資訊只要登入，系統會自動帶上使用者資訊，點擊按鈕後進到第二階段：</p>
+<p><img src="https://i.imgur.com/0qhzeEE.png" alt></p>
+<p>進到第二階段後，主要是讓使用者再次「確認訂單」無誤後即可送出訂單，此夜不能再作修改，若要修改要再回到上一頁做修正<br><img src="https://i.imgur.com/BaCrUca.png" alt></p>
+<p>送出訂單後，會到第三階段「訂單完成」頁面，主要是讓使用者看看這次的訂單，但是已經送出了，若有誤要盡快聯繫賣家<br><img src="https://i.imgur.com/YThBUwl.png" alt></p>
+<h3 id="訂單查詢："><a href="#訂單查詢：" class="headerlink" title="訂單查詢："></a>訂單查詢：</h3><p>若使用者要查詢目前已送出過得訂單，可點選右上角 「order」按鈕，查看已出的訂單，會顯示每筆訂單的「總金額」、「訂單時間」、「訂單詳細」<br><img src="https://i.imgur.com/PXYQRzT.png" alt></p>
+<h2 id="網站後台介紹："><a href="#網站後台介紹：" class="headerlink" title="網站後台介紹："></a>網站後台介紹：</h2><p>要登入後台介面管理者必須先從前端用「管理者帳號」登入，若透過網址隨意進入，皆會倒回登入頁面要求使用管理者帳號登入</p>
+<p><img src="https://i.imgur.com/XWg6bmt.png" alt></p>
+<p>若不是用「管理者」登入，會重新倒回登入頁面，請求重新登入<br><img src="https://i.imgur.com/wc7DgSf.png" alt></p>
+<h3 id="商品管理頁面："><a href="#商品管理頁面：" class="headerlink" title="商品管理頁面："></a>商品管理頁面：</h3><p>商品管理頁面，每頁最多呈現五筆，管理者可以對商品進行「刪除」與「修改」</p>
+<p>查詢頁面：</p>
+<p><img src="https://i.imgur.com/r78w7xF.png" alt></p>
+<p>商品修改頁面：</p>
+<p><img src="https://i.imgur.com/o6c5zKz.png" alt></p>
+<p>商品新增</p>
+<p><img src="https://i.imgur.com/tYAGp9i.png" alt></p>
+<h2 id="fashe-網站-Demo："><a href="#fashe-網站-Demo：" class="headerlink" title="fashe 網站 Demo："></a>fashe 網站 Demo：</h2><p><a href="https://fasheshop.herokuapp.com" target="_blank" rel="noopener">fashe 網站連結</a></p>
+<h6 id="tags-Node-js"><a href="#tags-Node-js" class="headerlink" title="tags: Node.js"></a>tags: <code>Node.js</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/Node-js/" title="Node.js">Node.js</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+        
+            <a class="next" href="/2019/09/06/Vue_basic/">
+                <span class="nav-default">Vue | 基本概念</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

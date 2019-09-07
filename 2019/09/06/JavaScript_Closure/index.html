@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">JavaScript | Closure</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-Closure"><span class="toc-text">[JavaScript] - Closure</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-JavaScript-Closure"><span class="toc-text">tags: JavaScript Closure</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="JavaScript-Closure"><a href="#JavaScript-Closure" class="headerlink" title="[JavaScript] - Closure"></a>[JavaScript] - Closure</h1><p>先來看看 wiki 上對 Closure 的解釋：</p>
+<blockquote>
+<p>在電腦科學中，閉包（英語：Closure），又稱詞法閉包（Lexical Closure）或函式閉包（function closures），是參照了自由變數的函式。這個被參照的自由變數將和這個函式一同存在，即使已經離開了創造它的環境也不例外。所以，有另一種說法認為閉包是由函式和與其相關的參照環境組合而成的實體。閉包在執行時可以有多個實體，不同的參照環境和相同的函式組合可以產生不同的實體。</p>
+</blockquote>
+<p>直接來看個常見的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'button'</span>)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>畫面上有３個按鈕，我希望點擊第一個按鈕時能出現 0，第二個物件的時候 1，第三個出現2…以程式來看好像沒什麼問題，但依序點擊後，實際印出來卻是：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
+
+<p>但其實回頭再看一次程式，當我們依序點擊每個按鈕 btn[0]、btn[1]、btn[2] 時，按鈕監聽到<strong>點擊事件</strong>後要呼叫 function 時，<code>i</code> 最後已經是 3 ，所以點擊出來是3：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>這時我們可以透過閉包的方式改寫一下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getId</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>,getId(i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>新增一個 getId 的 function ，讓每個 btn 都各自有 getId function ，當我點擊事件發生後，各自的 getId 會 return 裡面的 function ，而這個 function 的作用域只會在 getId 裡 不會被外層影響到</p>
+<p>而在 ES6 中有個 <strong>let</strong> ， let 是屬於<strong>塊級作用域</strong>( block scoped )，塊級作用域就是限縮在 <code>{ }</code>之中，以上面的例子，我們用 let 改寫：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">      console.log(i</span>)</span></span><br><span class="line"><span class="function">  &#125;);</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
+
+<p>透過 let 的特性，當迴圈每執行一次，就會產生一個新的作用域，就會像下方這樣：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">    btn[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">     console.log(i</span>)</span></span><br><span class="line"><span class="function">    &#125;);</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">1</span>;</span><br><span class="line">    btn[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">     console.log(i</span>)</span></span><br><span class="line"><span class="function">    &#125;);</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function">.</span></span><br><span class="line"><span class="function">.</span></span><br></pre></td></tr></table></figure>
+
+<p>因此就可以避免 i 這個變數，不會因為全域變數的關係不斷的被修改．</p>
+<p>參考:<br><a href="https://pjchender.blogspot.com/2017/05/javascript-closure.html" target="_blank" rel="noopener">深入淺出瞭解 JavaScript 閉包（closure）</a><br><a href="https://blog.techbridge.cc/2018/12/08/javascript-closure/" target="_blank" rel="noopener">所有的函式都是閉包：談 JS 中的作用域與 Closure
+</a></p>
+<h6 id="tags-JavaScript-Closure"><a href="#tags-JavaScript-Closure" class="headerlink" title="tags: JavaScript Closure"></a>tags: <code>JavaScript</code> <code>Closure</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/JavaScript/" title="JavaScript">JavaScript</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/JavaScript_event_bubbling_capture/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">JavaScript | event bubbling &amp; capture</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/JavaScript_基礎概念/">
+                <span class="nav-default">JavaScript | 基礎概念</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

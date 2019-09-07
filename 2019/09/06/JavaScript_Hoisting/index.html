@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">JavaScript | Hoisting</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-Hoisting"><span class="toc-text">[JavaScript] - Hoisting</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#undefined-與-not-defined"><span class="toc-text">undefined 與 not defined</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hoisting-實戰"><span class="toc-text">Hoisting 實戰</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-JavaScript-Hoisting"><span class="toc-text">tags: JavaScript Hoisting</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="JavaScript-Hoisting"><a href="#JavaScript-Hoisting" class="headerlink" title="[JavaScript] - Hoisting"></a>[JavaScript] - Hoisting</h1><h2 id="undefined-與-not-defined"><a href="#undefined-與-not-defined" class="headerlink" title="undefined 與 not defined"></a>undefined 與 not defined</h2><p>在了解 <code>Hoisting</code> 之前，我們先稍微了解一下 <code>undefined</code>、<code>not defined</code> 的差別：</p>
+<ul>
+<li>undefined : 記憶體已有準備位置，但還未定義型態，或是沒有指定的屬性</li>
+<li>not defined : 還沒準備空間</li>
+</ul>
+<h2 id="Hoisting-實戰"><a href="#Hoisting-實戰" class="headerlink" title="Hoisting 實戰"></a>Hoisting 實戰</h2><p>我們直接印出還未宣告的 <code>a</code>: </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// ReferenceError: a is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>若我們宣告並印出來看看結果：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>根據上面的結果，我們在學習程式語言時，都知道程式「由上而下」的讀取，為何在執行第一行時錯誤訊息卻不是<code>not defined</code> ?</p>
+<p>這就是因為有 <strong><code>Hoisting</code></strong> 「提升」的緣故，其中第二行宣告了，但因為 <code>Hoisting</code> 的原因被「提升」到了最上面，</p>
+<p>竟然被提升了，那我們給值看看：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
+
+<p>結果還是 <code>undefined</code> ，這邊我就可以知道只有變數宣告會被「提升」，而賦值不會，到這邊理解上應該是長這樣：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
+
+<p>那我們看看另一個例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a:'</span>+a); <span class="comment">// a:50</span></span><br></pre></td></tr></table></figure>
+
+<p><code>a</code> 的結果卻是 <code>50</code> 而不是 <code>undefined</code>，根據之前的例子所了解的概念，我們應該這樣想像這個例子其實是下方的樣子，就可以了解為何不是<code>undefined</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line">a = <span class="number">50</span> ;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a:'</span>+a); <span class="comment">// a:50</span></span><br></pre></td></tr></table></figure>
+
+<p>接著我們看看若有同名<code>function</code>的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//ƒ a()&#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
+
+<p>透過這個例子和之前的例子我們可以了解到：</p>
+<ul>
+<li>function 宣告與變數宣告都會提升</li>
+<li>但提升的優先權:function 宣告 &gt; 變數的宣告</li>
+<li>賦值不會提升</li>
+</ul>
+<p>參考：<a href="https://blog.techbridge.cc/2018/11/10/javascript-hoisting/" target="_blank" rel="noopener">我知道你懂 hoisting，可是你了解到多深？</a></p>
+<h6 id="tags-JavaScript-Hoisting"><a href="#tags-JavaScript-Hoisting" class="headerlink" title="tags: JavaScript Hoisting"></a>tags: <code>JavaScript</code> <code>Hoisting</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/JavaScript/" title="JavaScript">JavaScript</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/JavaScript_let_const_ES6/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">JavaScript | let &amp; const [ES6]</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/JavaScript_event_bubbling_capture/">
+                <span class="nav-default">JavaScript | event bubbling &amp; capture</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

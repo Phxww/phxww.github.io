@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">Vue | 基本概念</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Vue-基本概念"><span class="toc-text">Vue - 基本概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#基本觀念：MVVM"><span class="toc-text">基本觀念：MVVM</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#載入-CDN"><span class="toc-text">載入 CDN</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Hello-Vue"><span class="toc-text">Hello Vue</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#條件渲染"><span class="toc-text">條件渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-if"><span class="toc-text">v-if</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-show"><span class="toc-text">v-show</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#V-if-amp-v-show"><span class="toc-text">V-if &amp; v-show</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#列表渲染"><span class="toc-text">列表渲染</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-for"><span class="toc-text">v-for</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#事件處理"><span class="toc-text">事件處理</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#監聽事件-v-on"><span class="toc-text">監聽事件 v-on</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#事件修飾符"><span class="toc-text">事件修飾符</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#表单输入绑定"><span class="toc-text">表单输入绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-model"><span class="toc-text">v-model</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#屬性绑定"><span class="toc-text">屬性绑定</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-bind"><span class="toc-text">v-bind</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#模版語法"><span class="toc-text">模版語法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#v-once"><span class="toc-text">v-once</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#v-html"><span class="toc-text">v-html</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-Vue"><span class="toc-text">tags: Vue</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="Vue-基本概念"><a href="#Vue-基本概念" class="headerlink" title="Vue - 基本概念"></a>Vue - 基本概念</h1><p>本篇主要紀錄學習 <code>Vue</code> 的基本觀念，將比較重要的學習點紀錄起來，可以搭配 Vue 官方的文件一起</p>
+<h2 id="基本觀念：MVVM"><a href="#基本觀念：MVVM" class="headerlink" title="基本觀念：MVVM"></a>基本觀念：MVVM</h2><p>認識<code>Vue</code> 之前，要先知道 <code>Vue</code> 是屬於 <code>MVVM</code> 的架構，著重在於 <code>MVVM</code> （Model–view–viewmodel） 的 <code>VM</code> <code>(ViewModel)</code></p>
+<p>透過 wiki 的圖來了解一下：<a href="https://zh.wikipedia.org/wiki/MVVM" target="_blank" rel="noopener">wiki</a></p>
+<p><img src="https://i.imgur.com/JRmm3gt.png" alt></p>
+<ul>
+<li>Model: 資料部分</li>
+<li>View: 畫面部分</li>
+<li>ViewModel: 串起資料與畫面的橋樑 </li>
+</ul>
+<p><code>Vue</code> 擔任的角色就是「串起資料與畫面的橋樑 <code>ViewModel</code> 」 </p>
+<p>我們對應一下程式碼比較有感覺：</p>
+<ul>
+<li><p>View : 下方 html 的部分</p>
+</li>
+<li><p>Model : 下方 Js 中 message 的部分</p>
+</li>
+<li><p>ViewModel : Vue 將資料與畫面的部分綁起來</p>
+<p><img src="https://i.imgur.com/ENBYNiu.png" alt></p>
+</li>
+</ul>
+<h2 id="載入-CDN"><a href="#載入-CDN" class="headerlink" title="載入 CDN"></a>載入 CDN</h2><p>將下方官網提供的 CDN 連結放進程式中的<code>&lt;head&gt;</code> 之間</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt; &lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="Hello-Vue"><a href="#Hello-Vue" class="headerlink" title="Hello Vue"></a>Hello Vue</h2><p> 學習每個程式都要透過 <code>Hello World</code> 來了解一下 :<br>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &#123;&#123; message &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Hello World'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World</span><br></pre></td></tr></table></figure>
+
+<p>這樣就已經完成基本 Vue 的應用了，來看一下是什麼意思吧！</p>
+<ul>
+<li>el: 指定掛載的元素</li>
+<li>data: 綁定的資料來源<br>其中在若要將資料呈現在前端就在程式碼中加入 <code> {{ }} </code> 裡面填入，畫面上就會顯示所指定的資料．</li>
+</ul>
+<h2 id="條件渲染"><a href="#條件渲染" class="headerlink" title="條件渲染"></a>條件渲染</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><p><code>v-if</code> 可以單獨使用或是搭配 <code>v-else-if</code> <code>v-else</code>一起使用，若條件成立就會顯示該元素，且只有成立的條件會渲染，我們直接看例子 ：</p>
+<ul>
+<li><p>語法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-<span class="keyword">if</span>=<span class="string">"判斷式"</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><p>v-if 單獨使用：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-<span class="keyword">if</span>=<span class="string">"isBoy"</span>&gt;Hi!Boy!&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+</li>
+<li><p><code>v-if</code> 搭配  <code>v-else-if</code> <code>v-else</code>：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-<span class="keyword">if</span>=<span class="string">"type === 'A'"</span>&gt;Hi!A!&lt;/span&gt;</span><br><span class="line">&lt;span v-<span class="keyword">else</span>-<span class="keyword">if</span>=<span class="string">"type === 'B'"</span>&gt;Hi!B!&lt;/span&gt;</span><br><span class="line">&lt;span v-<span class="keyword">else</span>&gt;Not A or B&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>與 <code>v-if</code> 相似，但差別在於不管如何都會留在 DOM 中，只是利用 <code>CSS</code> 屬性中的 <code>display</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-show=<span class="string">"show"</span>&gt;Hi!&lt;/span&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="V-if-amp-v-show"><a href="#V-if-amp-v-show" class="headerlink" title="V-if &amp; v-show"></a>V-if &amp; v-show</h3><p>差別：</p>
+<ul>
+<li>v-if : 直接新增/刪除 DOM元素</li>
+<li>v-show : display:none與移除 display</li>
+</ul>
+<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><ul>
+<li>語法：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-<span class="keyword">for</span>=<span class="string">"(key,index) in list"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>HTML:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item,index) in list&quot;&gt;</span><br><span class="line">      &#123;&#123; index +1 &#125;&#125; - &#123;&#123; item.name &#125;&#125; 是 &#123;&#123; item.age&#125;&#125; 歲</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Vue:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data :&#123;</span><br><span class="line">    list:[</span><br><span class="line">        &#123;</span><br><span class="line">            name:<span class="string">'Bob'</span>,</span><br><span class="line">            age:<span class="number">20</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name:<span class="string">'Tony'</span>,</span><br><span class="line">            age:<span class="number">40</span>         </span><br><span class="line">        &#125;   </span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>結果:</li>
+</ul>
+<p><img src="https://i.imgur.com/T7rEQ9V.png" alt></p>
+<h2 id="事件處理"><a href="#事件處理" class="headerlink" title="事件處理"></a>事件處理</h2><h3 id="監聽事件-v-on"><a href="#監聽事件-v-on" class="headerlink" title="監聽事件 v-on"></a>監聽事件 v-on</h3><p>以監聽點擊事件為例：<code>v-on:click</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"example-1"</span>&gt;</span><br><span class="line">  &lt;button v-on:click=<span class="string">"counter += 1"</span>&gt;Add <span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;p&gt; clicked &#123;&#123; counter &#125;&#125; times.&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>也可以用<code>＠</code>縮寫代替<code>v-on:</code></p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"example-1"</span>&gt;</span><br><span class="line">  &lt;button @click=<span class="string">"counter += 1"</span>&gt;Add <span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;p&gt; clicked &#123;&#123; counter &#125;&#125; times.&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="事件修飾符"><a href="#事件修飾符" class="headerlink" title="事件修飾符"></a>事件修飾符</h3><p>在寫網頁時經常會使用<code>preventDefault()</code>、<code>stopPropagation()</code> Vue 有提供多個事件修飾符：</p>
+<ul>
+<li><code>stop</code>- event.stopPropagation()</li>
+<li><code>prevent</code> - event.preventDefault()</li>
+<li><code>capture</code></li>
+<li><code>self</code></li>
+<li><code>once</code></li>
+<li><code>passive</code><br>以常用的 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"#"</span> v-on:click.stop=<span class="string">"doFun"</span>&gt;連結&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h2><h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>看標題就會想到跟表單有關，在 <code>Vue</code> 裡想綁定資料在 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>、<code>&lt;select&gt;</code>中，就可以用<code>v-model</code> 來實現，</p>
+<p>特別要注意的是：<code>v-model</code> 實現了「資料雙向綁定」，「資料雙向綁定」就是使用者在前端 <code>input</code> 裡輸入值，可以直接修改 <code>vue</code> 中資料來源 <code>data</code> 內容</p>
+<p>看個例子，當使用者在 <code>input</code> 裡可以直接修改資料來源<code>message</code> 的內容:<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=<span class="string">"message"</span> &gt;</span><br><span class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure></p>
+<h2 id="屬性绑定"><a href="#屬性绑定" class="headerlink" title="屬性绑定"></a>屬性绑定</h2><h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><p>語法：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"divClass"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;img v-bind:src=<span class="string">"imageSrc"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<p>也可以透過<code>：</code>縮寫 <code>v-bind</code>:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :<span class="class"><span class="keyword">class</span></span>=<span class="string">"divClass"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;img :src=<span class="string">"imageSrc"</span>&gt;</span><br></pre></td></tr></table></figure>
+
+<h2 id="模版語法"><a href="#模版語法" class="headerlink" title="模版語法"></a>模版語法</h2><h3 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h3><ul>
+<li><code>v-once</code> 只會表達「一次」，若更改資料來源，是不會重新渲染的<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-once&gt;長官留言: &#123;&#123; message &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><ul>
+<li><code>v-html</code> 可依 html 格式呈現於畫面上<br>HTML:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;div v-html=&quot;message&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>Vue:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data :&#123;</span><br><span class="line">    message:<span class="string">'&lt;b&gt;Hi~ Vue&lt;/b&gt;'</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
+
+<p>參考：<br><a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 官方</a><br><a href="https://www.youtube.com/watch?v=VW4RZSKqIEE&list=PLEfh-m_KG4dYor8h4Hi2lqKJ0xqNTFh16&index=4&t=0s" target="_blank" rel="noopener">Alex 宅幹嘛 </a></p>
+<h6 id="tags-Vue"><a href="#tags-Vue" class="headerlink" title="tags: Vue"></a>tags: <code>Vue</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/Vue/" title="Vue">Vue</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/Node.js_fashe_購物網站/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">Node.js | fashe購物網站</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/Node.js_FireBase/">
+                <span class="nav-default">Node.js | FireBase</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

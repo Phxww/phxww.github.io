@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">JavaScript | 基礎概念</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-基礎概念"><span class="toc-text">[JavaScript] - 基礎概念</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#queryselector-用法："><span class="toc-text">queryselector 用法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#queryselectorAll-用法："><span class="toc-text">queryselectorAll 用法：</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#appendChild"><span class="toc-text">appendChild</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#innerHTML-v-s-creatElement"><span class="toc-text">innerHTML v.s creatElement</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#innerHTML"><span class="toc-text">innerHTML</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#creatElement"><span class="toc-text">creatElement</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#splice-陣列刪除"><span class="toc-text">splice 陣列刪除</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#自訂-dataset-－-data"><span class="toc-text">自訂 dataset － data-*</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#BOM-Browser-Object-Model"><span class="toc-text">BOM (Browser Object Model)</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-javascript"><span class="toc-text">tags:  javascript</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="JavaScript-基礎概念"><a href="#JavaScript-基礎概念" class="headerlink" title="[JavaScript] - 基礎概念"></a>[JavaScript] - 基礎概念</h1><p>本篇主要是複習 JavaScript 的基礎概念，將一些簡單的觀念做個紀錄．</p>
+<h2 id="queryselector-用法："><a href="#queryselector-用法：" class="headerlink" title="queryselector 用法："></a>queryselector 用法：</h2><ul>
+<li>只回傳符合指定選擇器的第一個元素</li>
+</ul>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class=&quot;divclass&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;div class=&quot;divclass&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.querySelector(<span class="string">".divclass"</span>).textContent=<span class="string">'測試文字'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>output:<br><img src="https://i.imgur.com/zDRrb40.png" alt></p>
+<hr>
+<h2 id="queryselectorAll-用法："><a href="#queryselectorAll-用法：" class="headerlink" title="queryselectorAll 用法："></a>queryselectorAll 用法：</h2><ul>
+<li>抓取所有符合匹配的元素,以陣列方式回傳</li>
+</ul>
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> divclass = <span class="built_in">document</span>.querySelectorAll(<span class="string">'.divclass'</span>);</span><br><span class="line">divclass[<span class="number">0</span>].textContent=<span class="string">'測試文字１'</span>;</span><br><span class="line">divclass[<span class="number">1</span>].textContent=<span class="string">'測試文字２'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>把 divclass 印出來：<br><img src="https://i.imgur.com/ml7qXE0.png" alt></p>
+<p>output:<br><img src="https://i.imgur.com/hsmaSkh.png" alt></p>
+<hr>
+<h2 id="appendChild"><a href="#appendChild" class="headerlink" title="appendChild"></a>appendChild</h2><ul>
+<li><p>動態增加子結點，加入後並不會清掉子結點原本的內容</p>
+<p>目標加入到下方<code>&lt;p&gt;</code>元素裡:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;title&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>透過 <code>creatElement()</code> 加入:</li>
+</ul>
+<p><code>creatElement()</code>  創立後，加入想要的元素：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="built_in">document</span>.createElement(<span class="string">'p'</span>);</span><br><span class="line">str.textContent = <span class="string">'Yes!'</span>;</span><br></pre></td></tr></table></figure>
+
+<p>指定在 <code>class=&#39;title&#39;</code> 後動態加入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">doucment.querySelector(<span class="string">'.title'</span>).appendChild(str);</span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+<p>  output:<br>  <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;title&quot;&gt;</span><br><span class="line">    &lt;p&gt;Yes!&lt;/p&gt;</span><br><span class="line">&lt;/p&gt;</span><br></pre></td></tr></table></figure></p>
+<ul>
+<li><p>透過 <code>createTextNode()</code> 加入:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> str = <span class="built_in">document</span>.createTextNode(<span class="string">"Yes!!"</span>);</span><br><span class="line">doucment.querySelector(<span class="string">'.title'</span>).appendChild(str);</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p class=&quot;title&quot;&gt;Yes!!&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="innerHTML-v-s-creatElement"><a href="#innerHTML-v-s-creatElement" class="headerlink" title="innerHTML v.s creatElement"></a>innerHTML v.s creatElement</h2><h3 id="innerHTML"><a href="#innerHTML" class="headerlink" title="innerHTML"></a>innerHTML</h3><ul>
+<li>字串傳入直接渲染、效能快、安全性低 </li>
+<li>同層節點會被清空，只留下本次加入的 innerHTML</li>
+</ul>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ptag&quot;&gt;&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"ptag"</span>).innerHTML = <span class="string">"Hello ptag."</span>;</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;p id=&quot;ptag&quot;&gt;Hello ptag.&lt;/p&gt;</span><br></pre></td></tr></table></figure>
+
+<h3 id="creatElement"><a href="#creatElement" class="headerlink" title="creatElement"></a>creatElement</h3><ul>
+<li>以 DOM 節點新增、效能差、安全性高</li>
+</ul>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;tempdiv&quot;&gt;&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.createElement(<span class="string">"BUTTON"</span>);</span><br><span class="line"><span class="built_in">document</span>.getElementById(<span class="string">"tempdiv"</span>).appendChild(btn);</span><br></pre></td></tr></table></figure>
+
+<p>output:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;tempdiv&quot;&gt;</span><br><span class="line">    &lt;button&gt;&lt;/button&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<hr>
+<h2 id="splice-陣列刪除"><a href="#splice-陣列刪除" class="headerlink" title="splice 陣列刪除"></a>splice 陣列刪除</h2><ul>
+<li>array.splice(‘刪除的第 n 個位置’,’要刪幾個’)<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> numArray = [<span class="number">0</span>,<span class="number">1</span>,<span class="number">2</span>,<span class="number">3</span>];</span><br><span class="line">numArray.splice(<span class="number">1</span>,<span class="number">1</span>)<span class="comment">//刪除第一個,刪除一個</span></span><br><span class="line"><span class="built_in">console</span>.log(numArray);<span class="comment">//[0,2,3]</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<h2 id="自訂-dataset-－-data"><a href="#自訂-dataset-－-data" class="headerlink" title="自訂 dataset － data-*"></a>自訂 dataset － data-*</h2><ul>
+<li>可元件上自定義資料屬性</li>
+</ul>
+<p>取得 <code>div</code> 裡 <code>data-userid</code> 的值：</p>
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;user&quot; data-userid=&quot;777&quot;&gt;Tony&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+
+<p>js:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> element = <span class="built_in">document</span>.querySelector(<span class="string">'#user'</span>);</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'id:'</span>+element.dataset.userid); <span class="comment">//id:777</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="BOM-Browser-Object-Model"><a href="#BOM-Browser-Object-Model" class="headerlink" title="BOM (Browser Object Model)"></a>BOM (Browser Object Model)</h2><p>windows 底下有很多物件，介紹其中幾個：</p>
+<ul>
+<li>DOM : 操作 DOM 元素</li>
+<li>history : 歷史瀏覽紀錄</li>
+<li>location : 網址資訊做調整</li>
+<li>frames : 針對網頁的 iframe 做操控 </li>
+<li>screen : 載具螢幕相關資訊</li>
+<li>navigator : 瀏覽器相關資訊、版本</li>
+</ul>
+<hr>
+<p>參考：<code>udemy</code>,<code>w3schools</code>,<code>MDN</code></p>
+<h6 id="tags-javascript"><a href="#tags-javascript" class="headerlink" title="tags:  javascript"></a>tags:  <code>javascript</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/JavaScript/" title="JavaScript">JavaScript</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/JavaScript_Closure/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">JavaScript | Closure</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/hello_git/">
+                <span class="nav-default">Hello git</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

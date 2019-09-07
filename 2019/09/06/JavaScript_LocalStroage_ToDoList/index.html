@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">JavaScript | LocalStroage - ToDoList</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-LocalStroage"><span class="toc-text">[JavaScript] - LocalStroage</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage、sessionStorage"><span class="toc-text">localStorage、sessionStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看-LocalStorage"><span class="toc-text">查看 LocalStorage</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage-使用方法"><span class="toc-text">localStorage 使用方法</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#localStorage-存取方式"><span class="toc-text">localStorage 存取方式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#localStorage-setItem"><span class="toc-text">localStorage.setItem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#localStorage-getItem"><span class="toc-text">localStorage.getItem</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#localStorage-removeItem"><span class="toc-text">localStorage.removeItem</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage-實戰"><span class="toc-text">localStorage 實戰</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#localStorage-ToDoList"><span class="toc-text">localStorage - ToDoList</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-JavaScript-LocalStroage-JSON"><span class="toc-text">tags: JavaScript LocalStroage JSON</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="JavaScript-LocalStroage"><a href="#JavaScript-LocalStroage" class="headerlink" title="[JavaScript] - LocalStroage"></a>[JavaScript] - LocalStroage</h1><p>當你在逛「購物網站」點選「商品」後…、「旅遊住宿網站」點選「某間旅館」後，會發現下次進到網站後，怎麼會有上次瀏覽過的「商品」、「旅館」，其實就是存在 <code>LocalStroage</code> 裡．</p>
+<p><code>LocalStroage</code> 想像就是一個瀏覽器的資料庫，<code>Web Storage</code> 主要分為 <code>sessionStorage</code>、<code>LocalStroage</code> 主要是差在生命週期的不同</p>
+<h2 id="localStorage、sessionStorage"><a href="#localStorage、sessionStorage" class="headerlink" title="localStorage、sessionStorage"></a>localStorage、sessionStorage</h2><p>w3schools 上的解釋生命週期：</p>
+<ul>
+<li><p>window.localStorage - 不會有過期日，除非自行刪除</p>
+<blockquote>
+<p>stores data with no expiration date</p>
+</blockquote>
+</li>
+<li><p>window.sessionStorage - 每開一個分頁就有一個 <code>sessionStorage</code> 關閉後就消失了</p>
+<blockquote>
+<p>stores data for one session (data is lost when the browser tab is closed)</p>
+</blockquote>
+</li>
+</ul>
+<h2 id="查看-LocalStorage"><a href="#查看-LocalStorage" class="headerlink" title="查看 LocalStorage"></a>查看 LocalStorage</h2><p>以 chrome 來說，在開發者工具裡＝&gt; application =&gt; localstorage</p>
+<p><img src="https://i.imgur.com/8WT66NM.png" alt></p>
+<h2 id="localStorage-使用方法"><a href="#localStorage-使用方法" class="headerlink" title="localStorage 使用方法"></a>localStorage 使用方法</h2><h3 id="localStorage-存取方式"><a href="#localStorage-存取方式" class="headerlink" title="localStorage 存取方式"></a>localStorage 存取方式</h3><ul>
+<li><p>特別要注意的是 <code>LocalStroage</code> 資料「儲存」與「取用」的方式是以<code>String</code> 的方式進行儲存，所以通常都以 <strong>JSON</strong> 來處理 array、object 的存取</p>
+<ul>
+<li><code>JSON.stringify()</code>：將 JSON 格式字串化</li>
+<li><code>JSON.parse()</code>：將字串轉為 JSON 格式</li>
+</ul>
+</li>
+</ul>
+<h3 id="localStorage-setItem"><a href="#localStorage-setItem" class="headerlink" title="localStorage.setItem"></a>localStorage.setItem</h3><ul>
+<li>要存儲 <code>LocalStroage</code> 就用 <code>setItem</code>:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LocalStorage.setItem(<span class="string">"username"</span>, <span class="string">"Andy"</span>);</span><br></pre></td></tr></table></figure>
+
+<h3 id="localStorage-getItem"><a href="#localStorage-getItem" class="headerlink" title="localStorage.getItem"></a>localStorage.getItem</h3><ul>
+<li>要取出 <code>LocalStroage</code> 就用 <code>getItem</code>:</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.getItem(<span class="string">"username"</span>); <span class="comment">// Andy</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="localStorage-removeItem"><a href="#localStorage-removeItem" class="headerlink" title="localStorage.removeItem"></a>localStorage.removeItem</h3><ul>
+<li>要刪除 <code>LocalStroage</code> 就用 <code>removeItem</code>:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.removeItem(<span class="string">"username"</span>);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="localStorage-實戰"><a href="#localStorage-實戰" class="headerlink" title="localStorage 實戰"></a>localStorage 實戰</h2><ul>
+<li>將 user 轉為字串後存進 localStorage 裡<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = [</span><br><span class="line">    &#123;</span><br><span class="line">     name:<span class="string">'Andy'</span>,</span><br><span class="line">     age:<span class="number">18</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">     name:<span class="string">'Jay'</span>,</span><br><span class="line">     age:<span class="number">30</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">     name:<span class="string">'Bob'</span>,</span><br><span class="line">     age:<span class="number">55</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">localStorage.setItem(<span class="string">'user'</span>,<span class="built_in">JSON</span>.stringify(user));</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>這時可以透過使用者工具去看一下 user 資料是否正確</p>
+<p><img src="https://i.imgur.com/sOWSucX.png" alt></p>
+<ul>
+<li>從 <code>localStorage</code> 取出</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userdata = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'user'</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'userdata[0].name:'</span>+userdata[<span class="number">0</span>].name+<span class="string">' age:'</span>+userdata[<span class="number">0</span>].age);</span><br><span class="line"></span><br><span class="line"><span class="comment">//console:</span></span><br><span class="line"><span class="comment">//userdata[0].name:Andy age:18</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="localStorage-ToDoList"><a href="#localStorage-ToDoList" class="headerlink" title="localStorage - ToDoList"></a>localStorage - ToDoList</h2><p>這邊有利用 localStorage 做的簡單 To Do List<br><a href="https://phxww.github.io/ToDoList/" target="_blank" rel="noopener">連結－To Do List</a></p>
+<p><img src="https://i.imgur.com/XFXwgd5.png" alt></p>
+<p>參考：<code>udemy</code>,<code>w3schools</code>,<code>MDN</code></p>
+<h6 id="tags-JavaScript-LocalStroage-JSON"><a href="#tags-JavaScript-LocalStroage-JSON" class="headerlink" title="tags: JavaScript LocalStroage JSON"></a>tags: <code>JavaScript</code> <code>LocalStroage</code> <code>JSON</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/JavaScript/" title="JavaScript">JavaScript</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/Database_Sequence/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">Database | Sequence</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/JavaScript_let_const_ES6/">
+                <span class="nav-default">JavaScript | let &amp; const [ES6]</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

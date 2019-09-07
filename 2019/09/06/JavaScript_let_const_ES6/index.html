@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">JavaScript | let &amp; const [ES6]</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#JavaScript-let-amp-const-ES6"><span class="toc-text">[JavaScript] - let &amp; const [ES6]</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#let"><span class="toc-text">let</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#const"><span class="toc-text">const</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-JavaScript-ES6-let-const"><span class="toc-text">tags: JavaScript ES6 let const</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="JavaScript-let-amp-const-ES6"><a href="#JavaScript-let-amp-const-ES6" class="headerlink" title="[JavaScript] - let &amp; const [ES6]"></a>[JavaScript] - let &amp; const [ES6]</h1><p>在了解 let &amp; const 我們先看看 var 的例子：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'var-in-i='</span>+i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'var-out-i='</span>+i);</span><br><span class="line"></span><br><span class="line"><span class="comment">//OUTPUT:</span></span><br><span class="line"><span class="comment">//var-in-i=1</span></span><br><span class="line"><span class="comment">//var-in-i=1</span></span><br><span class="line"><span class="comment">//var-in-i=2</span></span><br><span class="line"><span class="comment">//var-out-i=3</span></span><br></pre></td></tr></table></figure>
+
+<p>因為 <code>var i</code> 是全域變數．所以<code>var-out-i</code> 可以印出值，但這樣容易造成程式之間變數的污染．</p>
+<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>let 特性是屬於<strong>塊級作用域( block scoped )</strong>，塊級作用域就是限縮在 <code>{ }</code> 之內，我們用上方的例子更改一下</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'let-in-i='</span>+i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'let-out-i='</span>+i);</span><br><span class="line"></span><br><span class="line"><span class="comment">//OUTPUT:</span></span><br><span class="line"><span class="keyword">let</span>-<span class="keyword">in</span>-i=<span class="number">0</span></span><br><span class="line"><span class="keyword">let</span>-<span class="keyword">in</span>-i=<span class="number">1</span></span><br><span class="line"><span class="keyword">let</span>-<span class="keyword">in</span>-i=<span class="number">2</span></span><br><span class="line">Uncaught <span class="built_in">ReferenceError</span>: i is not defined</span><br></pre></td></tr></table></figure>
+
+<p>透過上方<code>let</code>的例子，可以看到 <code>let-out-i</code> 卻是<code>is not defined</code>，<code>let</code> 只在<code>{ }</code>有效．</p>
+<p>可以透過另一個例子再來看看：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> studentVar = <span class="string">'Bob'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(studentVar); <span class="comment">//Bob</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> studentLet = <span class="string">'Bob'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(studentLet);<span class="comment">//studentLet is not defined</span></span><br></pre></td></tr></table></figure>
+
+<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p><code>const</code> 也是<strong>塊級作用域( block scoped )</strong>，但要注意的是只要一指定就不能再做更改，且不能<strong>重複宣告</strong>．且在哪一行宣告就要立即給予值．</p>
+<p>我們透過上放的特性，來看看以下幾個例子：</p>
+<p>不能重複宣告：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> student = <span class="string">'Tony'</span>;</span><br><span class="line">student = <span class="string">'Bob'</span>;</span><br><span class="line"><span class="comment">//Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+
+<p>塊級作用域：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> student = <span class="string">'Tony'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(student);</span><br><span class="line"><span class="comment">//Uncaught ReferenceError: student is not defined</span></span><br></pre></td></tr></table></figure>
+
+<p>立即給予值：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line"><span class="keyword">const</span> student ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Uncaught SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure>
+
+<p>但今天若是用在<code>object</code>與 <code>array</code> 上就不一樣了：</p>
+<ul>
+<li><code>object</code> : 只能修改屬性但不覆寫</li>
+<li><code>array</code> : 只能修改，但不能重新指定一個新的陣列</li>
+</ul>
+<p>我們來看看<code>object</code>與 <code>array</code>的例子</p>
+<p>object:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> andy = &#123;<span class="string">'money'</span>: <span class="number">100</span> &#125;;</span><br><span class="line"></span><br><span class="line">andy = &#123;<span class="string">'card'</span>: <span class="string">'ACard'</span>&#125;;<span class="comment">//Uncaught TypeError: Assignment to constant variable.</span></span><br><span class="line"></span><br><span class="line">andy.money = <span class="number">200</span>;</span><br><span class="line"><span class="built_in">console</span>.log(andy.money);<span class="comment">//200</span></span><br></pre></td></tr></table></figure>
+
+<p>array:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> student = [];</span><br><span class="line"></span><br><span class="line">student.push(<span class="string">'Bob'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(student[<span class="number">0</span>]);<span class="comment">//bob</span></span><br><span class="line"></span><br><span class="line">student = [<span class="string">'Andy'</span>];<span class="comment">//Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
+
+<p>參考:<br><a href="https://pjchender.blogspot.com/2017/01/es6-let.html" target="_blank" rel="noopener">JavaScript ES6 中使用block-scoped 的 let 宣告變數</a><br><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/let" target="_blank" rel="noopener">MDN-let</a></p>
+<h6 id="tags-JavaScript-ES6-let-const"><a href="#tags-JavaScript-ES6-let-const" class="headerlink" title="tags: JavaScript ES6 let const"></a>tags: <code>JavaScript</code> <code>ES6</code> <code>let</code> <code>const</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/JavaScript/" title="JavaScript">JavaScript</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/JavaScript_LocalStroage_ToDoList/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">JavaScript | LocalStroage - ToDoList</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/JavaScript_Hoisting/">
+                <span class="nav-default">JavaScript | Hoisting</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

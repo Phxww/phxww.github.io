@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">Node.js | FireBase</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Node-js-FireBase"><span class="toc-text">[Node.js] - FireBase</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#FireBase-簡介"><span class="toc-text">FireBase 簡介</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝-firebase-相關模組"><span class="toc-text">安裝 firebase 相關模組</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#安裝-firebase"><span class="toc-text">安裝 firebase</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#firebase-使用方法"><span class="toc-text">firebase 使用方法</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#入門語法："><span class="toc-text">入門語法：</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#語法："><span class="toc-text">語法：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#讀取一次資料庫的資料："><span class="toc-text">讀取一次資料庫的資料：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#設定值-push-方法"><span class="toc-text">設定值 -push 方法:</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#刪除"><span class="toc-text">刪除</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#排序"><span class="toc-text">排序</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#取得區間"><span class="toc-text">取得區間</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-Node-js-FireBase"><span class="toc-text">tags: Node.js  FireBase</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="Node-js-FireBase"><a href="#Node-js-FireBase" class="headerlink" title="[Node.js] - FireBase"></a>[Node.js] - FireBase</h1><h2 id="FireBase-簡介"><a href="#FireBase-簡介" class="headerlink" title="FireBase 簡介"></a>FireBase 簡介</h2><p>FireBase 是一套 Web 的應用程式開發平台，目前他可支援手機ＡＰＰ與 Web 許多服務，目前只用到「資料庫」、「認證」功能，其他到時候使用到再繼續補上．</p>
+<h2 id="安裝-firebase-相關模組"><a href="#安裝-firebase-相關模組" class="headerlink" title="安裝 firebase 相關模組"></a>安裝 firebase 相關模組</h2><h3 id="安裝-firebase"><a href="#安裝-firebase" class="headerlink" title="安裝 firebase"></a>安裝 firebase</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install firebase --save</span><br></pre></td></tr></table></figure>
+
+<h3 id="firebase-使用方法"><a href="#firebase-使用方法" class="headerlink" title="firebase 使用方法"></a>firebase 使用方法</h3><p>進到 <a href="https://firebase.google.com/" target="_blank" rel="noopener">firebase</a> 網站登入帳號後，先建立一個新的 firebase 專案</p>
+<p><img src="https://i.imgur.com/RSAY039.png" alt></p>
+<p>建立完後進到專案控制台，接著點選左側「Database」並點選建立「資料庫」且以「測試模式」啟動</p>
+<p><img src="https://i.imgur.com/h6PzYhE.png" alt></p>
+<p><img src="https://i.imgur.com/iGhBn66.png" alt></p>
+<p>這樣資料庫就建立完成，接著點選左上角「齒輪」裡的專案設定<br><img src="https://i.imgur.com/cIM7bU0.png" alt></p>
+<p>到最下方會看到「您的專案沒有任何應用程式」的提示，點選 <code>&lt;/&gt;</code> ，將「新增Firebase SDk 」的內容複製到自己開發的 Node.js 專案裡．</p>
+<p><img src="https://i.imgur.com/Ldlxu6w.png" alt><br><img src="https://i.imgur.com/xP4TMf8.png" alt></p>
+<p>貼到相對應的 js 裡與 node.js </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
+
+<p>Node.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firebase = <span class="built_in">require</span>(<span class="string">'firebase'</span>);</span><br><span class="line"><span class="keyword">const</span> firebaseConfig = &#123;</span><br><span class="line">    apiKey: XXX,</span><br><span class="line">    authDomain: XXX,</span><br><span class="line">    databaseURL:XXX, </span><br><span class="line">    projectId: XXX,</span><br><span class="line">    storageBucket: XXX,</span><br><span class="line">    messagingSenderId:XXX,</span><br><span class="line">    appId: XXX</span><br><span class="line">&#125;;</span><br><span class="line">firebase.initializeApp(firebaseConfig);</span><br></pre></td></tr></table></figure>
+
+<h2 id="入門語法："><a href="#入門語法：" class="headerlink" title="入門語法："></a>入門語法：</h2><h3 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">firebase.database().ref().set()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ref(): 尋找路徑,()為空時預設根目錄</span></span><br><span class="line"><span class="comment">// set(): 要設定的值、物件...</span></span><br></pre></td></tr></table></figure>
+
+<h3 id="讀取一次資料庫的資料："><a href="#讀取一次資料庫的資料：" class="headerlink" title="讀取一次資料庫的資料："></a>讀取一次資料庫的資料：</h3><ul>
+<li><code>.once()</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> path = firebase.database().ref(<span class="string">'XXX/XXX/XX...'</span>);</span><br><span class="line"> path.once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">     snapshot.val(); <span class="comment">//.val()轉換obj或json可讀取的資料</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">### 即時監聽： </span></span><br><span class="line"><span class="string">* `</span>．.on()<span class="string">`</span></span><br><span class="line"><span class="string">    - 語法與 .once() 相同</span></span><br><span class="line"><span class="string">### 設定值 - `</span><span class="keyword">set</span>` 方法:    </span><br><span class="line">    </span><br><span class="line">```javascript=    </span><br><span class="line">firebase.database().ref().<span class="keyword">set</span>(people);//people為設定的資料</span><br></pre></td></tr></table></figure>
+</li>
+</ul>
+<ul>
+<li>後面搭配 <code>.then()</code>,意思是若有 set 值完那就執行接下來的事<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firebase.database().ref().set(people).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        XXX.....   <span class="comment">//執行接下來的事</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h3 id="設定值-push-方法"><a href="#設定值-push-方法" class="headerlink" title="設定值 -push 方法:"></a>設定值 -<code>push</code> 方法:</h3><ul>
+<li>會自動產生一組 key</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> todos = firebase.database().ref(<span class="string">'todos'</span>);</span><br><span class="line">todos.push(&#123;</span><br><span class="line">    content:<span class="string">'要開會'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+<p> 結果：<br><img src="https://i.imgur.com/T55BpnJ.png" alt></p>
+<h3 id="刪除"><a href="#刪除" class="headerlink" title="刪除"></a>刪除</h3><ul>
+<li>remove()<ul>
+<li>搭配 child():子路徑</li>
+</ul>
+</li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> todos = firebase.database().ref().child(<span class="string">'todos'</span>);</span><br><span class="line">todos.child(<span class="string">'-LkwvIhG6EEoJEAByWIi'</span>).remove();</span><br><span class="line"><span class="comment">//child('指定key')</span></span><br></pre></td></tr></table></figure>
+
+<p>其中「要開會2」就會被刪除<br><img src="https://i.imgur.com/pEpCerF.png" alt></p>
+<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">orderByChild(<span class="string">'欄位名稱'</span>)</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>以<code>age</code>來排序：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> peoplePath = firebase.database().ref(<span class="string">'people'</span>);</span><br><span class="line">peoplePath.orderByChild(<span class="string">'age'</span>).once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">    snapshot.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item.val());</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.imgur.com/5O0ZThD.png" alt></p>
+<h3 id="取得區間"><a href="#取得區間" class="headerlink" title="取得區間"></a>取得區間</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">startAt()：以上</span><br><span class="line">endAt()：以下</span><br><span class="line">equalTo()：等於</span><br></pre></td></tr></table></figure>
+
+<ul>
+<li>以 startAt() 為例：取得年齡大於２３歲：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> peoplePath = firebase.database().ref(<span class="string">'people'</span>);</span><br><span class="line">peoplePath.orderByChild(<span class="string">'age'</span>).startAt(<span class="number">23</span>).once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">    snapshot.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item.val());</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>結果：<br><img src="https://i.imgur.com/aS8nLHL.png" alt></p>
+<ul>
+<li>限制筆數：<ul>
+<li>limitToFirst(數量)：限制前Ｘ筆</li>
+<li>limitToLast(數量)：限制倒數Ｘ筆</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li>查詢大於23歲的第一筆資料：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> peoplePath = firebase.database().ref(<span class="string">'people'</span>);</span><br><span class="line">peoplePath.orderByChild(<span class="string">'age'</span>).startAt(<span class="number">23</span>).limitToFirst(<span class="number">1</span>).once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">    snapshot.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item.val());</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p>結果：<br><img src="https://i.imgur.com/dpAC6jO.png" alt></p>
+<h6 id="tags-Node-js-FireBase"><a href="#tags-Node-js-FireBase" class="headerlink" title="tags: Node.js  FireBase"></a>tags: <code>Node.js</code>  <code>FireBase</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/Node-js/" title="Node.js">Node.js</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/Vue_basic/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">Vue | 基本概念</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/Heroku_deploy/">
+                <span class="nav-default">Heroku | 部署</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>

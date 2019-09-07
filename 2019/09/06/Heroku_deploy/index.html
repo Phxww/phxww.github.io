@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head><meta name="generator" content="Hexo 3.9.0">
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+    <title></title>
+    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="/css/gitment.css">
+    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+</head>
+<body>
+<header class="header">
+    <div class="header-inner">
+        <div class="header-title">
+
+        </div>
+        <nav class="header-nav">
+            
+            <a href="/" class="header-nav-link" >
+                首页
+            </a>
+            
+
+            
+            <a href="/archives" class="header-nav-link">
+                归档
+            </a>
+            
+
+            
+            <a href="/tags" class="header-nav-link">
+                标签
+            </a>
+            
+
+            
+        </nav>
+    </div>
+</header>
+<header class="mobile-header">
+    <div class="mobile-nav">
+        <div class="mobile-nav-icon">
+            <span></span>
+            <span></span>
+            <span></span>
+        </div>
+        <div class="mobile-nav-title">
+            <a href="/" class="mobile-nav-title-link">'s Blog</a>
+        </div>
+
+    </div>
+    <nav class="mobile-menu">
+        <ul class="mobile-menu-list">
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-home"></i>
+                <a href="/" class="mobile-nav-link">首页</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-archive"></i>
+                <a href="/archives" class="mobile-nav-link">归档</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-tag"></i>
+                <a href="/tags" class="mobile-nav-link">标签</a>
+            </li>
+            <li class="mobile-menu-item">
+                <i class="iconfont icon-about"></i>
+                <a href="/about/" class="mobile-nav-link">关于</a>
+            </li>
+        </ul>
+    </nav>
+</header>
+<div class="main">
+    <div class="content-inner">
+        <div class="posts">
+    <article class="post-whole">
+        <div class="post-title">
+            <h2 class="title">Heroku | 部署</h2>
+            <div class="post-meta">
+                <span class="post-time">2019-09-06</span>
+                
+                <span class="post-visit"> 阅读次数：<span id="busuanzi_value_page_pv"></span></span>
+            </div>
+        </div>
+        <div class="post-toc" id="post-toc">
+    <strong class="post-toc-title">目录</strong>
+    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#Heroku-部署"><span class="toc-text">Heroku - 部署</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#安裝-Heroku"><span class="toc-text">安裝 Heroku</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#登入-Heroku"><span class="toc-text">登入 Heroku</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#初始化-git"><span class="toc-text">初始化 git</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#在-heroku-上新增專案"><span class="toc-text">在 heroku 上新增專案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#官網上查看專案"><span class="toc-text">官網上查看專案</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#啟動專案"><span class="toc-text">啟動專案</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#啟動專案有兩種方式："><span class="toc-text">啟動專案有兩種方式：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#查看-Log"><span class="toc-text">查看 Log</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#兩種方式可以看log"><span class="toc-text">兩種方式可以看log:</span></a><ol class="toc-child"><li class="toc-item toc-level-6"><a class="toc-link" href="#tags-Heroku"><span class="toc-text">tags: Heroku</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    <div class="back-to-top" id="back-to-top">
+        <a href="javascript:void(0);">回到顶部</a>
+    </div>
+</div>
+        <div class="post-content">
+            <h1 id="Heroku-部署"><a href="#Heroku-部署" class="headerlink" title="Heroku - 部署"></a>Heroku - 部署</h1><p>   自己寫的 side project 或是面試小作品還在想要放到哪裡嗎？不仿試試看 <strong>Heroku</strong>， <strong>Heroku</strong> 提供的服務是提供免費的空間放置您網站的好所在，還提供以下各程式語言使用：</p>
+<p>Node.js、Java、Ruby、PHP、Python、GO、Scala、Clojure</p>
+<p><img src="https://i.imgur.com/JuPZsd7.png" alt></p>
+<p>首先到官網右上角 <a href="https://www.heroku.com/" target="_blank" rel="noopener">Sign Up</a> 註冊好後，會收到一封信，點選裡面網址輸入完密碼後，就註冊完成囉！</p>
+<h2 id="安裝-Heroku"><a href="#安裝-Heroku" class="headerlink" title="安裝 Heroku"></a>安裝 Heroku</h2><p>有兩種方式：</p>
+<ul>
+<li><p>指令安裝 </p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install heroku/brew/heroku</span><br></pre></td></tr></table></figure>
+</li>
+<li><p>pkg 安裝</p>
+</li>
+</ul>
+<p><a href="https://cli-assets.heroku.com/heroku.pkg" target="_blank" rel="noopener">macOS 安裝連結</a><br><a href="https://cli-assets.heroku.com/heroku-x64.exe" target="_blank" rel="noopener">Windows 64-bit 安裝連結</a></p>
+<p>其他安裝可以至 <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true" target="_blank" rel="noopener">官網</a> 參考看看喔</p>
+<h2 id="登入-Heroku"><a href="#登入-Heroku" class="headerlink" title="登入 Heroku"></a>登入 Heroku</h2><p>在 termainal 中輸入<code>heroku login</code> </p>
+<p><img src="https://i.imgur.com/xg0ynGd.png" alt></p>
+<p>按任意鍵後會跳出登入的網站<br><img src="https://i.imgur.com/EC8Ezwl.png" alt><br>接著點選 <code>Log in</code> 後就登入完成：<br><img src="https://i.imgur.com/yQWfzOd.png" alt></p>
+<h2 id="初始化-git"><a href="#初始化-git" class="headerlink" title="初始化 git"></a>初始化 git</h2><ul>
+<li>初始化 git 專案：<br>在專案裡輸入<code>git init</code> 後，先來看看專案目前的狀態<code>git status</code>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.imgur.com/zQwcfqT.png" alt></p>
+<ul>
+<li>將所有檔案加入<code>git add</code> ：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.imgur.com/9I66QsM.png" alt></p>
+<ul>
+<li>將這次的修改 commit ：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"add index"</span></span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.imgur.com/7x1de2U.png" alt></p>
+<h2 id="在-heroku-上新增專案"><a href="#在-heroku-上新增專案" class="headerlink" title="在 heroku 上新增專案"></a>在 heroku 上新增專案</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku create</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://i.imgur.com/RceLOcD.png" alt></p>
+<ul>
+<li>上傳至 heroku 的 master<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push heroku master</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<p><img src="https://i.imgur.com/1tkzpNO.png" alt></p>
+<ul>
+<li>這就是你的 web 位置<br><a href="https://XXX-XXX-XXX.herokuapp.com/" target="_blank" rel="noopener">https://XXX-XXX-XXX.herokuapp.com/</a> </li>
+</ul>
+<h2 id="官網上查看專案"><a href="#官網上查看專案" class="headerlink" title="官網上查看專案"></a>官網上查看專案</h2><p>右上角 -&gt; Dashboard<br><img src="https://i.imgur.com/RL8IpVn.png" alt></p>
+<p>就可以看到剛剛上傳的檔案：<br><img src="https://i.imgur.com/1lzCW6u.png" alt></p>
+<ul>
+<li>點擊專案進去就有專案的所有設定，像是 overview 標籤裡右方就可以看到所有的編譯紀錄：</li>
+</ul>
+<p><img src="https://i.imgur.com/bFSIoN7.png" alt></p>
+<h2 id="啟動專案"><a href="#啟動專案" class="headerlink" title="啟動專案"></a>啟動專案</h2><h3 id="啟動專案有兩種方式："><a href="#啟動專案有兩種方式：" class="headerlink" title="啟動專案有兩種方式："></a>啟動專案有兩種方式：</h3><ol>
+<li>右上角 -&gt; dashboard -&gt; open APP<br><img src="https://i.imgur.com/ASSLLXw.png" alt><ol start="2">
+<li>terminal 裡進到該專案內輸入：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku open</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="查看-Log"><a href="#查看-Log" class="headerlink" title="查看 Log"></a>查看 Log</h2><h3 id="兩種方式可以看log"><a href="#兩種方式可以看log" class="headerlink" title="兩種方式可以看log:"></a>兩種方式可以看log:</h3><ol>
+<li><p>官網上，進到自己的專案後右上角點選<code>More</code>-&gt; <code>View logs</code><br><img src="https://i.imgur.com/7lVRAxp.png" alt></p>
+</li>
+<li><p>在 terminal 上輸入：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku logs --tail</span><br></pre></td></tr></table></figure>
+
+</li>
+</ol>
+<h6 id="tags-Heroku"><a href="#tags-Heroku" class="headerlink" title="tags: Heroku"></a>tags: <code>Heroku</code></h6>
+        </div>
+        
+        <div class="post-tag">
+            
+            <a class="tag" href="/tags/Heroku/" title="Heroku">Heroku</a>
+            
+        </div>
+        
+    </article>
+</div>
+<div class="paginator">
+    
+        
+            <a class="prev" href="/2019/09/06/Node.js_FireBase/">
+                <i class="iconfont icon-prev"></i>
+                <span class="nav-default">Node.js | FireBase</span>
+                <span class="nav-mobile">上一篇</span>
+            </a>
+        
+        
+            <a class="next" href="/2019/09/06/Database_Sequence/">
+                <span class="nav-default">Database | Sequence</span>
+                <span class="nav-mobile">下一篇</span>
+                <i class="iconfont icon-next"></i>
+            </a>
+        
+    
+</div>
+<div id="comment-container"></div>
+    </div>
+</div>
+<footer class="footer-social">
+    
+
+    
+
+    
+
+    <div class="footer-copyright">
+        <p class="time-line">
+            &copy;
+            
+            
+            2019
+            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
+            <a target="_blank" href="https://github.com/iJinxin"></a>
+        </p>
+        <p class="theme-info">
+            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
+            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
+        </p>
+    </div>
+</footer>
+</body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script src="/js/index.js"></script>
+<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
+<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
+<script>
+    
+
+</script>
+</html>
