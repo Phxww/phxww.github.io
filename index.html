@@ -1,893 +1,420 @@
 <!DOCTYPE html>
 <html>
-<head><meta name="generator" content="Hexo 3.9.0">
-    <meta http-equiv="content-type" content="text/html; charset=utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
-    <title></title>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="/css/gitment.css">
-    <link rel="stylesheet" type="text/css" href="//at.alicdn.com/t/font_859455_eaq7v6w8ktj.css">
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Phoenix&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/css/plugins/gitment.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+    <script src="/js/qrious.js"></script>
+  
+  
+    <script src="/js/gitment.js"></script>
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
 </head>
-<body>
-<header class="header">
-    <div class="header-inner">
-        <div class="header-title">
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
 
-        </div>
-        <nav class="header-nav">
-            
-            <a href="/" class="header-nav-link" >
-                Home
-            </a>
-            
-
-            
-            <a href="/archives" class="header-nav-link">
-                Archives
-            </a>
-            
-
-            
-            <a href="/tags" class="header-nav-link">
-                Tags
-            </a>
-            
-
-            
-        </nav>
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <!-- <div class="logo">Phoenix's Blog</div> -->
+      <div>Phoenix's Blog</div>
+      <span></span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link active">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
     </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link mobile-active">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
 </header>
-<header class="mobile-header">
-    <div class="mobile-nav">
-        <div class="mobile-nav-icon">
-            <span></span>
-            <span></span>
-            <span></span>
-        </div>
-        <div class="mobile-nav-title">
-            <a href="/" class="mobile-nav-title-link">Phoenix's Blog</a>
-        </div>
 
-    </div>
-    <nav class="mobile-menu">
-        <ul class="mobile-menu-list">
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-home"></i>
-                <a href="/" class="mobile-nav-link">Home</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-archive"></i>
-                <a href="/archives" class="mobile-nav-link">Archives</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-tag"></i>
-                <a href="/tags" class="mobile-nav-link">Tags</a>
-            </li>
-            <li class="mobile-menu-item">
-                <i class="iconfont icon-about"></i>
-                <a href="/about/" class="mobile-nav-link">About</a>
-            </li>
-        </ul>
-    </nav>
-</header>
-<div class="main">
-    <div class="content-inner">
-        <div class="posts">
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/Node.js_fashe_購物網站/">Node.js | fashe購物網站</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="Node-js-fashe-購物網站"><a href="#Node-js-fashe-購物網站" class="headerlink" title="[Node.js] - fashe 購物網站"></a>[Node.js] - fashe 購物網站</h1><p>本篇主要介紹 <strong>fashe 購物網站</strong> 功能及架構，自學完 Node.js 後，找一個電商網站來模仿並加上自己設計，另外加上管理者後台控制功能．</p>
-<h2 id="網站應用技術"><a href="#網站應用技術" class="headerlink" title="網站應用技術"></a>網站應用技術</h2><p>技術介紹：</p>
-<ul>
-<li>前端框架： <code>Bootstrap</code></li>
-<li>前端程式語言：<code>JavaScript</code>、<code>jQuery</code></li>
-<li>後端框架： <code>Node.js</code></li>
-<li>資料庫：<code>PostgreSQL</code></li>
-<li>雲端伺服器:<code>Heroku</code></li>
-</ul>
-<h2 id="網站功能簡介"><a href="#網站功能簡介" class="headerlink" title="網站功能簡介"></a>網站功能簡介</h2><p>網站功能主要切分兩類 <strong>使用者</strong>、<strong>管理者</strong></p>
-<ul>
-<li>使用者：<ul>
-<li>註冊、登入、修改個人資料</li>
-<li>選購商品、刪除訂單商品、送出訂單、查看已送出訂單</li>
-</ul>
-</li>
-<li>管理者：<ul>
-<li>商品：對商品可以新增、刪除、修改、查詢</li>
-<li>後台只能有管理者能進入</li>
-</ul>
-</li>
-</ul>
-<h2 id="網站前端介紹："><a href="#網站前端介紹：" class="headerlink" title="網站前端介紹："></a>網站前端介紹：</h2><p>主要分為４個部分：首頁、商品選購頁面、關於頁面、聯繫頁面</p>
-<ul>
-<li><p>首頁：<br><img src="https://i.imgur.com/U3ygTFt.png" alt></p>
-</li>
-<li><p>關於頁面：<br><img src="https://i.imgur.com/Dh8nBv2.png" alt></p>
-</li>
-<li><p>聯繫頁面：<br><img src="https://i.imgur.com/DNealpn.png" alt></p>
-</li>
-</ul>
-<p>「商品頁面」放在下分跟商品流程一起說明，下面分兩部份解說「使用者註冊和登入」、「商品選購」</p>
-<h3 id="使用者註冊和登入"><a href="#使用者註冊和登入" class="headerlink" title="使用者註冊和登入"></a>使用者註冊和登入</h3><p>點選右上方註冊即可進入到 「註冊頁面」<br><img src="https://i.imgur.com/9zo4qV7.png" alt></p>
-<p>註冊成功後網頁會自動導入到 「登入頁面」，而登入後就自動導回首頁<br><img src="https://i.imgur.com/QXsztFL.png" alt></p>
-<p>若 email 有重複被註冊，系統也會判定後倒回登入頁面<br><img src="https://i.imgur.com/nC5LcEq.png" alt></p>
-<p>也可以點選右上方人頭「修改個人資料」：</p>
-<p><img src="https://i.imgur.com/PFK7uts.png" alt></p>
-<h3 id="商品選購："><a href="#商品選購：" class="headerlink" title="商品選購："></a>商品選購：</h3><p>商品頁面：<br><img src="https://i.imgur.com/plJqub0.png" alt></p>
-<p>商品頁面每頁呈現最多六筆商品，透過分頁管理來呈現<br>使用者可點選任意商品後，進入商品更詳細的頁面，並且可以點選右方的 <code>size</code> 和 <code>數量</code> ，選購完後點選 <code>ADD CART</code> 即可加入購物車</p>
-<p><img src="https://i.imgur.com/L5c0sdr.png" alt></p>
-<p>出現已加入購物車後，右上角購物車就會加入剛剛選購的商品<br><img src="https://i.imgur.com/dn0oB9n.png" alt><br><img src="https://i.imgur.com/z9ihWxa.png=500x500" alt></p>
-<p>點擊 「view cart」按鈕就可看到目前購物車內有什麼商品，若買錯也可點擊「垃圾桶」刪除商品，下方訂購者資訊只要登入，系統會自動帶上使用者資訊，點擊按鈕後進到第二階段：</p>
-<p><img src="https://i.imgur.com/0qhzeEE.png" alt></p>
-<p>進到第二階段後，主要是讓使用者再次「確認訂單」無誤後即可送出訂單，此夜不能再作修改，若要修改要再回到上一頁做修正<br><img src="https://i.imgur.com/BaCrUca.png" alt></p>
-<p>送出訂單後，會到第三階段「訂單完成」頁面，主要是讓使用者看看這次的訂單，但是已經送出了，若有誤要盡快聯繫賣家<br><img src="https://i.imgur.com/YThBUwl.png" alt></p>
-<h3 id="訂單查詢："><a href="#訂單查詢：" class="headerlink" title="訂單查詢："></a>訂單查詢：</h3><p>若使用者要查詢目前已送出過得訂單，可點選右上角 「order」按鈕，查看已出的訂單，會顯示每筆訂單的「總金額」、「訂單時間」、「訂單詳細」<br><img src="https://i.imgur.com/PXYQRzT.png" alt></p>
-<h2 id="網站後台介紹："><a href="#網站後台介紹：" class="headerlink" title="網站後台介紹："></a>網站後台介紹：</h2><p>要登入後台介面管理者必須先從前端用「管理者帳號」登入，若透過網址隨意進入，皆會倒回登入頁面要求使用管理者帳號登入</p>
-<p><img src="https://i.imgur.com/XWg6bmt.png" alt></p>
-<p>若不是用「管理者」登入，會重新倒回登入頁面，請求重新登入<br><img src="https://i.imgur.com/wc7DgSf.png" alt></p>
-<h3 id="商品管理頁面："><a href="#商品管理頁面：" class="headerlink" title="商品管理頁面："></a>商品管理頁面：</h3><p>商品管理頁面，每頁最多呈現五筆，管理者可以對商品進行「刪除」與「修改」</p>
-<p>查詢頁面：</p>
-<p><img src="https://i.imgur.com/r78w7xF.png" alt></p>
-<p>商品修改頁面：</p>
-<p><img src="https://i.imgur.com/o6c5zKz.png" alt></p>
-<p>商品新增</p>
-<p><img src="https://i.imgur.com/tYAGp9i.png" alt></p>
-<h2 id="fashe-網站-Demo："><a href="#fashe-網站-Demo：" class="headerlink" title="fashe 網站 Demo："></a>fashe 網站 Demo：</h2><p><a href="https://fasheshop.herokuapp.com" target="_blank" rel="noopener">fashe 網站連結</a></p>
-<h6 id="tags-Node-js"><a href="#tags-Node-js" class="headerlink" title="tags: Node.js"></a>tags: <code>Node.js</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/Vue_basic/">Vue | 基本概念</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="Vue-基本概念"><a href="#Vue-基本概念" class="headerlink" title="Vue - 基本概念"></a>Vue - 基本概念</h1><p>本篇主要紀錄學習 <code>Vue</code> 的基本觀念，將比較重要的學習點紀錄起來，可以搭配 Vue 官方的文件一起</p>
-<h2 id="基本觀念：MVVM"><a href="#基本觀念：MVVM" class="headerlink" title="基本觀念：MVVM"></a>基本觀念：MVVM</h2><p>認識<code>Vue</code> 之前，要先知道 <code>Vue</code> 是屬於 <code>MVVM</code> 的架構，著重在於 <code>MVVM</code> （Model–view–viewmodel） 的 <code>VM</code> <code>(ViewModel)</code></p>
-<p>透過 wiki 的圖來了解一下：<a href="https://zh.wikipedia.org/wiki/MVVM" target="_blank" rel="noopener">wiki</a></p>
-<p><img src="https://i.imgur.com/JRmm3gt.png" alt></p>
-<ul>
-<li>Model: 資料部分</li>
-<li>View: 畫面部分</li>
-<li>ViewModel: 串起資料與畫面的橋樑 </li>
-</ul>
-<p><code>Vue</code> 擔任的角色就是「串起資料與畫面的橋樑 <code>ViewModel</code> 」 </p>
-<p>我們對應一下程式碼比較有感覺：</p>
-<ul>
-<li><p>View : 下方 html 的部分</p>
-</li>
-<li><p>Model : 下方 Js 中 message 的部分</p>
-</li>
-<li><p>ViewModel : Vue 將資料與畫面的部分綁起來</p>
-<p><img src="https://i.imgur.com/ENBYNiu.png" alt></p>
-</li>
-</ul>
-<h2 id="載入-CDN"><a href="#載入-CDN" class="headerlink" title="載入 CDN"></a>載入 CDN</h2><p>將下方官網提供的 CDN 連結放進程式中的<code>&lt;head&gt;</code> 之間</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/vue&quot;&gt; &lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="Hello-Vue"><a href="#Hello-Vue" class="headerlink" title="Hello Vue"></a>Hello Vue</h2><p> 學習每個程式都要透過 <code>Hello World</code> 來了解一下 :<br>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &#123;&#123; message &#125;&#125;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>js:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data: &#123;</span><br><span class="line">    message: <span class="string">'Hello World'</span></span><br><span class="line">  &#125;</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p>output:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">Hello World</span><br></pre></td></tr></table></figure>
-
-<p>這樣就已經完成基本 Vue 的應用了，來看一下是什麼意思吧！</p>
-<ul>
-<li>el: 指定掛載的元素</li>
-<li>data: 綁定的資料來源<br>其中在若要將資料呈現在前端就在程式碼中加入 <code> {{ }} </code> 裡面填入，畫面上就會顯示所指定的資料．</li>
-</ul>
-<h2 id="條件渲染"><a href="#條件渲染" class="headerlink" title="條件渲染"></a>條件渲染</h2><h3 id="v-if"><a href="#v-if" class="headerlink" title="v-if"></a>v-if</h3><p><code>v-if</code> 可以單獨使用或是搭配 <code>v-else-if</code> <code>v-else</code>一起使用，若條件成立就會顯示該元素，且只有成立的條件會渲染，我們直接看例子 ：</p>
-<ul>
-<li><p>語法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-<span class="keyword">if</span>=<span class="string">"判斷式"</span></span><br></pre></td></tr></table></figure>
-</li>
-<li><p>v-if 單獨使用：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-<span class="keyword">if</span>=<span class="string">"isBoy"</span>&gt;Hi!Boy!&lt;/span&gt;</span><br></pre></td></tr></table></figure>
-</li>
-<li><p><code>v-if</code> 搭配  <code>v-else-if</code> <code>v-else</code>：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-<span class="keyword">if</span>=<span class="string">"type === 'A'"</span>&gt;Hi!A!&lt;/span&gt;</span><br><span class="line">&lt;span v-<span class="keyword">else</span>-<span class="keyword">if</span>=<span class="string">"type === 'B'"</span>&gt;Hi!B!&lt;/span&gt;</span><br><span class="line">&lt;span v-<span class="keyword">else</span>&gt;Not A or B&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="v-show"><a href="#v-show" class="headerlink" title="v-show"></a>v-show</h3><p>與 <code>v-if</code> 相似，但差別在於不管如何都會留在 DOM 中，只是利用 <code>CSS</code> 屬性中的 <code>display</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-show=<span class="string">"show"</span>&gt;Hi!&lt;/span&gt;</span><br></pre></td></tr></table></figure>
-
-<h3 id="V-if-amp-v-show"><a href="#V-if-amp-v-show" class="headerlink" title="V-if &amp; v-show"></a>V-if &amp; v-show</h3><p>差別：</p>
-<ul>
-<li>v-if : 直接新增/刪除 DOM元素</li>
-<li>v-show : display:none與移除 display</li>
-</ul>
-<h2 id="列表渲染"><a href="#列表渲染" class="headerlink" title="列表渲染"></a>列表渲染</h2><h3 id="v-for"><a href="#v-for" class="headerlink" title="v-for"></a>v-for</h3><ul>
-<li>語法：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">v-<span class="keyword">for</span>=<span class="string">"(key,index) in list"</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>HTML:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">    &lt;ul&gt;</span><br><span class="line">      &lt;li v-for=&quot;(item,index) in list&quot;&gt;</span><br><span class="line">      &#123;&#123; index +1 &#125;&#125; - &#123;&#123; item.name &#125;&#125; 是 &#123;&#123; item.age&#125;&#125; 歲</span><br><span class="line">      &lt;/li&gt;</span><br><span class="line">    &lt;/ul&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>Vue:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data :&#123;</span><br><span class="line">    list:[</span><br><span class="line">        &#123;</span><br><span class="line">            name:<span class="string">'Bob'</span>,</span><br><span class="line">            age:<span class="number">20</span></span><br><span class="line">        &#125;,</span><br><span class="line">        &#123;</span><br><span class="line">            name:<span class="string">'Tony'</span>,</span><br><span class="line">            age:<span class="number">40</span>         </span><br><span class="line">        &#125;   </span><br><span class="line">    ]</span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>結果:</li>
-</ul>
-<p><img src="https://i.imgur.com/T7rEQ9V.png" alt></p>
-<h2 id="事件處理"><a href="#事件處理" class="headerlink" title="事件處理"></a>事件處理</h2><h3 id="監聽事件-v-on"><a href="#監聽事件-v-on" class="headerlink" title="監聽事件 v-on"></a>監聽事件 v-on</h3><p>以監聽點擊事件為例：<code>v-on:click</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"example-1"</span>&gt;</span><br><span class="line">  &lt;button v-on:click=<span class="string">"counter += 1"</span>&gt;Add <span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;p&gt; clicked &#123;&#123; counter &#125;&#125; times.&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p>也可以用<code>＠</code>縮寫代替<code>v-on:</code></p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=<span class="string">"example-1"</span>&gt;</span><br><span class="line">  &lt;button @click=<span class="string">"counter += 1"</span>&gt;Add <span class="number">1</span>&lt;<span class="regexp">/button&gt;</span></span><br><span class="line"><span class="regexp">  &lt;p&gt; clicked &#123;&#123; counter &#125;&#125; times.&lt;/</span>p&gt;</span><br><span class="line">&lt;<span class="regexp">/div&gt;</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="事件修飾符"><a href="#事件修飾符" class="headerlink" title="事件修飾符"></a>事件修飾符</h3><p>在寫網頁時經常會使用<code>preventDefault()</code>、<code>stopPropagation()</code> Vue 有提供多個事件修飾符：</p>
-<ul>
-<li><code>stop</code>- event.stopPropagation()</li>
-<li><code>prevent</code> - event.preventDefault()</li>
-<li><code>capture</code></li>
-<li><code>self</code></li>
-<li><code>once</code></li>
-<li><code>passive</code><br>以常用的 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;a href=<span class="string">"#"</span> v-on:click.stop=<span class="string">"doFun"</span>&gt;連結&lt;<span class="regexp">/a&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="表单输入绑定"><a href="#表单输入绑定" class="headerlink" title="表单输入绑定"></a>表单输入绑定</h2><h3 id="v-model"><a href="#v-model" class="headerlink" title="v-model"></a>v-model</h3><p>看標題就會想到跟表單有關，在 <code>Vue</code> 裡想綁定資料在 <code>&lt;input&gt;</code>、<code>&lt;textarea&gt;</code>、<code>&lt;select&gt;</code>中，就可以用<code>v-model</code> 來實現，</p>
-<p>特別要注意的是：<code>v-model</code> 實現了「資料雙向綁定」，「資料雙向綁定」就是使用者在前端 <code>input</code> 裡輸入值，可以直接修改 <code>vue</code> 中資料來源 <code>data</code> 內容</p>
-<p>看個例子，當使用者在 <code>input</code> 裡可以直接修改資料來源<code>message</code> 的內容:<br> <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;input v-model=<span class="string">"message"</span> &gt;</span><br><span class="line">&lt;p&gt;Message is: &#123;&#123; message &#125;&#125;&lt;<span class="regexp">/p&gt;</span></span><br></pre></td></tr></table></figure></p>
-<h2 id="屬性绑定"><a href="#屬性绑定" class="headerlink" title="屬性绑定"></a>屬性绑定</h2><h3 id="v-bind"><a href="#v-bind" class="headerlink" title="v-bind"></a>v-bind</h3><p>語法：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div v-bind:<span class="class"><span class="keyword">class</span></span>=<span class="string">"divClass"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;img v-bind:src=<span class="string">"imageSrc"</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<p>也可以透過<code>：</code>縮寫 <code>v-bind</code>:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">&lt;div :<span class="class"><span class="keyword">class</span></span>=<span class="string">"divClass"</span>&gt;&lt;/div&gt;</span><br><span class="line">&lt;img :src=<span class="string">"imageSrc"</span>&gt;</span><br></pre></td></tr></table></figure>
-
-<h2 id="模版語法"><a href="#模版語法" class="headerlink" title="模版語法"></a>模版語法</h2><h3 id="v-once"><a href="#v-once" class="headerlink" title="v-once"></a>v-once</h3><ul>
-<li><code>v-once</code> 只會表達「一次」，若更改資料來源，是不會重新渲染的<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;span v-once&gt;長官留言: &#123;&#123; message &#125;&#125;&lt;<span class="regexp">/span&gt;</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="v-html"><a href="#v-html" class="headerlink" title="v-html"></a>v-html</h3><ul>
-<li><code>v-html</code> 可依 html 格式呈現於畫面上<br>HTML:<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;div id=&quot;app&quot;&gt;</span><br><span class="line">  &lt;div v-html=&quot;message&quot;&gt;&lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>Vue:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> app = <span class="keyword">new</span> Vue(&#123;</span><br><span class="line">  el: <span class="string">'#app'</span>,</span><br><span class="line">  data :&#123;</span><br><span class="line">    message:<span class="string">'&lt;b&gt;Hi~ Vue&lt;/b&gt;'</span></span><br><span class="line">  &#125;</span><br></pre></td></tr></table></figure>
-
-<p>參考：<br><a href="https://vuejs.org/" target="_blank" rel="noopener">Vue 官方</a><br><a href="https://www.youtube.com/watch?v=VW4RZSKqIEE&list=PLEfh-m_KG4dYor8h4Hi2lqKJ0xqNTFh16&index=4&t=0s" target="_blank" rel="noopener">Alex 宅幹嘛 </a></p>
-<h6 id="tags-Vue"><a href="#tags-Vue" class="headerlink" title="tags: Vue"></a>tags: <code>Vue</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/Node.js_FireBase/">Node.js | FireBase</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="Node-js-FireBase"><a href="#Node-js-FireBase" class="headerlink" title="[Node.js] - FireBase"></a>[Node.js] - FireBase</h1><h2 id="FireBase-簡介"><a href="#FireBase-簡介" class="headerlink" title="FireBase 簡介"></a>FireBase 簡介</h2><p>FireBase 是一套 Web 的應用程式開發平台，目前他可支援手機ＡＰＰ與 Web 許多服務，目前只用到「資料庫」、「認證」功能，其他到時候使用到再繼續補上．</p>
-<h2 id="安裝-firebase-相關模組"><a href="#安裝-firebase-相關模組" class="headerlink" title="安裝 firebase 相關模組"></a>安裝 firebase 相關模組</h2><h3 id="安裝-firebase"><a href="#安裝-firebase" class="headerlink" title="安裝 firebase"></a>安裝 firebase</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install firebase --save</span><br></pre></td></tr></table></figure>
-
-<h3 id="firebase-使用方法"><a href="#firebase-使用方法" class="headerlink" title="firebase 使用方法"></a>firebase 使用方法</h3><p>進到 <a href="https://firebase.google.com/" target="_blank" rel="noopener">firebase</a> 網站登入帳號後，先建立一個新的 firebase 專案</p>
-<p><img src="https://i.imgur.com/RSAY039.png" alt></p>
-<p>建立完後進到專案控制台，接著點選左側「Database」並點選建立「資料庫」且以「測試模式」啟動</p>
-<p><img src="https://i.imgur.com/h6PzYhE.png" alt></p>
-<p><img src="https://i.imgur.com/iGhBn66.png" alt></p>
-<p>這樣資料庫就建立完成，接著點選左上角「齒輪」裡的專案設定<br><img src="https://i.imgur.com/cIM7bU0.png" alt></p>
-<p>到最下方會看到「您的專案沒有任何應用程式」的提示，點選 <code>&lt;/&gt;</code> ，將「新增Firebase SDk 」的內容複製到自己開發的 Node.js 專案裡．</p>
-<p><img src="https://i.imgur.com/Ldlxu6w.png" alt><br><img src="https://i.imgur.com/xP4TMf8.png" alt></p>
-<p>貼到相對應的 js 裡與 node.js </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;script src=<span class="string">"https://www.gstatic.com/firebasejs/6.6.0/firebase-app.js"</span>&gt;&lt;/script&gt;</span><br></pre></td></tr></table></figure>
-
-<p>Node.js</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> firebase = <span class="built_in">require</span>(<span class="string">'firebase'</span>);</span><br><span class="line"><span class="keyword">const</span> firebaseConfig = &#123;</span><br><span class="line">    apiKey: XXX,</span><br><span class="line">    authDomain: XXX,</span><br><span class="line">    databaseURL:XXX, </span><br><span class="line">    projectId: XXX,</span><br><span class="line">    storageBucket: XXX,</span><br><span class="line">    messagingSenderId:XXX,</span><br><span class="line">    appId: XXX</span><br><span class="line">&#125;;</span><br><span class="line">firebase.initializeApp(firebaseConfig);</span><br></pre></td></tr></table></figure>
-
-<h2 id="入門語法："><a href="#入門語法：" class="headerlink" title="入門語法："></a>入門語法：</h2><h3 id="語法："><a href="#語法：" class="headerlink" title="語法："></a>語法：</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">firebase.database().ref().set()</span><br><span class="line"></span><br><span class="line"><span class="comment">// ref(): 尋找路徑,()為空時預設根目錄</span></span><br><span class="line"><span class="comment">// set(): 要設定的值、物件...</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="讀取一次資料庫的資料："><a href="#讀取一次資料庫的資料：" class="headerlink" title="讀取一次資料庫的資料："></a>讀取一次資料庫的資料：</h3><ul>
-<li><code>.once()</code><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"> <span class="keyword">var</span> path = firebase.database().ref(<span class="string">'XXX/XXX/XX...'</span>);</span><br><span class="line"> path.once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">     snapshot.val(); <span class="comment">//.val()轉換obj或json可讀取的資料</span></span><br><span class="line"> &#125;</span><br><span class="line"> <span class="string">``</span><span class="string">` </span></span><br><span class="line"><span class="string">### 即時監聽： </span></span><br><span class="line"><span class="string">* `</span>．.on()<span class="string">`</span></span><br><span class="line"><span class="string">    - 語法與 .once() 相同</span></span><br><span class="line"><span class="string">### 設定值 - `</span><span class="keyword">set</span>` 方法:    </span><br><span class="line">    </span><br><span class="line">```javascript=    </span><br><span class="line">firebase.database().ref().<span class="keyword">set</span>(people);//people為設定的資料</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>後面搭配 <code>.then()</code>,意思是若有 set 值完那就執行接下來的事<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">firebase.database().ref().set(people).then(<span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        XXX.....   <span class="comment">//執行接下來的事</span></span><br><span class="line">&#125;);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h3 id="設定值-push-方法"><a href="#設定值-push-方法" class="headerlink" title="設定值 -push 方法:"></a>設定值 -<code>push</code> 方法:</h3><ul>
-<li>會自動產生一組 key</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> todos = firebase.database().ref(<span class="string">'todos'</span>);</span><br><span class="line">todos.push(&#123;</span><br><span class="line">    content:<span class="string">'要開會'</span></span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-<p> 結果：<br><img src="https://i.imgur.com/T55BpnJ.png" alt></p>
-<h3 id="刪除"><a href="#刪除" class="headerlink" title="刪除"></a>刪除</h3><ul>
-<li>remove()<ul>
-<li>搭配 child():子路徑</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> todos = firebase.database().ref().child(<span class="string">'todos'</span>);</span><br><span class="line">todos.child(<span class="string">'-LkwvIhG6EEoJEAByWIi'</span>).remove();</span><br><span class="line"><span class="comment">//child('指定key')</span></span><br></pre></td></tr></table></figure>
-
-<p>其中「要開會2」就會被刪除<br><img src="https://i.imgur.com/pEpCerF.png" alt></p>
-<h3 id="排序"><a href="#排序" class="headerlink" title="排序"></a>排序</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">orderByChild(<span class="string">'欄位名稱'</span>)</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>以<code>age</code>來排序：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> peoplePath = firebase.database().ref(<span class="string">'people'</span>);</span><br><span class="line">peoplePath.orderByChild(<span class="string">'age'</span>).once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">    snapshot.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item.val());</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/5O0ZThD.png" alt></p>
-<h3 id="取得區間"><a href="#取得區間" class="headerlink" title="取得區間"></a>取得區間</h3><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">startAt()：以上</span><br><span class="line">endAt()：以下</span><br><span class="line">equalTo()：等於</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>以 startAt() 為例：取得年齡大於２３歲：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> peoplePath = firebase.database().ref(<span class="string">'people'</span>);</span><br><span class="line">peoplePath.orderByChild(<span class="string">'age'</span>).startAt(<span class="number">23</span>).once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">    snapshot.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item.val());</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>結果：<br><img src="https://i.imgur.com/aS8nLHL.png" alt></p>
-<ul>
-<li>限制筆數：<ul>
-<li>limitToFirst(數量)：限制前Ｘ筆</li>
-<li>limitToLast(數量)：限制倒數Ｘ筆</li>
-</ul>
-</li>
-</ul>
-<ul>
-<li>查詢大於23歲的第一筆資料：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> peoplePath = firebase.database().ref(<span class="string">'people'</span>);</span><br><span class="line">peoplePath.orderByChild(<span class="string">'age'</span>).startAt(<span class="number">23</span>).limitToFirst(<span class="number">1</span>).once(<span class="string">'value'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">snapshot</span>)</span>&#123;</span><br><span class="line">    snapshot.forEach(<span class="function"><span class="keyword">function</span>(<span class="params">item</span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(item.val());</span><br><span class="line">    &#125;)</span><br><span class="line">&#125;)</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>結果：<br><img src="https://i.imgur.com/dpAC6jO.png" alt></p>
-<h6 id="tags-Node-js-FireBase"><a href="#tags-Node-js-FireBase" class="headerlink" title="tags: Node.js  FireBase"></a>tags: <code>Node.js</code>  <code>FireBase</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/Heroku_deploy/">Heroku | 部署</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="Heroku-部署"><a href="#Heroku-部署" class="headerlink" title="Heroku - 部署"></a>Heroku - 部署</h1><p>   自己寫的 side project 或是面試小作品還在想要放到哪裡嗎？不仿試試看 <strong>Heroku</strong>， <strong>Heroku</strong> 提供的服務是提供免費的空間放置您網站的好所在，還提供以下各程式語言使用：</p>
-<p>Node.js、Java、Ruby、PHP、Python、GO、Scala、Clojure</p>
-<p><img src="https://i.imgur.com/JuPZsd7.png" alt></p>
-<p>首先到官網右上角 <a href="https://www.heroku.com/" target="_blank" rel="noopener">Sign Up</a> 註冊好後，會收到一封信，點選裡面網址輸入完密碼後，就註冊完成囉！</p>
-<h2 id="安裝-Heroku"><a href="#安裝-Heroku" class="headerlink" title="安裝 Heroku"></a>安裝 Heroku</h2><p>有兩種方式：</p>
-<ul>
-<li><p>指令安裝 </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew install heroku/brew/heroku</span><br></pre></td></tr></table></figure>
-</li>
-<li><p>pkg 安裝</p>
-</li>
-</ul>
-<p><a href="https://cli-assets.heroku.com/heroku.pkg" target="_blank" rel="noopener">macOS 安裝連結</a><br><a href="https://cli-assets.heroku.com/heroku-x64.exe" target="_blank" rel="noopener">Windows 64-bit 安裝連結</a></p>
-<p>其他安裝可以至 <a href="https://devcenter.heroku.com/articles/getting-started-with-nodejs?singlepage=true" target="_blank" rel="noopener">官網</a> 參考看看喔</p>
-<h2 id="登入-Heroku"><a href="#登入-Heroku" class="headerlink" title="登入 Heroku"></a>登入 Heroku</h2><p>在 termainal 中輸入<code>heroku login</code> </p>
-<p><img src="https://i.imgur.com/xg0ynGd.png" alt></p>
-<p>按任意鍵後會跳出登入的網站<br><img src="https://i.imgur.com/EC8Ezwl.png" alt><br>接著點選 <code>Log in</code> 後就登入完成：<br><img src="https://i.imgur.com/yQWfzOd.png" alt></p>
-<h2 id="初始化-git"><a href="#初始化-git" class="headerlink" title="初始化 git"></a>初始化 git</h2><ul>
-<li>初始化 git 專案：<br>在專案裡輸入<code>git init</code> 後，先來看看專案目前的狀態<code>git status</code>：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/zQwcfqT.png" alt></p>
-<ul>
-<li>將所有檔案加入<code>git add</code> ：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git add .</span><br><span class="line">git status</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/9I66QsM.png" alt></p>
-<ul>
-<li>將這次的修改 commit ：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git commit -m <span class="string">"add index"</span></span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/7x1de2U.png" alt></p>
-<h2 id="在-heroku-上新增專案"><a href="#在-heroku-上新增專案" class="headerlink" title="在 heroku 上新增專案"></a>在 heroku 上新增專案</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku create</span><br></pre></td></tr></table></figure>
-
-<p><img src="https://i.imgur.com/RceLOcD.png" alt></p>
-<ul>
-<li>上傳至 heroku 的 master<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git push heroku master</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/1tkzpNO.png" alt></p>
-<ul>
-<li>這就是你的 web 位置<br><a href="https://XXX-XXX-XXX.herokuapp.com/" target="_blank" rel="noopener">https://XXX-XXX-XXX.herokuapp.com/</a> </li>
-</ul>
-<h2 id="官網上查看專案"><a href="#官網上查看專案" class="headerlink" title="官網上查看專案"></a>官網上查看專案</h2><p>右上角 -&gt; Dashboard<br><img src="https://i.imgur.com/RL8IpVn.png" alt></p>
-<p>就可以看到剛剛上傳的檔案：<br><img src="https://i.imgur.com/1lzCW6u.png" alt></p>
-<ul>
-<li>點擊專案進去就有專案的所有設定，像是 overview 標籤裡右方就可以看到所有的編譯紀錄：</li>
-</ul>
-<p><img src="https://i.imgur.com/bFSIoN7.png" alt></p>
-<h2 id="啟動專案"><a href="#啟動專案" class="headerlink" title="啟動專案"></a>啟動專案</h2><h3 id="啟動專案有兩種方式："><a href="#啟動專案有兩種方式：" class="headerlink" title="啟動專案有兩種方式："></a>啟動專案有兩種方式：</h3><ol>
-<li>右上角 -&gt; dashboard -&gt; open APP<br><img src="https://i.imgur.com/ASSLLXw.png" alt><ol start="2">
-<li>terminal 裡進到該專案內輸入：<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku open</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-</li>
-</ol>
-<h2 id="查看-Log"><a href="#查看-Log" class="headerlink" title="查看 Log"></a>查看 Log</h2><h3 id="兩種方式可以看log"><a href="#兩種方式可以看log" class="headerlink" title="兩種方式可以看log:"></a>兩種方式可以看log:</h3><ol>
-<li><p>官網上，進到自己的專案後右上角點選<code>More</code>-&gt; <code>View logs</code><br><img src="https://i.imgur.com/7lVRAxp.png" alt></p>
-</li>
-<li><p>在 terminal 上輸入：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">heroku logs --tail</span><br></pre></td></tr></table></figure>
-
-</li>
-</ol>
-<h6 id="tags-Heroku"><a href="#tags-Heroku" class="headerlink" title="tags: Heroku"></a>tags: <code>Heroku</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/Database_Sequence/">Database | Sequence</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="Database-Sequence"><a href="#Database-Sequence" class="headerlink" title="[Database] - Sequence"></a>[Database] - Sequence</h1><h2 id="Sequence-實戰"><a href="#Sequence-實戰" class="headerlink" title="Sequence 實戰"></a>Sequence 實戰</h2><p>Sequence 就是「<strong>序列號</strong>」的意思</p>
-<ul>
-<li><p>使用時機： 通常需要「排序」或是希望拿取一個數字當作「唯一的值」去處理時，就可以使用到，</p>
-</li>
-<li><p>使用方法：每次向 <code>Sequence</code> 拿取時，他會將當前數自動增加一個指定的值，並返回給你，通常都是<code>+1</code></p>
-</li>
-</ul>
-<h2 id="Sequence-實戰-1"><a href="#Sequence-實戰-1" class="headerlink" title="Sequence 實戰"></a>Sequence 實戰</h2><ul>
-<li>我們先建立一個 sequence <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">sequence</span> order_id_seq <span class="keyword">increment</span> <span class="keyword">by</span> <span class="number">1</span> <span class="keyword">minvalue</span> <span class="number">1</span> <span class="keyword">no</span> maxvalue <span class="keyword">start</span> <span class="keyword">with</span> <span class="number">1</span>; </span><br><span class="line"></span><br><span class="line">incerment: 每次增加的數值</span><br><span class="line"><span class="keyword">start</span>    : <span class="keyword">Sequence</span> 開始的數值</span><br><span class="line">maxvalue : <span class="keyword">Sequence</span> 的最大值</span><br><span class="line"><span class="keyword">minvalue</span> : <span class="keyword">Sequence</span> 的最小值</span><br><span class="line"><span class="keyword">nocycle</span>  : 當 <span class="keyword">Sequence</span> 達到最大值時，不重頭開始</span><br></pre></td></tr></table></figure>
-</li>
-</ul>
-<ul>
-<li>利用指令 <code>\d</code> 看剛剛建立的資料表結構<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">\d order_id_seq</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/bi1Kjjw.png" alt></p>
-<ul>
-<li>我們可以建立一個 table，當輸入資料時，<code>id</code> 會透過我們剛建立的 <code>order_id_seq</code> 每次自動 +1    <figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">create</span> <span class="keyword">table</span> order_id (<span class="keyword">id</span> int4 <span class="keyword">not</span> <span class="literal">null</span> <span class="keyword">default</span> <span class="keyword">nextval</span>(<span class="string">'order_id_seq'</span>),<span class="keyword">name</span> <span class="built_in">text</span>);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/Mp9ETg4.png" alt></p>
-<ul>
-<li>我們輸入一筆資料並將他 select 出來</li>
-</ul>
-<p><img src="https://i.imgur.com/WCnhpAM.png" alt><br><img src="https://i.imgur.com/JVpipxl.png" alt></p>
-<ul>
-<li>取得下一筆 sequence<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> * <span class="keyword">from</span> <span class="keyword">nextval</span>(<span class="string">'order_id_seq'</span>);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/qKxdp9q.png" alt><br><img src="https://i.imgur.com/pqNRGWQ.png" alt></p>
-<p><img src="https://i.imgur.com/TfOTk6S.png" alt></p>
-<ul>
-<li>查看最新一筆 sequence<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">select</span> currval(<span class="string">'order_id_seq'</span>);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/9Fu6vPJ.png" alt></p>
-<ul>
-<li>刪除 sequence<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">DROP</span> <span class="keyword">SEQUENCE</span> order_id_seq</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p><img src="https://i.imgur.com/HlYjVDe.png" alt></p>
-<p>參考：<br><a href="https://www.cnblogs.com/mchina/archive/2013/04/10/3012493.html" target="_blank" rel="noopener">PostgreSQL 序列（SEQUENCE）</a></p>
-<ul>
-<li><a href="/s/slide-example">Slide example</a></li>
-<li><a href="/s/yaml-metadata">YAML metadata</a></li>
-<li><a href="/s/features">Features</a></li>
-</ul>
-<h6 id="tags-Database-Sequence-PostgreSQL"><a href="#tags-Database-Sequence-PostgreSQL" class="headerlink" title="tags: Database Sequence PostgreSQL"></a>tags: <code>Database</code> <code>Sequence</code> <code>PostgreSQL</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/JavaScript_LocalStroage_ToDoList/">JavaScript | LocalStroage - ToDoList</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="JavaScript-LocalStroage"><a href="#JavaScript-LocalStroage" class="headerlink" title="[JavaScript] - LocalStroage"></a>[JavaScript] - LocalStroage</h1><p>當你在逛「購物網站」點選「商品」後…、「旅遊住宿網站」點選「某間旅館」後，會發現下次進到網站後，怎麼會有上次瀏覽過的「商品」、「旅館」，其實就是存在 <code>LocalStroage</code> 裡．</p>
-<p><code>LocalStroage</code> 想像就是一個瀏覽器的資料庫，<code>Web Storage</code> 主要分為 <code>sessionStorage</code>、<code>LocalStroage</code> 主要是差在生命週期的不同</p>
-<h2 id="localStorage、sessionStorage"><a href="#localStorage、sessionStorage" class="headerlink" title="localStorage、sessionStorage"></a>localStorage、sessionStorage</h2><p>w3schools 上的解釋生命週期：</p>
-<ul>
-<li><p>window.localStorage - 不會有過期日，除非自行刪除</p>
-<blockquote>
-<p>stores data with no expiration date</p>
-</blockquote>
-</li>
-<li><p>window.sessionStorage - 每開一個分頁就有一個 <code>sessionStorage</code> 關閉後就消失了</p>
-<blockquote>
-<p>stores data for one session (data is lost when the browser tab is closed)</p>
-</blockquote>
-</li>
-</ul>
-<h2 id="查看-LocalStorage"><a href="#查看-LocalStorage" class="headerlink" title="查看 LocalStorage"></a>查看 LocalStorage</h2><p>以 chrome 來說，在開發者工具裡＝&gt; application =&gt; localstorage</p>
-<p><img src="https://i.imgur.com/8WT66NM.png" alt></p>
-<h2 id="localStorage-使用方法"><a href="#localStorage-使用方法" class="headerlink" title="localStorage 使用方法"></a>localStorage 使用方法</h2><h3 id="localStorage-存取方式"><a href="#localStorage-存取方式" class="headerlink" title="localStorage 存取方式"></a>localStorage 存取方式</h3><ul>
-<li><p>特別要注意的是 <code>LocalStroage</code> 資料「儲存」與「取用」的方式是以<code>String</code> 的方式進行儲存，所以通常都以 <strong>JSON</strong> 來處理 array、object 的存取</p>
-<ul>
-<li><code>JSON.stringify()</code>：將 JSON 格式字串化</li>
-<li><code>JSON.parse()</code>：將字串轉為 JSON 格式</li>
-</ul>
-</li>
-</ul>
-<h3 id="localStorage-setItem"><a href="#localStorage-setItem" class="headerlink" title="localStorage.setItem"></a>localStorage.setItem</h3><ul>
-<li>要存儲 <code>LocalStroage</code> 就用 <code>setItem</code>:</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">LocalStorage.setItem(<span class="string">"username"</span>, <span class="string">"Andy"</span>);</span><br></pre></td></tr></table></figure>
-
-<h3 id="localStorage-getItem"><a href="#localStorage-getItem" class="headerlink" title="localStorage.getItem"></a>localStorage.getItem</h3><ul>
-<li>要取出 <code>LocalStroage</code> 就用 <code>getItem</code>:</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.getItem(<span class="string">"username"</span>); <span class="comment">// Andy</span></span><br></pre></td></tr></table></figure>
-
-<h3 id="localStorage-removeItem"><a href="#localStorage-removeItem" class="headerlink" title="localStorage.removeItem"></a>localStorage.removeItem</h3><ul>
-<li>要刪除 <code>LocalStroage</code> 就用 <code>removeItem</code>:<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">localStorage.removeItem(<span class="string">"username"</span>);</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<h2 id="localStorage-實戰"><a href="#localStorage-實戰" class="headerlink" title="localStorage 實戰"></a>localStorage 實戰</h2><ul>
-<li>將 user 轉為字串後存進 localStorage 裡<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> user = [</span><br><span class="line">    &#123;</span><br><span class="line">     name:<span class="string">'Andy'</span>,</span><br><span class="line">     age:<span class="number">18</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">     name:<span class="string">'Jay'</span>,</span><br><span class="line">     age:<span class="number">30</span></span><br><span class="line">    &#125;,&#123;</span><br><span class="line">     name:<span class="string">'Bob'</span>,</span><br><span class="line">     age:<span class="number">55</span></span><br><span class="line">    &#125;</span><br><span class="line">];</span><br><span class="line"></span><br><span class="line">localStorage.setItem(<span class="string">'user'</span>,<span class="built_in">JSON</span>.stringify(user));</span><br></pre></td></tr></table></figure>
-
-</li>
-</ul>
-<p>這時可以透過使用者工具去看一下 user 資料是否正確</p>
-<p><img src="https://i.imgur.com/sOWSucX.png" alt></p>
-<ul>
-<li>從 <code>localStorage</code> 取出</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> userdata = <span class="built_in">JSON</span>.parse(localStorage.getItem(<span class="string">'user'</span>));</span><br><span class="line"></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'userdata[0].name:'</span>+userdata[<span class="number">0</span>].name+<span class="string">' age:'</span>+userdata[<span class="number">0</span>].age);</span><br><span class="line"></span><br><span class="line"><span class="comment">//console:</span></span><br><span class="line"><span class="comment">//userdata[0].name:Andy age:18</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="localStorage-ToDoList"><a href="#localStorage-ToDoList" class="headerlink" title="localStorage - ToDoList"></a>localStorage - ToDoList</h2><p>這邊有利用 localStorage 做的簡單 To Do List<br><a href="https://phxww.github.io/ToDoList/" target="_blank" rel="noopener">連結－To Do List</a></p>
-<p><img src="https://i.imgur.com/XFXwgd5.png" alt></p>
-<p>參考：<code>udemy</code>,<code>w3schools</code>,<code>MDN</code></p>
-<h6 id="tags-JavaScript-LocalStroage-JSON"><a href="#tags-JavaScript-LocalStroage-JSON" class="headerlink" title="tags: JavaScript LocalStroage JSON"></a>tags: <code>JavaScript</code> <code>LocalStroage</code> <code>JSON</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/JavaScript_let_const_ES6/">JavaScript | let &amp; const [ES6]</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="JavaScript-let-amp-const-ES6"><a href="#JavaScript-let-amp-const-ES6" class="headerlink" title="[JavaScript] - let &amp; const [ES6]"></a>[JavaScript] - let &amp; const [ES6]</h1><p>在了解 let &amp; const 我們先看看 var 的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'var-in-i='</span>+i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'var-out-i='</span>+i);</span><br><span class="line"></span><br><span class="line"><span class="comment">//OUTPUT:</span></span><br><span class="line"><span class="comment">//var-in-i=1</span></span><br><span class="line"><span class="comment">//var-in-i=1</span></span><br><span class="line"><span class="comment">//var-in-i=2</span></span><br><span class="line"><span class="comment">//var-out-i=3</span></span><br></pre></td></tr></table></figure>
-
-<p>因為 <code>var i</code> 是全域變數．所以<code>var-out-i</code> 可以印出值，但這樣容易造成程式之間變數的污染．</p>
-<h2 id="let"><a href="#let" class="headerlink" title="let"></a>let</h2><p>let 特性是屬於<strong>塊級作用域( block scoped )</strong>，塊級作用域就是限縮在 <code>{ }</code> 之內，我們用上方的例子更改一下</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'let-in-i='</span>+i);</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'let-out-i='</span>+i);</span><br><span class="line"></span><br><span class="line"><span class="comment">//OUTPUT:</span></span><br><span class="line"><span class="keyword">let</span>-<span class="keyword">in</span>-i=<span class="number">0</span></span><br><span class="line"><span class="keyword">let</span>-<span class="keyword">in</span>-i=<span class="number">1</span></span><br><span class="line"><span class="keyword">let</span>-<span class="keyword">in</span>-i=<span class="number">2</span></span><br><span class="line">Uncaught <span class="built_in">ReferenceError</span>: i is not defined</span><br></pre></td></tr></table></figure>
-
-<p>透過上方<code>let</code>的例子，可以看到 <code>let-out-i</code> 卻是<code>is not defined</code>，<code>let</code> 只在<code>{ }</code>有效．</p>
-<p>可以透過另一個例子再來看看：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">var</span> studentVar = <span class="string">'Bob'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(studentVar); <span class="comment">//Bob</span></span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">let</span> studentLet = <span class="string">'Bob'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(studentLet);<span class="comment">//studentLet is not defined</span></span><br></pre></td></tr></table></figure>
-
-<h2 id="const"><a href="#const" class="headerlink" title="const"></a>const</h2><p><code>const</code> 也是<strong>塊級作用域( block scoped )</strong>，但要注意的是只要一指定就不能再做更改，且不能<strong>重複宣告</strong>．且在哪一行宣告就要立即給予值．</p>
-<p>我們透過上放的特性，來看看以下幾個例子：</p>
-<p>不能重複宣告：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> student = <span class="string">'Tony'</span>;</span><br><span class="line">student = <span class="string">'Bob'</span>;</span><br><span class="line"><span class="comment">//Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-
-<p>塊級作用域：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line">    <span class="keyword">const</span> student = <span class="string">'Tony'</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="built_in">console</span>.log(student);</span><br><span class="line"><span class="comment">//Uncaught ReferenceError: student is not defined</span></span><br></pre></td></tr></table></figure>
-
-<p>立即給予值：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">if</span>(<span class="literal">true</span>)&#123;</span><br><span class="line"><span class="keyword">const</span> student ;</span><br><span class="line">&#125;</span><br><span class="line"><span class="comment">//Uncaught SyntaxError: Missing initializer in const declaration</span></span><br></pre></td></tr></table></figure>
-
-<p>但今天若是用在<code>object</code>與 <code>array</code> 上就不一樣了：</p>
-<ul>
-<li><code>object</code> : 只能修改屬性但不覆寫</li>
-<li><code>array</code> : 只能修改，但不能重新指定一個新的陣列</li>
-</ul>
-<p>我們來看看<code>object</code>與 <code>array</code>的例子</p>
-<p>object:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> andy = &#123;<span class="string">'money'</span>: <span class="number">100</span> &#125;;</span><br><span class="line"></span><br><span class="line">andy = &#123;<span class="string">'card'</span>: <span class="string">'ACard'</span>&#125;;<span class="comment">//Uncaught TypeError: Assignment to constant variable.</span></span><br><span class="line"></span><br><span class="line">andy.money = <span class="number">200</span>;</span><br><span class="line"><span class="built_in">console</span>.log(andy.money);<span class="comment">//200</span></span><br></pre></td></tr></table></figure>
-
-<p>array:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> student = [];</span><br><span class="line"></span><br><span class="line">student.push(<span class="string">'Bob'</span>); </span><br><span class="line"><span class="built_in">console</span>.log(student[<span class="number">0</span>]);<span class="comment">//bob</span></span><br><span class="line"></span><br><span class="line">student = [<span class="string">'Andy'</span>];<span class="comment">//Uncaught TypeError: Assignment to constant variable.</span></span><br></pre></td></tr></table></figure>
-
-<p>參考:<br><a href="https://pjchender.blogspot.com/2017/01/es6-let.html" target="_blank" rel="noopener">JavaScript ES6 中使用block-scoped 的 let 宣告變數</a><br><a href="https://developer.mozilla.org/zh-TW/docs/Web/JavaScript/Reference/Statements/let" target="_blank" rel="noopener">MDN-let</a></p>
-<h6 id="tags-JavaScript-ES6-let-const"><a href="#tags-JavaScript-ES6-let-const" class="headerlink" title="tags: JavaScript ES6 let const"></a>tags: <code>JavaScript</code> <code>ES6</code> <code>let</code> <code>const</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/JavaScript_Hoisting/">JavaScript | Hoisting</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="JavaScript-Hoisting"><a href="#JavaScript-Hoisting" class="headerlink" title="[JavaScript] - Hoisting"></a>[JavaScript] - Hoisting</h1><h2 id="undefined-與-not-defined"><a href="#undefined-與-not-defined" class="headerlink" title="undefined 與 not defined"></a>undefined 與 not defined</h2><p>在了解 <code>Hoisting</code> 之前，我們先稍微了解一下 <code>undefined</code>、<code>not defined</code> 的差別：</p>
-<ul>
-<li>undefined : 記憶體已有準備位置，但還未定義型態，或是沒有指定的屬性</li>
-<li>not defined : 還沒準備空間</li>
-</ul>
-<h2 id="Hoisting-實戰"><a href="#Hoisting-實戰" class="headerlink" title="Hoisting 實戰"></a>Hoisting 實戰</h2><p>我們直接印出還未宣告的 <code>a</code>: </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);<span class="comment">// ReferenceError: a is not defined</span></span><br></pre></td></tr></table></figure>
-
-<p>若我們宣告並印出來看看結果：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a;</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>根據上面的結果，我們在學習程式語言時，都知道程式「由上而下」的讀取，為何在執行第一行時錯誤訊息卻不是<code>not defined</code> ?</p>
-<p>這就是因為有 <strong><code>Hoisting</code></strong> 「提升」的緣故，其中第二行宣告了，但因為 <code>Hoisting</code> 的原因被「提升」到了最上面，</p>
-<p>竟然被提升了，那我們給值看看：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line"><span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line"><span class="comment">// undefined</span></span><br></pre></td></tr></table></figure>
-
-<p>結果還是 <code>undefined</code> ，這邊我就可以知道只有變數宣告會被「提升」，而賦值不會，到這邊理解上應該是長這樣：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="built_in">console</span>.log(a);</span><br><span class="line">a = <span class="number">10</span>;</span><br></pre></td></tr></table></figure>
-
-<p>那我們看看另一個例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a = <span class="number">50</span>;</span><br><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a:'</span>+a); <span class="comment">// a:50</span></span><br></pre></td></tr></table></figure>
-
-<p><code>a</code> 的結果卻是 <code>50</code> 而不是 <code>undefined</code>，根據之前的例子所了解的概念，我們應該這樣想像這個例子其實是下方的樣子，就可以了解為何不是<code>undefined</code>：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line">a = <span class="number">50</span> ;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">'a:'</span>+a); <span class="comment">// a:50</span></span><br></pre></td></tr></table></figure>
-
-<p>接著我們看看若有同名<code>function</code>的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">console</span>.log(a); <span class="comment">//ƒ a()&#123;&#125;</span></span><br><span class="line"><span class="keyword">var</span> a ;</span><br><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">a</span>(<span class="params"></span>)</span>&#123;&#125;</span><br></pre></td></tr></table></figure>
-
-<p>透過這個例子和之前的例子我們可以了解到：</p>
-<ul>
-<li>function 宣告與變數宣告都會提升</li>
-<li>但提升的優先權:function 宣告 &gt; 變數的宣告</li>
-<li>賦值不會提升</li>
-</ul>
-<p>參考：<a href="https://blog.techbridge.cc/2018/11/10/javascript-hoisting/" target="_blank" rel="noopener">我知道你懂 hoisting，可是你了解到多深？</a></p>
-<h6 id="tags-JavaScript-Hoisting"><a href="#tags-JavaScript-Hoisting" class="headerlink" title="tags: JavaScript Hoisting"></a>tags: <code>JavaScript</code> <code>Hoisting</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/JavaScript_event_bubbling_capture/">JavaScript | event bubbling &amp; capture</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="JavaScript-event-bubbling-amp-capture"><a href="#JavaScript-event-bubbling-amp-capture" class="headerlink" title="[JavaScript] - event bubbling &amp; capture"></a>[JavaScript] - event bubbling &amp; capture</h1><p>開始了解 <code>Bubbling</code>、<code>Capturing</code> 之前，一定要先玩完 <code>addEventListener</code>監聽事件，</p>
-<h2 id="addEventListener-使用方法"><a href="#addEventListener-使用方法" class="headerlink" title="addEventListener 使用方法"></a>addEventListener 使用方法</h2><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">addEventListener(<span class="string">'事件型態'</span>,<span class="string">'方法'</span>,[<span class="literal">true</span>/<span class="literal">false</span>])</span><br></pre></td></tr></table></figure>
-
-<ul>
-<li>事件型態：最常用的點擊事件’click’、…等</li>
-<li>方法：監聽到事件後，要觸發的 function()</li>
-<li>第三個參數分為 true/ false<ul>
-<li>true: 添加到 Capturing (捕獲)階段</li>
-<li>false:添加到 Bubbling (冒泡)階段</li>
-</ul>
-</li>
-</ul>
-<h2 id="Bubbling-冒泡事件實戰"><a href="#Bubbling-冒泡事件實戰" class="headerlink" title="Bubbling 冒泡事件實戰"></a>Bubbling 冒泡事件實戰</h2><p>首先我們先把三個 <code>div</code> 疊起來並將監聽 <code>addEventListener</code> 第三個參數設為 <code>false</code> 像底下範例圖:<br><img src="https://i.imgur.com/pZtanbj.png" alt></p>
-<p>html:</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;div class =&quot;blueBox&quot; style=&quot;width: 100px;height:100px; background-color: blue&quot;&gt;</span><br><span class="line">    &lt;div class =&quot;yellowBox&quot; style=&quot;width: 70px;height: 70px; background-color: yellow&quot;&gt;</span><br><span class="line">            &lt;div class =&quot;greenBox&quot; style=&quot;width: 50px;height: 50px; background-color: green&quot;&gt;</span><br><span class="line">            &lt;/div&gt;</span><br><span class="line">    &lt;/div&gt;</span><br><span class="line">&lt;/div&gt;</span><br></pre></td></tr></table></figure>
-
-<p>js:</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blueBox = <span class="built_in">document</span>.querySelector(<span class="string">'.blueBox'</span>);</span><br><span class="line"><span class="keyword">var</span> yellowBox = <span class="built_in">document</span>.querySelector(<span class="string">'.yellowBox'</span>);</span><br><span class="line"><span class="keyword">var</span> greenBox = <span class="built_in">document</span>.querySelector(<span class="string">'.greenBox'</span>);</span><br><span class="line">greenBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'green-Bubbling'</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line">yellowBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'yellow-Bubbling'</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line">blueBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'blue-Bubbling'</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
-<p>當點擊綠色時 console 會依序印出：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">green-Bubbling</span><br><span class="line">yellow-Bubbling</span><br><span class="line">blue-Bubbling</span><br></pre></td></tr></table></figure>
-
-<p>這就是所謂的 <strong>冒泡事件</strong>，一層一層的「由內而外」的<strong>冒泡</strong>出去，那接下來我們將 <code>false</code> 改成 <code>true</code> 看看<strong>捕捉</strong>事件並印出來</p>
-<h2 id="Capturing-捕捉事件實戰"><a href="#Capturing-捕捉事件實戰" class="headerlink" title="Capturing 捕捉事件實戰"></a>Capturing 捕捉事件實戰</h2><p>這邊程式碼與上方相同，只將第三個參數改成 <code>true</code> </p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> blueBox = <span class="built_in">document</span>.querySelector(<span class="string">'.blueBox'</span>);</span><br><span class="line"><span class="keyword">var</span> yellowBox = <span class="built_in">document</span>.querySelector(<span class="string">'.yellowBox'</span>);</span><br><span class="line"><span class="keyword">var</span> greenBox = <span class="built_in">document</span>.querySelector(<span class="string">'.greenBox'</span>);</span><br><span class="line">greenBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'green-Capturing'</span>);</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br><span class="line">yellowBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'yellow-Capturing'</span>);</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br><span class="line">blueBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'blue-Capturing'</span>);</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br></pre></td></tr></table></figure>
-
-<p>這次一樣點擊綠色的 <code>div</code> 並印出結果：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">blue-Capturing</span><br><span class="line">yellow-Capturing</span><br><span class="line">green-Capturing</span><br></pre></td></tr></table></figure>
-
-<p>捕捉事件是從「由外而內」一層一層的<strong>捕捉</strong></p>
-<p>但我們再用下方程式來看，將每個 <code>&lt;div&gt;</code> 都加上 <code>Bubbling</code>、<code>Capturing</code>：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br></pre></td><td class="code"><pre><span class="line">greenBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'greenBox!!!'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'green-Capturing '</span>);</span><br><span class="line">   </span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br><span class="line">greenBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'greenBox!!!'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'green-Bubbling'</span>);</span><br><span class="line">   </span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line">yellowBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'yellowBox!!!'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'yellow-Capturing '</span>);</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br><span class="line">yellowBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'yellowBox!!!'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'yellow-Bubbling'</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br><span class="line">blueBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'blueBox!!!'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'blue-Capturing '</span>);  </span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br><span class="line">blueBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    alert(<span class="string">'blueBox!!!'</span>);</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'blue-Bubbling'</span>);</span><br><span class="line">&#125;,<span class="literal">false</span>);</span><br></pre></td></tr></table></figure>
-
-<p>而 console 印出來的結果是：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">blue-Capturing </span><br><span class="line">yellow-Capturing </span><br><span class="line">green-Capturing </span><br><span class="line">green-Bubbling</span><br><span class="line">yellow-Bubbling</span><br><span class="line">blue-Bubbling</span><br></pre></td></tr></table></figure>
-
-<h2 id="取消事件傳遞"><a href="#取消事件傳遞" class="headerlink" title="取消事件傳遞"></a>取消事件傳遞</h2><p>根據上面印出的結果，我們可子看到了很多文章中提到的「<strong>先捕捉，再冒泡</strong>」</p>
-<p>但是若我們不想點擊一個物件後卻像漣漪一直將事件傳遞出去時，我們可以透過 <code>e.stopPropagation</code> 來<strong>取消事件傳遞</strong>，而將他加在哪，哪裡就會中斷事件傳遞．</p>
-<p>因「先捕捉，再冒泡」，我們將 <code>e.stopPropagation</code> 加在 <code>blue</code> 裡</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">.</span><br><span class="line">.</span><br><span class="line">blueBox.addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">e</span>)</span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="string">'blue-Capturing '</span>);  </span><br><span class="line">    e.stopPropagation();</span><br><span class="line">&#125;,<span class="literal">true</span>);</span><br><span class="line">.</span><br><span class="line">.</span><br></pre></td></tr></table></figure>
-
-<p>點擊綠色區塊並印出結果：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">blue-Capturing</span><br></pre></td></tr></table></figure>
-
-<p>從結果看到事件在藍色區塊的 <code>Capturing</code> 階段就被停止傳遞了，可以了解到加入 <code>e.stopPropagation();</code> 時會不會再將事件傳遞給下一個節點．</p>
-<p>參考：<a href="https://blog.techbridge.cc/2017/07/15/javascript-event-propagation/" target="_blank" rel="noopener">DOM 的事件傳遞機制：捕獲與冒泡</a></p>
-<h6 id="tags-JavaScript-Bubbling-Capturing"><a href="#tags-JavaScript-Bubbling-Capturing" class="headerlink" title="tags: JavaScript Bubbling Capturing"></a>tags: <code>JavaScript</code> <code>Bubbling</code> <code>Capturing</code></h6>
-                
-            </div>
-        </article>
-    
-        <article class="post-abstract">
-            <div class="post-title">
-                <h2><a class="post-title-link" href="/2019/09/06/JavaScript_Closure/">JavaScript | Closure</a></h2>
-            </div>
-            <div class="post-meta">
-                <span class="post-time">2019-09-06</span>
-                
-                <span class="post-category">
-                    
-                    <a class="category" href="/categories/程式/">程式</a>
-                    
-                </span>
-                
-            </div>
-            <div class="post-content">
-                
-                    <h1 id="JavaScript-Closure"><a href="#JavaScript-Closure" class="headerlink" title="[JavaScript] - Closure"></a>[JavaScript] - Closure</h1><p>先來看看 wiki 上對 Closure 的解釋：</p>
-<blockquote>
-<p>在電腦科學中，閉包（英語：Closure），又稱詞法閉包（Lexical Closure）或函式閉包（function closures），是參照了自由變數的函式。這個被參照的自由變數將和這個函式一同存在，即使已經離開了創造它的環境也不例外。所以，有另一種說法認為閉包是由函式和與其相關的參照環境組合而成的實體。閉包在執行時可以有多個實體，不同的參照環境和相同的函式組合可以產生不同的實體。</p>
-</blockquote>
-<p>直接來看個常見的例子：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> btn = <span class="built_in">document</span>.querySelectorAll(<span class="string">'button'</span>)</span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>畫面上有３個按鈕，我希望點擊第一個按鈕時能出現 0，第二個物件的時候 1，第三個出現2…以程式來看好像沒什麼問題，但依序點擊後，實際印出來卻是：</p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">3</span><br><span class="line">3</span><br><span class="line">3</span><br></pre></td></tr></table></figure>
-
-<p>但其實回頭再看一次程式，當我們依序點擊每個按鈕 btn[0]、btn[1]、btn[2] 時，按鈕監聽到<strong>點擊事件</strong>後要呼叫 function 時，<code>i</code> 最後已經是 3 ，所以點擊出來是3：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>, <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(i);</span><br><span class="line">  &#125;)</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>這時我們可以透過閉包的方式改寫一下：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getId</span>(<span class="params">id</span>)</span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="function"><span class="keyword">function</span>(<span class="params"></span>)</span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(id);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br><span class="line"></span><br><span class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>,getId(i));</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-
-<p>新增一個 getId 的 function ，讓每個 btn 都各自有 getId function ，當我點擊事件發生後，各自的 getId 會 return 裡面的 function ，而這個 function 的作用域只會在 getId 裡 不會被外層影響到</p>
-<p>而在 ES6 中有個 <strong>let</strong> ， let 是屬於<strong>塊級作用域</strong>( block scoped )，塊級作用域就是限縮在 <code>{ }</code>之中，以上面的例子，我們用 let 改寫：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">for</span>(<span class="keyword">let</span> i=<span class="number">0</span>; i&lt;=<span class="number">2</span>; i++) &#123;</span><br><span class="line">  btn[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">      console.log(i</span>)</span></span><br><span class="line"><span class="function">  &#125;);</span></span><br><span class="line"><span class="function">&#125;</span></span><br></pre></td></tr></table></figure>
-
-<p>透過 let 的特性，當迴圈每執行一次，就會產生一個新的作用域，就會像下方這樣：</p>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">0</span>;</span><br><span class="line">    btn[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">     console.log(i</span>)</span></span><br><span class="line"><span class="function">    &#125;);</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">let</span> i=<span class="number">1</span>;</span><br><span class="line">    btn[i].addEventListener(<span class="string">'click'</span>,<span class="function"><span class="keyword">function</span>(<span class="params">&#123;</span></span></span><br><span class="line"><span class="function"><span class="params">     console.log(i</span>)</span></span><br><span class="line"><span class="function">    &#125;);</span></span><br><span class="line"><span class="function">&#125;</span></span><br><span class="line"><span class="function">.</span></span><br><span class="line"><span class="function">.</span></span><br></pre></td></tr></table></figure>
-
-<p>因此就可以避免 i 這個變數，不會因為全域變數的關係不斷的被修改．</p>
-<p>參考:<br><a href="https://pjchender.blogspot.com/2017/05/javascript-closure.html" target="_blank" rel="noopener">深入淺出瞭解 JavaScript 閉包（closure）</a><br><a href="https://blog.techbridge.cc/2018/12/08/javascript-closure/" target="_blank" rel="noopener">所有的函式都是閉包：談 JS 中的作用域與 Closure
-</a></p>
-<h6 id="tags-JavaScript-Closure"><a href="#tags-JavaScript-Closure" class="headerlink" title="tags: JavaScript Closure"></a>tags: <code>JavaScript</code> <code>Closure</code></h6>
-                
-            </div>
-        </article>
-    
-</div>
-<div class="paginator">
-    
+    <main class="app-body">
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/Node.js_fashe_購物網站/">Node.js | fashe購物網站</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
         
+  <a href="/tags#Node.js" >
+    <span class="tag-code">Node.js</span>
+  </a>
+
+      
+      <div class="article-summary">
         
-        <a class="next" href="/page/2/">
-            Next
-            <i class="iconfont icon-next"></i>
-        </a>
+          [Node.js] - fashe 購物網站本篇主要介紹 fashe 購物網站 功能及架構，自學完 Node.js 後，找一個電商網站來模仿並加上自己設計，另外加上管理者後台控制功能．
+網站應用技術技術介紹：
+
+前端框架： Bootstrap
+前端程式語言：JavaScript、jQuery ...
         
-    
+      </div>
+      <a class="more" href="/2019/09/06/Node.js_fashe_購物網站/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/Vue_basic/">Vue | 基本概念</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#Vue" >
+    <span class="tag-code">Vue</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          Vue - 基本概念本篇主要紀錄學習 Vue 的基本觀念，將比較重要的學習點紀錄起來，可以搭配 Vue 官方的文件一起
+基本觀念：MVVM認識Vue 之前，要先知道 Vue 是屬於 MVVM 的架構，著重在於 MVVM （Model–view–viewmodel） 的 VM (ViewMod ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/Vue_basic/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/Node.js_FireBase/">Node.js | FireBase</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#Node.js" >
+    <span class="tag-code">Node.js</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          [Node.js] - FireBaseFireBase 簡介FireBase 是一套 Web 的應用程式開發平台，目前他可支援手機ＡＰＰ與 Web 許多服務，目前只用到「資料庫」、「認證」功能，其他到時候使用到再繼續補上．
+安裝 firebase 相關模組安裝 firebase1npm i ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/Node.js_FireBase/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/Heroku_deploy/">Heroku | 部署</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#Heroku" >
+    <span class="tag-code">Heroku</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          Heroku - 部署   自己寫的 side project 或是面試小作品還在想要放到哪裡嗎？不仿試試看 Heroku， Heroku 提供的服務是提供免費的空間放置您網站的好所在，還提供以下各程式語言使用：
+Node.js、Java、Ruby、PHP、Python、GO、Scala、C ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/Heroku_deploy/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/Database_Sequence/">Database | Sequence</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#Database" >
+    <span class="tag-code">Database</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          [Database] - SequenceSequence 實戰Sequence 就是「序列號」的意思
+
+使用時機： 通常需要「排序」或是希望拿取一個數字當作「唯一的值」去處理時，就可以使用到，
+
+使用方法：每次向 Sequence 拿取時，他會將當前數自動增加一個指定的值，並返回給你，通常 ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/Database_Sequence/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/JavaScript_LocalStroage_ToDoList/">JavaScript | LocalStroage - ToDoList</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#JavaScript" >
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          [JavaScript] - LocalStroage當你在逛「購物網站」點選「商品」後…、「旅遊住宿網站」點選「某間旅館」後，會發現下次進到網站後，怎麼會有上次瀏覽過的「商品」、「旅館」，其實就是存在 LocalStroage 裡．
+LocalStroage 想像就是一個瀏覽器的資料庫，W ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/JavaScript_LocalStroage_ToDoList/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/JavaScript_let_const_ES6/">JavaScript | let & const [ES6]</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#JavaScript" >
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          [JavaScript] - let &amp; const [ES6]在了解 let &amp; const 我們先看看 var 的例子：
+12345678910for(var i=0; i&lt;=2; i++) &#123;    console.log('var-in-i='+i); ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/JavaScript_let_const_ES6/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/JavaScript_Hoisting/">JavaScript | Hoisting</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#JavaScript" >
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          [JavaScript] - Hoistingundefined 與 not defined在了解 Hoisting 之前，我們先稍微了解一下 undefined、not defined 的差別：
+
+undefined : 記憶體已有準備位置，但還未定義型態，或是沒有指定的屬性
+not de ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/JavaScript_Hoisting/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/JavaScript_event_bubbling_capture/">JavaScript | event bubbling & capture</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#JavaScript" >
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          [JavaScript] - event bubbling &amp; capture開始了解 Bubbling、Capturing 之前，一定要先玩完 addEventListener監聽事件，
+addEventListener 使用方法1addEventListener('事件型態',' ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/JavaScript_event_bubbling_capture/">Read more</a>
+    </article>
+  
+    <article class="article-card">
+      <h2 class="article-head">
+        <a href="/2019/09/06/JavaScript_Closure/">JavaScript | Closure</a>
+      </h2>
+      <p class="article-date">September 6, 2019</p>
+      
+        
+  <a href="/tags#JavaScript" >
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+      
+      <div class="article-summary">
+        
+          [JavaScript] - Closure先來看看 wiki 上對 Closure 的解釋：
+
+在電腦科學中，閉包（英語：Closure），又稱詞法閉包（Lexical Closure）或函式閉包（function closures），是參照了自由變數的函式。這個被參照的自由變數將和這個函 ...
+        
+      </div>
+      <a class="more" href="/2019/09/06/JavaScript_Closure/">Read more</a>
+    </article>
+  
+
+  
+    <div class="guide-pager">
+  
+    <a class="unvisible" href="/"><span class="page-arrow">←</span> Prev</a>
+  
+  
+    <a href="/page/2/">Next<span class="page-arrow"> →</span></a>
+  
 </div>
+  
+</main>
 
-    </div>
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
 </div>
-<footer class="footer-social">
-    
-
-    
-
-    
-
-    <div class="footer-copyright">
-        <p class="time-line">
-            &copy;
-            
-            
-            2019
-            &nbsp;<i class="iconfont icon-heart"></i>&nbsp;
-            <a target="_blank" href="https://github.com/iJinxin">Phoenix</a>
-        </p>
-        <p class="theme-info">
-            Powered by <a target="_blank" href="https://hexo.io">Hexo</a>  |  Theme -
-            <a target="_blank" href="https://github.com/iJinxin/hexo-theme-sky">Sky</a>
-        </p>
-    </div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
 </footer>
-</body>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-<script src="/js/index.js"></script>
-<script async src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script>
-<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>
-<script>
-    
 
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
 </script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
 </html>

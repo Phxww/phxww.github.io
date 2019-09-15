@@ -10,7 +10,7 @@
   
   <title>
     
-      
+      About | 
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -132,103 +132,39 @@
   </div>
 </header>
 
-    <div id="article-banner">
-  <h2>Archives</h2>
-  <!-- <p class="post-date">文章归档</p> -->
-</div>
-<main class="app-body" id="archives">
-  
-  
-  
-    <section class="time-section">
-  <h1 class="section-year">
-    2019
-  </h1>
-  <div class="section-list">
-    
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/Node.js_fashe_購物網站/" class="archive-title">Node.js | fashe購物網站</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/Vue_basic/" class="archive-title">Vue | 基本概念</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/Node.js_FireBase/" class="archive-title">Node.js | FireBase</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/Heroku_deploy/" class="archive-title">Heroku | 部署</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/Database_Sequence/" class="archive-title">Database | Sequence</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/JavaScript_LocalStroage_ToDoList/" class="archive-title">JavaScript | LocalStroage - ToDoList</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/JavaScript_let_const_ES6/" class="archive-title">JavaScript | let &amp; const [ES6]</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/JavaScript_Hoisting/" class="archive-title">JavaScript | Hoisting</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/JavaScript_event_bubbling_capture/" class="archive-title">JavaScript | event bubbling &amp; capture</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/JavaScript_Closure/" class="archive-title">JavaScript | Closure</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/JavaScript_基礎概念/" class="archive-title">JavaScript | 基礎概念</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/hello_git/" class="archive-title">Hello git</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/CSS_幼幼班/" class="archive-title">CSS | 幼幼班</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
-      <div class="section-list-item">
-        <a href="/2019/09/06/hello_css/" class="archive-title">手刻 | 純ＣＳＳ＋ＲＷＤ 切版練習-The Plant Shop</a>
-        <p class="archive-date">09-06</p>
-      </div>
-    
+    <div id="about-banner" style="background-image: url(http://file.muyutech.com/about.jpg)"></div>
+<div class="author">
+  <div class="head">
+    <img src="https://avatars1.githubusercontent.com/u/12988403?s=460&v=4" />
   </div>
-</section>
+  <h3>Phoenix</h3>
   
-</main>
+    <p class="description">Stay Hungry Stay Foolish.</p>
+  
+  <section class="share-icons">
+    
+    
+    
+    
+    
+    
+  </section>
+</div>
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/categories/程式/page/2/index.html';
-    $('#article-banner').geopattern(url);
-    $('.header').removeClass('fixed-header');
+    $('.header').removeClass('fixed-header')
+    var windowH = $(window).height();
+    var author = $('.author')
+    var bodyH = author.offset().top + author[0].offsetHeight + 71;
+    if (bodyH < windowH) {
+      author.css({
+        'margin-bottom': windowH - bodyH
+      })
+    }
   })();
 </script>
+
     <div class="scroll-top">
   <span class="arrow-icon"></span>
 </div>
