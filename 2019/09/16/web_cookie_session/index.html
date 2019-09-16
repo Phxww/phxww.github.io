@@ -10,7 +10,7 @@
   
   <title>
     
-      Node.js | fashe購物網站 | 
+      Web | Cookie &amp; Session | 
     
   </title>
   <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
@@ -133,8 +133,8 @@
 </header>
 
     <div id="article-banner">
-  <h2>Node.js | fashe購物網站</h2>
-  <p class="post-date">2019-09-06</p>
+  <h2>Web | Cookie & Session</h2>
+  <p class="post-date">2019-09-16</p>
   <div class="arrow-down">
     <a href="javascript:;"></a>
   </div>
@@ -142,71 +142,68 @@
 <main class="app-body flex-box">
   <!-- Article START -->
   <article class="post-article">
-    <section class="markdown-content"><h1 id="Node-js-fashe-購物網站"><a href="#Node-js-fashe-購物網站" class="headerlink" title="[Node.js] - fashe 購物網站"></a>[Node.js] - fashe 購物網站</h1><p>本篇主要介紹 <strong>fashe 購物網站</strong> 功能及架構，自學完 Node.js 後，找一個電商網站來模仿並加上自己設計，另外加上管理者後台控制功能．</p>
-<h2 id="網站應用技術"><a href="#網站應用技術" class="headerlink" title="網站應用技術"></a>網站應用技術</h2><p>技術介紹：</p>
+    <section class="markdown-content"><h1 id="Web-Cookie-amp-Session"><a href="#Web-Cookie-amp-Session" class="headerlink" title="[ Web ] Cookie &amp; Session"></a>[ Web ] Cookie &amp; Session</h1><p>通常在學習網頁初期時，<code>Cookie</code> 和 <code>Session</code> 是必學的觀念之一，而自己一直沒有把這兩個觀念用文字的方式紀錄下來，今天稍微整理一下，且釐清自己有搞混的地方．</p>
+<h2 id="無狀態服務-stateless-service"><a href="#無狀態服務-stateless-service" class="headerlink" title="無狀態服務 (stateless service)"></a>無狀態服務 (stateless service)</h2><p>在了解 <code>Cookie</code> 和 <code>Session</code> 之前，要先知道 <code>HTTP協議</code> 本身是 <code>無狀態服務 (stateless service)</code> 的，而 <code>無狀態服務</code> 簡單的說就是每次的請求都與之前的請求沒有任何關係的獨立一次性請求．</p>
+<p>而就是因為 <code>無狀態</code> 的這個特性，其實在以前登入信箱、Blog、購物網站..等需登入的網站時，每次都需要重新輸入帳號與密碼，而為了讓使用者能快速進入網站開始使用網站功能， <code>cookie</code> 就在這樣的情況下誕生了．</p>
+<h2 id="Cookie"><a href="#Cookie" class="headerlink" title="Cookie"></a>Cookie</h2><p>以購物車概念為例，當我們進入購物網站依序購買”帽子、衣服”時，實際情況是：</p>
+<p>1.購買<strong>帽子</strong>：點選購買<strong>帽子</strong>後，伺服器傳送 cookie（含有帽子的資訊）</p>
+<p>2.購買<strong>衣服</strong>：進到<strong>衣服</strong>頁面（瀏覽器傳送 cookie 給伺服器，伺服器就知道剛已購買<strong>帽子</strong>），接著點選購買<strong>衣服</strong>，伺服器傳送 cookie（將<strong>帽子</strong>資訊加上<strong>衣服</strong>的資訊）</p>
+<p>3.<strong>結帳</strong>：進入結帳頁面（將 cookie 傳送給伺服器），伺服器解讀完就知道該用戶到底買了哪些東西了．</p>
+<p>而透過上面的例子可以看到 <code>cookie</code> 就像一張會點菜明細一樣，而每加點一道菜，就會紀錄在明細裡，到了最後結帳的時後，將這張明細給店家，店家就知道你買了哪些東西．</p>
+<p><code>cookie</code> 儲存於用戶端中，主要分別存在<strong>記憶體</strong>與<strong>硬碟</strong>中：</p>
 <ul>
-<li>前端框架： <code>Bootstrap</code></li>
-<li>前端程式語言：<code>JavaScript</code>、<code>jQuery</code></li>
-<li>後端框架： <code>Node.js</code></li>
-<li>資料庫：<code>PostgreSQL</code></li>
-<li>雲端伺服器:<code>Heroku</code></li>
+<li>記憶體 - 瀏覽器關閉及消失</li>
+<li>硬碟 - 除非手動刪除或已到過期時間，不然不會消失</li>
 </ul>
-<h2 id="網站功能簡介"><a href="#網站功能簡介" class="headerlink" title="網站功能簡介"></a>網站功能簡介</h2><p>網站功能主要切分兩類 <strong>使用者</strong>、<strong>管理者</strong></p>
+<h3 id="Cookie-特性"><a href="#Cookie-特性" class="headerlink" title="Cookie 特性"></a>Cookie 特性</h3><ul>
+<li>儲存大小限制約 4kb</li>
+<li>儲存於用戶端中</li>
+<li>安全性低，明文傳遞</li>
+<li>只對原本的 domain 起作用</li>
+</ul>
+<h3 id="Cookie-操作"><a href="#Cookie-操作" class="headerlink" title="Cookie 操作"></a>Cookie 操作</h3><ul>
+<li><p>檢查 -&gt; Application -&gt; Cookies<br><img src="https://i.imgur.com/2YvMh6X.png" alt></p>
+</li>
+<li><p>新增一筆資料到 cookie：<br><code>document.cookie = &quot;temp-name=bob&quot;</code><br><img src="https://i.imgur.com/3Z7Yzl1.png" alt></p>
+</li>
+<li><p>GMT 時間格式：<br><code>new Date().toGMTString()</code></p>
+</li>
+</ul>
+<p><img src="https://i.imgur.com/nBukjJT.png" alt></p>
 <ul>
-<li>使用者：<ul>
-<li>註冊、登入、修改個人資料</li>
-<li>選購商品、刪除訂單商品、送出訂單、查看已送出訂單</li>
-</ul>
+<li><p>設定 30 秒內自動刪除 cookie：<br><code>document.cookie = &quot;temp-name=bob ; max-age=10; path=/&quot;</code></p>
 </li>
-<li>管理者：<ul>
-<li>商品：對商品可以新增、刪除、修改、查詢</li>
-<li>後台只能有管理者能進入</li>
-</ul>
+<li><p>指定cookie 過期時間：<br><code>document.cookie = &quot;temp-name=bob ; expires=Wed, 31 Jul 2019 12:14:30 GMT; path=/&quot;</code></p>
 </li>
 </ul>
-<h2 id="網站前端介紹："><a href="#網站前端介紹：" class="headerlink" title="網站前端介紹："></a>網站前端介紹：</h2><p>主要分為４個部分：首頁、商品選購頁面、關於頁面、聯繫頁面</p>
-<ul>
-<li><p>首頁：<br><img src="https://i.imgur.com/U3ygTFt.png" alt></p>
-</li>
-<li><p>關於頁面：<br><img src="https://i.imgur.com/Dh8nBv2.png" alt></p>
-</li>
-<li><p>聯繫頁面：<br><img src="https://i.imgur.com/DNealpn.png" alt></p>
-</li>
+<h2 id="Session"><a href="#Session" class="headerlink" title="Session"></a>Session</h2><p><code>cookie</code> 存在於使用者端且又可以被修改，安全性這麼不高的情況下，就產生了 <code>Session</code>．</p>
+<p>而<code>Session</code>是存在於伺服器中．通常用於使用者登入後，伺服器將所有該用戶要使用的資料存入 <code>cookie</code> 回傳給用戶端後，並建立一個對應的 <code>Session ID</code>，</p>
+<p>那竟然這個 <code>Session ID</code> 建立在伺服器端，這樣你應該猜到到底怎麼運作了，當用戶端要建立一個 <code>Session ID</code> 時，伺服器收到著個請求時，會去檢查這個請求有沒有包含這個 <code>Session ID</code> ，若有檢查到代表已經建立過了，伺服器就會將這個 <code>Session ID</code> 所需要的資訊回傳回去．但若沒有則建立一個新的對應的<code>Session ID</code>，並回傳給用戶端保存．</p>
+<p><code>Session</code> 就可以想像是一張會員卡，裡面記載了所有這個會員的資訊，給店家看了之後，店家就可以特過這張會員卡，查詢這個會員的所有交易紀錄等個人資訊．</p>
+<h3 id="Session-特性"><a href="#Session-特性" class="headerlink" title="Session 特性"></a>Session 特性</h3><ul>
+<li>儲存於伺服器端</li>
 </ul>
-<p>「商品頁面」放在下分跟商品流程一起說明，下面分兩部份解說「使用者註冊和登入」、「商品選購」</p>
-<h3 id="使用者註冊和登入"><a href="#使用者註冊和登入" class="headerlink" title="使用者註冊和登入"></a>使用者註冊和登入</h3><p>點選右上方註冊即可進入到 「註冊頁面」<br><img src="https://i.imgur.com/9zo4qV7.png" alt></p>
-<p>註冊成功後網頁會自動導入到 「登入頁面」，而登入後就自動導回首頁<br><img src="https://i.imgur.com/QXsztFL.png" alt></p>
-<p>若 email 有重複被註冊，系統也會判定後倒回登入頁面<br><img src="https://i.imgur.com/nC5LcEq.png" alt></p>
-<p>也可以點選右上方人頭「修改個人資料」：</p>
-<p><img src="https://i.imgur.com/PFK7uts.png" alt></p>
-<h3 id="商品選購："><a href="#商品選購：" class="headerlink" title="商品選購："></a>商品選購：</h3><p>商品頁面：<br><img src="https://i.imgur.com/plJqub0.png" alt></p>
-<p>商品頁面每頁呈現最多六筆商品，透過分頁管理來呈現<br>使用者可點選任意商品後，進入商品更詳細的頁面，並且可以點選右方的 <code>size</code> 和 <code>數量</code> ，選購完後點選 <code>ADD CART</code> 即可加入購物車</p>
-<p><img src="https://i.imgur.com/L5c0sdr.png" alt></p>
-<p>出現已加入購物車後，右上角購物車就會加入剛剛選購的商品<br><img src="https://i.imgur.com/dn0oB9n.png" alt><br><img src="https://i.imgur.com/z9ihWxa.png=500x500" alt></p>
-<p>點擊 「view cart」按鈕就可看到目前購物車內有什麼商品，若買錯也可點擊「垃圾桶」刪除商品，下方訂購者資訊只要登入，系統會自動帶上使用者資訊，點擊按鈕後進到第二階段：</p>
-<p><img src="https://i.imgur.com/0qhzeEE.png" alt></p>
-<p>進到第二階段後，主要是讓使用者再次「確認訂單」無誤後即可送出訂單，此夜不能再作修改，若要修改要再回到上一頁做修正<br><img src="https://i.imgur.com/BaCrUca.png" alt></p>
-<p>送出訂單後，會到第三階段「訂單完成」頁面，主要是讓使用者看看這次的訂單，但是已經送出了，若有誤要盡快聯繫賣家<br><img src="https://i.imgur.com/YThBUwl.png" alt></p>
-<h3 id="訂單查詢："><a href="#訂單查詢：" class="headerlink" title="訂單查詢："></a>訂單查詢：</h3><p>若使用者要查詢目前已送出過得訂單，可點選右上角 「order」按鈕，查看已出的訂單，會顯示每筆訂單的「總金額」、「訂單時間」、「訂單詳細」<br><img src="https://i.imgur.com/PXYQRzT.png" alt></p>
-<h2 id="網站後台介紹："><a href="#網站後台介紹：" class="headerlink" title="網站後台介紹："></a>網站後台介紹：</h2><p>要登入後台介面管理者必須先從前端用「管理者帳號」登入，若透過網址隨意進入，皆會倒回登入頁面要求使用管理者帳號登入</p>
-<p><img src="https://i.imgur.com/XWg6bmt.png" alt></p>
-<p>若不是用「管理者」登入，會重新倒回登入頁面，請求重新登入<br><img src="https://i.imgur.com/wc7DgSf.png" alt></p>
-<h3 id="商品管理頁面："><a href="#商品管理頁面：" class="headerlink" title="商品管理頁面："></a>商品管理頁面：</h3><p>商品管理頁面，每頁最多呈現五筆，管理者可以對商品進行「刪除」與「修改」</p>
-<p>查詢頁面：</p>
-<p><img src="https://i.imgur.com/r78w7xF.png" alt></p>
-<p>商品修改頁面：</p>
-<p><img src="https://i.imgur.com/o6c5zKz.png" alt></p>
-<p>商品新增</p>
-<p><img src="https://i.imgur.com/tYAGp9i.png" alt></p>
-<h2 id="fashe-網站-Demo："><a href="#fashe-網站-Demo：" class="headerlink" title="fashe 網站 Demo："></a>fashe 網站 Demo：</h2><p><a href="https://fasheshop.herokuapp.com" target="_blank" rel="noopener">fashe 網站連結</a></p>
-<h6 id="tags-Node-js"><a href="#tags-Node-js" class="headerlink" title="tags: Node.js"></a>tags: <code>Node.js</code></h6></section>
+<p>參考：<br><a href="https://ithelp.ithome.com.tw/articles/10203123" target="_blank" rel="noopener">Day19 要來塊餅乾嗎? Cookie &amp; Sessio</a><br><a href="https://progressbar.tw/posts/91" target="_blank" rel="noopener"> Cookie 是文檔還是餅乾？簡述HTTP網頁紀錄會員資訊的一大功臣</a><br><a href="https://zh.wikipedia.org/wiki/Cookie" target="_blank" rel="noopener">wiki - cookie</a><br><a href="https://medium.com/tsungs-blog/day14-session%E8%88%87cookie%E5%B7%AE%E5%88%A5-eb7b4035a382" target="_blank" rel="noopener">Day14-Session與Cookie差別</a><br><a href="https://blog.hellojcc.tw/2016/01/12/introduce-session-and-cookie/?source=post_page-----eb7b4035a382----------------------" target="_blank" rel="noopener">介紹 Session 及 Cookie 兩者的差別說明</a></p>
+<h6 id="tags-web"><a href="#tags-web" class="headerlink" title="tags: web"></a>tags: <code>web</code></h6></section>
     <!-- Tags START -->
     
       <div class="tags">
         <span>Tags:</span>
         
-  <a href="/tags#Node.js" >
-    <span class="tag-code">Node.js</span>
+  <a href="/tags#JavaScript" >
+    <span class="tag-code">JavaScript</span>
+  </a>
+
+  <a href="/tags#Web" >
+    <span class="tag-code">Web</span>
+  </a>
+
+  <a href="/tags#Cookie" >
+    <span class="tag-code">Cookie</span>
+  </a>
+
+  <a href="/tags#Session" >
+    <span class="tag-code">Session</span>
   </a>
 
       </div>
@@ -217,20 +214,13 @@
   <div class="nav-container">
     <!-- reverse left and right to put prev and next in a more logic postition -->
     
-      <a class="nav-left" href="/2019/09/06/Vue_basic/">
+      <a class="nav-left" href="/2019/09/06/Node.js_fashe_購物網站/">
         <span class="nav-arrow">← </span>
         
-          Vue | 基本概念
+          Node.js | fashe購物網站
         
       </a>
     
-    
-      <a class="nav-right" href="/2019/09/16/web_cookie_session/">
-        
-          Web | Cookie &amp; Session
-        
-        <span class="nav-arrow"> →</span>
-      </a>
     
   </div>
 
@@ -276,7 +266,7 @@
   <div class="toc-main">
     <strong class="toc-title">Catalog</strong>
     
-      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Node-js-fashe-購物網站"><span class="toc-nav-text">[Node.js] - fashe 購物網站</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#網站應用技術"><span class="toc-nav-text">網站應用技術</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#網站功能簡介"><span class="toc-nav-text">網站功能簡介</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#網站前端介紹："><span class="toc-nav-text">網站前端介紹：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#使用者註冊和登入"><span class="toc-nav-text">使用者註冊和登入</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#商品選購："><span class="toc-nav-text">商品選購：</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#訂單查詢："><span class="toc-nav-text">訂單查詢：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#網站後台介紹："><span class="toc-nav-text">網站後台介紹：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#商品管理頁面："><span class="toc-nav-text">商品管理頁面：</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#fashe-網站-Demo："><span class="toc-nav-text">fashe 網站 Demo：</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#tags-Node-js"><span class="toc-nav-text">tags: Node.js</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Web-Cookie-amp-Session"><span class="toc-nav-text">[ Web ] Cookie &amp; Session</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#無狀態服務-stateless-service"><span class="toc-nav-text">無狀態服務 (stateless service)</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Cookie"><span class="toc-nav-text">Cookie</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Cookie-特性"><span class="toc-nav-text">Cookie 特性</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Cookie-操作"><span class="toc-nav-text">Cookie 操作</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#Session"><span class="toc-nav-text">Session</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#Session-特性"><span class="toc-nav-text">Session 特性</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#tags-web"><span class="toc-nav-text">tags: web</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
     
   </div>
 </aside>
@@ -286,7 +276,7 @@
 
 <script>
   (function () {
-    var url = 'http://yoursite.com/2019/09/06/Node.js_fashe_購物網站/';
+    var url = 'http://yoursite.com/2019/09/16/web_cookie_session/';
     var banner = ''
     if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
       $('#article-banner').css({
@@ -348,7 +338,7 @@
     var gitmentConfig = "yanm1ng";
     if (gitmentConfig !== 'undefined') {
       var gitment = new Gitment({
-        id: "Node.js | fashe購物網站",
+        id: "Web | Cookie & Session",
         owner: "yanm1ng",
         repo: "yanm1ng.github.io",
         oauth: {
