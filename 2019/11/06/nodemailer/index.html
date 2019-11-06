@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+  <head><meta name="generator" content="Hexo 3.9.0">
+  <meta http-equiv="content-type" content="text/html; charset=utf-8">
+  <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+  <meta name="description" content="Phoenix&#39;s blog">
+  <meta name="keyword" content="hexo-theme, vuejs">
+  
+    <link rel="shortcut icon" href="/css/images/logo.png">
+  
+  <title>
+    
+      Node.js | Nodemailer | 
+    
+  </title>
+  <link href="//cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.css" rel="stylesheet">
+  <link href="//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/styles/tomorrow.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="/css/style.css">
+  
+  <link rel="stylesheet" href="/css/plugins/gitment.css">
+  
+  <script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/geopattern/1.2.3/js/geopattern.min.js"></script>
+  <script src="//cdnjs.cloudflare.com/ajax/libs/nprogress/0.2.0/nprogress.min.js"></script>
+  
+    <script src="/js/qrious.js"></script>
+  
+  
+    <script src="/js/gitment.js"></script>
+  
+  
+  
+    <!-- MathJax support START -->
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Config({
+        tex2jax: {
+          inlineMath: [ ['$','$'], ["\\(","\\)"]  ],
+          processEscapes: true,
+          skipTags: ['script', 'noscript', 'style', 'textarea', 'pre', 'code']
+        }
+      });
+    </script>
+
+    <script type="text/x-mathjax-config">
+      MathJax.Hub.Queue(function() {
+        var all = MathJax.Hub.getAllJax(), i;
+        for (i=0; i < all.length; i += 1) {
+          all[i].SourceElement().parentNode.className += ' has-jax';
+        }
+      });
+    </script>
+    <script type="text/javascript" src="//cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <!-- MathJax support END -->
+  
+
+
+</head>
+<div class="wechat-share">
+  <img src="/css/images/logo.png">
+</div>
+
+  <body>
+    <header class="header fixed-header">
+  <div class="header-container">
+    <a class="home-link" href="/">
+      <!-- <div class="logo">Phoenix's Blog</div> -->
+      <div>Phoenix's Blog</div>
+      <span></span>
+    </a>
+    <ul class="right-list">
+      
+        <li class="list-item">
+          
+            <a href="/" class="item-link">Home</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/tags/" class="item-link">Tags</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/archives/" class="item-link">Archives</a>
+          
+        </li>
+      
+        <li class="list-item">
+          
+            <a href="/about/" class="item-link">About</a>
+          
+        </li>
+      
+    </ul>
+    <div class="menu">
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+      <span class="icon-bar"></span>
+    </div>
+    <div class="menu-mask">
+      <ul class="menu-list">
+        
+          <li class="menu-item">
+            
+              <a href="/" class="menu-link">Home</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/tags/" class="menu-link">Tags</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/archives/" class="menu-link">Archives</a>
+            
+          </li>
+        
+          <li class="menu-item">
+            
+              <a href="/about/" class="menu-link">About</a>
+            
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+</header>
+
+    <div id="article-banner">
+  <h2>Node.js | Nodemailer</h2>
+  <p class="post-date">2019-11-06</p>
+  <div class="arrow-down">
+    <a href="javascript:;"></a>
+  </div>
+</div>
+<main class="app-body flex-box">
+  <!-- Article START -->
+  <article class="post-article">
+    <section class="markdown-content"><h1 id="Node-js-透過-Nodemailer-寄送-Email"><a href="#Node-js-透過-Nodemailer-寄送-Email" class="headerlink" title="Node.js - 透過 Nodemailer 寄送 Email"></a>Node.js - 透過 Nodemailer 寄送 Email</h1><p>試著實作一個簡單類似 gmail 信箱寄信的相關功能，且可以讓使用者利用類似 word 的輸入介面來寄信</p>
+<h2 id="實作目標"><a href="#實作目標" class="headerlink" title="實作目標"></a>實作目標</h2><ul>
+<li>信件可含 HTML 內文</li>
+<li>信件可以附加圖片</li>
+<li>信件可夾帶檔案</li>
+</ul>
+<h2 id="安裝與設定"><a href="#安裝與設定" class="headerlink" title="安裝與設定"></a>安裝與設定</h2><p>安裝：</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">npm install --save nodemailer</span><br></pre></td></tr></table></figure>
+
+<p>載入模組設定：mailManager.js</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> nodemailer = <span class="built_in">require</span>(<span class="string">"nodemailer"</span>);</span><br></pre></td></tr></table></figure>
+
+<h2 id="實作"><a href="#實作" class="headerlink" title="實作"></a>實作</h2><h3 id="開啟信箱存取權限"><a href="#開啟信箱存取權限" class="headerlink" title="開啟信箱存取權限"></a>開啟信箱存取權限</h3><p>開始實做之前，先將 mail 設定的 <code>低安全性應用程式存取權限</code> 打開，這邊以 gmail 為例，先登入自己帳號後，可透過以下連結直接開始做設定，如下圖原先是<code>已關閉</code> 將他打開變成 <code>已開啟</code></p>
+<p><a href="https://myaccount.google.com/lesssecureapps?pli=1" target="_blank" rel="noopener">低安全性應用程式存取權限連結</a></p>
+<p><img src="https://i.imgur.com/84vF3jU.png" alt></p>
+<h3 id="發信服務的相關設定"><a href="#發信服務的相關設定" class="headerlink" title="發信服務的相關設定"></a>發信服務的相關設定</h3><p>透過 <code>createTransport</code> 物件設定發信的服務的對象與帳號密碼，這邊以 Gmail 為例，若不是 gmail 也可以透過<code>host</code>、<code>port</code> 設定去修改 ，最後將相關設定存放於<code>.env</code>裡</p>
+<p>mailManager.js：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">let</span> transporter = nodemailer.createTransport(&#123;</span><br><span class="line">    host: process.env.MAIL_HOST ,</span><br><span class="line">    auth: &#123;</span><br><span class="line">      user: process.env.MAIL_USER,</span><br><span class="line">      pass: process.env.MAIL_PASSWORD</span><br><span class="line">    &#125;</span><br><span class="line">  &#125;);</span><br></pre></td></tr></table></figure>
+
+<p>.env:</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">MAIL_USER = abc@gmail.com</span><br><span class="line">MAIL_PASSWORD = <span class="number">123456789</span></span><br><span class="line">MAIL_HOST = smtp.gmail.com</span><br></pre></td></tr></table></figure>
+
+<h3 id="傳送-HTML-內文並寄信"><a href="#傳送-HTML-內文並寄信" class="headerlink" title="傳送 HTML 內文並寄信"></a>傳送 HTML 內文並寄信</h3><p>透過 <code>html</code> 參數寫入 html 格式內文，透過 <code>sendMail</code> 方法寄出信件</p>
+<p>mailManager.js：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"> mailOption = &#123;</span><br><span class="line">          <span class="keyword">from</span>: process.env.MAIL_USER, <span class="comment">//寄件者</span></span><br><span class="line">          to: <span class="string">'Andy &lt;andy@gmail.com&gt;'</span>, <span class="comment">//收件者</span></span><br><span class="line">          subject: <span class="string">'Hey~'</span>, <span class="comment">// 主旨</span></span><br><span class="line">          html:<span class="string">'&lt;b&gt;Test mail &lt;/b&gt;'</span>, <span class="comment">// html 內文</span></span><br><span class="line">          attachments: []<span class="comment">// 夾帶檔案，後面說明</span></span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">transporter.sendMail(mailOption,<span class="function"><span class="keyword">function</span>(<span class="params">error, info</span>) </span>&#123;<span class="comment">//寄信方法</span></span><br><span class="line">          <span class="keyword">if</span> (error) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">console</span>.log(error);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="string">"訊息已發送: "</span> + info.response);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+<h3 id="信件可夾帶檔案"><a href="#信件可夾帶檔案" class="headerlink" title="信件可夾帶檔案"></a>信件可夾帶檔案</h3><p>透過 <code>attachments</code> 參數設定夾帶的檔案</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">mailOption = &#123;</span><br><span class="line">          <span class="keyword">from</span>: process.env.MAIL_USER, <span class="comment">//寄件者</span></span><br><span class="line">          to: <span class="string">'Andy &lt;andy@gmail.com&gt;'</span>, <span class="comment">//收件者</span></span><br><span class="line">          subject: <span class="string">'Hey~'</span>, <span class="comment">// 主旨</span></span><br><span class="line">          html:<span class="string">'&lt;b&gt;Test mail &lt;/b&gt;'</span>, <span class="comment">// html 內文</span></span><br><span class="line">          attachments: [  &#123;</span><br><span class="line">              filename: <span class="string">'abc.jpg'</span>,</span><br><span class="line">              path: <span class="string">'/aa/xx/abc.jpg'</span></span><br><span class="line">          &#125;,&#123;</span><br><span class="line">              filename: <span class="string">'def.jpg'</span>,</span><br><span class="line">              path: <span class="string">'/aa/xx/def.jpg'</span></span><br><span class="line">          &#125;...]</span><br><span class="line">    &#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="加入線上編輯器-summernote"><a href="#加入線上編輯器-summernote" class="headerlink" title="加入線上編輯器 - summernote"></a>加入線上編輯器 - summernote</h3><p>基本上上面已經達到寄信功能，但希望讓使用者上能透過線上編輯器直接讓使用者在上方修改自己喜歡的樣式，類似 word 來編輯背後幫你轉成 html 格式與樣式，所以這邊就透過 <code>summernote</code> 來完成線上編輯的功能</p>
+<p><a href="https://summernote.org/" target="_blank" rel="noopener">summernote 連結</a></p>
+<p><img src="https://i.imgur.com/e5Bpj2M.png" alt></p>
+<h4 id="設定與實作"><a href="#設定與實作" class="headerlink" title="設定與實作"></a>設定與實作</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;link href=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.css"</span> rel=<span class="string">"stylesheet"</span>&gt;</span><br><span class="line">&lt;script src=<span class="string">"https://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.12/summernote-bs4.js"</span>&gt;</span><br><span class="line"></span><br><span class="line">&lt;script&gt;</span><br><span class="line">$(<span class="string">'#summernote'</span>).summernote();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>html:</p>
+<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;textarea id=&quot;summernote&quot; name=&quot;editordata&quot;&gt;&lt;/textarea&gt;</span><br></pre></td></tr></table></figure>
+
+<p>點選右上角的 <code>summernote</code> 裡的<code>&lt;/&gt;</code>(<code>code view</code>) 就可即時看到目前使用者所輸入轉換成 html 和 css 的內容，就可以將使用者輸入的內容傳送到 <code>Nodemailer</code> 的 html 裡</p>
+<p><img src="https://i.imgur.com/bk11WJS.png" alt></p>
+<p><img src="https://i.imgur.com/SSgKqnY.png" alt></p>
+<h3 id="html-內文夾帶圖片"><a href="#html-內文夾帶圖片" class="headerlink" title="html 內文夾帶圖片"></a>html 內文夾帶圖片</h3><p>直接利用<code>summernote</code> 裡的<code>picture</code> 插入圖片後並寄信試試看， mail 收到後卻沒有圖片？ </p>
+<p><img src="https://i.imgur.com/dho7TbU.png" alt></p>
+<p><img src="https://i.imgur.com/LL9zKRz.png" alt></p>
+<p>mail:<br><img src="https://i.imgur.com/g58D11j.png" alt></p>
+<p>利用<code>nodemailer-plugin-inline-base64</code> 套件解決這個問題，該套件可以將 base64 編碼圖像轉換成 mail 附件的形式(CID-referenced)，但不讓圖片出現在附件裡．</p>
+<p>連結：<a href="https://www.npmjs.com/package/nodemailer-plugin-inline-base64" target="_blank" rel="noopener">nodemailer-plugin-inline-base64</a></p>
+<p>以 cid 方式設定為例如下：</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">var</span> mailOpt = &#123;</span><br><span class="line">    <span class="keyword">from</span>: <span class="string">'XXX@gmail.com'</span>,</span><br><span class="line">    to: <span class="string">'XXX@gmail.com'</span>, </span><br><span class="line">    ....</span><br><span class="line">    </span><br><span class="line">    html: <span class="string">'&lt;b&gt;Hello world&lt;/b&gt;,img11:&lt;img src="cid:test_cid"&gt;&lt;br/&gt;img22:&lt;img src="cid:test_cid2"&gt;'</span>, <span class="comment">// html body</span></span><br><span class="line">    attachments : [&#123;</span><br><span class="line">      filename: <span class="string">'p1.png'</span>,</span><br><span class="line">      path: <span class="string">'./p1.png'</span>,</span><br><span class="line">      cid: <span class="string">'test_cid'</span> </span><br><span class="line">    &#125;,&#123;</span><br><span class="line">      filename: <span class="string">'v1.png'</span>,</span><br><span class="line">      path: <span class="string">'./v1.png'</span>,</span><br><span class="line">      cid: <span class="string">'test_cid2'</span> </span><br><span class="line">    &#125;],</span><br></pre></td></tr></table></figure>
+
+<h4 id="安裝"><a href="#安裝" class="headerlink" title="安裝:"></a>安裝:</h4><p><code>npm install --save nodemailer-plugin-inline-base64</code></p>
+<h4 id="設定與實作："><a href="#設定與實作：" class="headerlink" title="設定與實作："></a>設定與實作：</h4><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> inlineBase64 = <span class="built_in">require</span>(<span class="string">'nodemailer-plugin-inline-base64'</span>);</span><br><span class="line"></span><br><span class="line">transporter.use(<span class="string">'compile'</span>, inlineBase64(&#123;<span class="attr">cidPrefix</span>: <span class="string">'somePrefix_'</span>&#125;)); <span class="comment">//加入</span></span><br><span class="line">transporter.sendMail(mailOption,<span class="function"><span class="keyword">function</span>(<span class="params">error, info</span>) </span>&#123;</span><br><span class="line">          <span class="keyword">if</span> (error) &#123;</span><br><span class="line">            <span class="keyword">return</span> <span class="built_in">console</span>.log(error);</span><br><span class="line">          &#125; <span class="keyword">else</span> &#123;</span><br><span class="line">             <span class="built_in">console</span>.log(<span class="string">"訊息已發送: "</span> + info.response);</span><br><span class="line">          &#125;</span><br><span class="line">        &#125;);</span><br></pre></td></tr></table></figure>
+
+<h2 id="實作結果"><a href="#實作結果" class="headerlink" title="實作結果"></a>實作結果</h2><p>這邊實作一個簡單寄信的界面，能夠在頁面上輸入信件內容與上傳檔案：</p>
+<p><img src="https://i.imgur.com/qJsx6vc.png" alt></p>
+<p>實際收到信件內容：</p>
+<p><img src="https://i.imgur.com/fUGAjGn.png" alt></p>
+<p>github 連結:<a href="https://github.com/Phxww/mail-manager" target="_blank" rel="noopener">https://github.com/Phxww/mail-manager</a></p>
+<p>參考：</p>
+<ul>
+<li><a href="https://nodemailer.com/about/" target="_blank" rel="noopener">nodemailer</a></li>
+<li><a href="https://ithelp.ithome.com.tw/articles/10160766" target="_blank" rel="noopener">Node.js 系列學習日誌  - 使用 nodemailer 套件透過 gmail 發送電子信箱</a></li>
+<li><a href="https://cythilya.github.io/2015/08/19/node-nodemailer/" target="_blank" rel="noopener">Node.js: 使用 Nodemailer 傳送 Email</a><br><a href></a></li>
+</ul>
+<h6 id="tags-Nodemailer-Node-js-summernote"><a href="#tags-Nodemailer-Node-js-summernote" class="headerlink" title="tags: Nodemailer Node.js summernote"></a>tags: <code>Nodemailer</code> <code>Node.js</code> <code>summernote</code></h6></section>
+    <!-- Tags START -->
+    
+      <div class="tags">
+        <span>Tags:</span>
+        
+  <a href="/tags#Node.js" >
+    <span class="tag-code">Node.js</span>
+  </a>
+
+      </div>
+    
+    <!-- Tags END -->
+    <!-- NAV START -->
+    
+  <div class="nav-container">
+    <!-- reverse left and right to put prev and next in a more logic postition -->
+    
+      <a class="nav-left" href="/2019/09/16/web_cookie_session/">
+        <span class="nav-arrow">← </span>
+        
+          Web | Cookie &amp; Session
+        
+      </a>
+    
+    
+  </div>
+
+    <!-- NAV END -->
+    <!-- 打赏 START -->
+    <!-- 
+      <div class="money-like">
+        <div class="reward-btn">
+          赏
+          <span class="money-code">
+            <span class="alipay-code">
+              <div class="code-image"></div>
+              <b>使用支付宝打赏</b>
+            </span>
+            <span class="wechat-code">
+              <div class="code-image"></div>
+              <b>使用微信打赏</b>
+            </span>
+          </span>
+        </div>
+        <p class="notice">若你觉得我的文章对你有帮助，欢迎点击上方按钮对我打赏</p>
+      </div>
+     -->
+    <!-- 打赏 END -->
+    <!-- 二维码 START -->
+    <!-- 
+      <div class="qrcode">
+        <canvas id="share-qrcode"></canvas>
+        <p class="notice">扫描二维码，分享此文章</p>
+      </div>
+     -->
+    <!-- 二维码 END -->
+    
+      <!-- Gitment START -->
+      <div id="comments"></div>
+      <!-- Gitment END -->
+    
+  </article>
+  <!-- Article END -->
+  <!-- Catalog START -->
+  
+    <aside class="catalog-container">
+  <div class="toc-main">
+    <strong class="toc-title">Catalog</strong>
+    
+      <ol class="toc-nav"><li class="toc-nav-item toc-nav-level-1"><a class="toc-nav-link" href="#Node-js-透過-Nodemailer-寄送-Email"><span class="toc-nav-text">Node.js - 透過 Nodemailer 寄送 Email</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#實作目標"><span class="toc-nav-text">實作目標</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#安裝與設定"><span class="toc-nav-text">安裝與設定</span></a></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#實作"><span class="toc-nav-text">實作</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#開啟信箱存取權限"><span class="toc-nav-text">開啟信箱存取權限</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#發信服務的相關設定"><span class="toc-nav-text">發信服務的相關設定</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#傳送-HTML-內文並寄信"><span class="toc-nav-text">傳送 HTML 內文並寄信</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#信件可夾帶檔案"><span class="toc-nav-text">信件可夾帶檔案</span></a></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#加入線上編輯器-summernote"><span class="toc-nav-text">加入線上編輯器 - summernote</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#設定與實作"><span class="toc-nav-text">設定與實作</span></a></li></ol></li><li class="toc-nav-item toc-nav-level-3"><a class="toc-nav-link" href="#html-內文夾帶圖片"><span class="toc-nav-text">html 內文夾帶圖片</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#安裝"><span class="toc-nav-text">安裝:</span></a></li><li class="toc-nav-item toc-nav-level-4"><a class="toc-nav-link" href="#設定與實作："><span class="toc-nav-text">設定與實作：</span></a></li></ol></li></ol></li><li class="toc-nav-item toc-nav-level-2"><a class="toc-nav-link" href="#實作結果"><span class="toc-nav-text">實作結果</span></a><ol class="toc-nav-child"><li class="toc-nav-item toc-nav-level-6"><a class="toc-nav-link" href="#tags-Nodemailer-Node-js-summernote"><span class="toc-nav-text">tags: Nodemailer Node.js summernote</span></a></li></ol></li></ol></li></ol></li></ol></li></ol></li></ol>
+    
+  </div>
+</aside>
+  
+  <!-- Catalog END -->
+</main>
+
+<script>
+  (function () {
+    var url = 'http://yoursite.com/2019/11/06/nodemailer/';
+    var banner = ''
+    if (banner !== '' && banner !== 'undefined' && banner !== 'null') {
+      $('#article-banner').css({
+        'background-image': 'url(' + banner + ')'
+      })
+    } else {
+      $('#article-banner').geopattern(url)
+    }
+    $('.header').removeClass('fixed-header')
+
+    // error image
+    $(".markdown-content img").on('error', function() {
+      $(this).attr('src', 'http://file.muyutech.com/error-img.png')
+      $(this).css({
+        'cursor': 'default'
+      })
+    })
+
+    // zoom image
+    $(".markdown-content img").on('click', function() {
+      var src = $(this).attr('src')
+      if (src !== 'http://file.muyutech.com/error-img.png') {
+        var imageW = $(this).width()
+        var imageH = $(this).height()
+
+        var zoom = ($(window).width() * 0.95 / imageW).toFixed(2)
+        zoom = zoom < 1 ? 1 : zoom
+        zoom = zoom > 2 ? 2 : zoom
+        var transY = (($(window).height() - imageH) / 2).toFixed(2)
+
+        $('body').append('<div class="image-view-wrap"><div class="image-view-inner"><img src="'+ src +'" /></div></div>')
+        $('.image-view-wrap').addClass('wrap-active')
+        $('.image-view-wrap img').css({
+          'width': `${imageW}`,
+          'transform': `translate3d(0, ${transY}px, 0) scale3d(${zoom}, ${zoom}, 1)`
+        })
+        $('html').css('overflow', 'hidden')
+
+        $('.image-view-wrap').on('click', function() {
+          $(this).remove()
+          $('html').attr('style', '')
+        })
+      }
+    })
+  })();
+</script>
+
+
+  <script>
+    var qr = new QRious({
+      element: document.getElementById('share-qrcode'),
+      value: document.location.href
+    });
+  </script>
+
+
+
+  <script>
+    var gitmentConfig = "yanm1ng";
+    if (gitmentConfig !== 'undefined') {
+      var gitment = new Gitment({
+        id: "Node.js | Nodemailer",
+        owner: "yanm1ng",
+        repo: "yanm1ng.github.io",
+        oauth: {
+          client_id: "0f87e490e00ee3fd87ef",
+          client_secret: "4a9d2b148e7971c2201ad12131ce8bf8159ccd2e"
+        },
+        theme: {
+          render(state, instance) {
+            const container = document.createElement('div')
+            container.lang = "en-US"
+            container.className = 'gitment-container gitment-root-container'
+            container.appendChild(instance.renderHeader(state, instance))
+            container.appendChild(instance.renderEditor(state, instance))
+            container.appendChild(instance.renderComments(state, instance))
+            container.appendChild(instance.renderFooter(state, instance))
+            return container;
+          }
+        }
+      })
+      gitment.render(document.getElementById('comments'))
+    }
+  </script>
+
+
+
+
+    <div class="scroll-top">
+  <span class="arrow-icon"></span>
+</div>
+    <footer class="app-footer">
+  <p class="copyright">
+    &copy; 2019 | Proudly powered by <a href="https://hexo.io" target="_blank">Hexo</a>
+    <br>
+    Theme by <a href="https://github.com/yanm1ng">yanm1ng</a>
+  </p>
+</footer>
+
+<script>
+  function async(u, c) {
+    var d = document, t = 'script',
+      o = d.createElement(t),
+      s = d.getElementsByTagName(t)[0];
+    o.src = u;
+    if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+    s.parentNode.insertBefore(o, s);
+  }
+</script>
+<script>
+  async("//cdnjs.cloudflare.com/ajax/libs/fastclick/1.0.6/fastclick.min.js", function(){
+    FastClick.attach(document.body);
+  })
+</script>
+
+<script>
+  var hasLine = 'true';
+  async("//cdnjs.cloudflare.com/ajax/libs/highlight.js/9.12.0/highlight.min.js", function(){
+    $('figure pre').each(function(i, block) {
+      var figure = $(this).parents('figure');
+      if (hasLine === 'false') {
+        figure.find('.gutter').hide();
+      }
+      var lang = figure.attr('class').split(' ')[1] || 'code';
+      var codeHtml = $(this).html();
+      var codeTag = document.createElement('code');
+      codeTag.className = lang;
+      codeTag.innerHTML = codeHtml;
+      $(this).attr('class', '').empty().html(codeTag);
+      figure.attr('data-lang', lang.toUpperCase());
+      hljs.highlightBlock(block);
+    });
+  })
+</script>
+<!-- Baidu Tongji -->
+
+<script src="/js/script.js"></script>
+  </body>
+</html>
